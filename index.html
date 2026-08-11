@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>金属研究框架 · Metals Framework</title>
+<style>
+  :root{
+    --bg:#f4f4f3; --panel:#ffffff; --ink:#1d1d1c; --ink2:#7a7772; --line:#e6e4e0;
+    --accent:#9c5f2c; --blue:#2456e0; --hdr:#141413;
+    --radius:4px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);font:14.5px/1.7 "PingFang SC","Microsoft YaHei",system-ui,sans-serif}
+  a{text-decoration:none;color:inherit}
+  code{font:12px Consolas,monospace;background:#f0eeeb;border-radius:3px;padding:1px 5px;color:#7a4a1f}
+
+  /* ---------- 顶栏（参考站风格：黑 header） ---------- */
+  .topbar{background:var(--hdr);color:#f5f4f2;position:sticky;top:0;z-index:50;box-shadow:0 1px 0 rgba(0,0,0,.2)}
+  .topbar-in{max-width:1460px;margin:0 auto;display:flex;align-items:center;gap:28px;padding:0 28px;height:52px}
+  .brand{font-weight:700;font-size:15px;letter-spacing:.02em;display:flex;align-items:center;gap:8px;white-space:nowrap}
+  .brand .sq{color:var(--accent)}
+  .brand small{color:#8f8c87;font-weight:400;font-size:11.5px;letter-spacing:.14em}
+  .mtabs{display:flex;gap:2px;height:52px;overflow-x:auto}
+  .mtab{padding:0 16px;display:flex;align-items:center;font-size:13.5px;color:#b9b5af;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:.15s}
+  .mtab:hover{color:#fff}
+  .mtab.active{color:#fff;border-bottom-color:#e0452f;font-weight:600}
+  .topbar .right{margin-left:auto;font-size:11.5px;color:#8f8c87;white-space:nowrap}
+  .dotlive{display:inline-block;width:7px;height:7px;border-radius:50%;background:#3fae63;margin-right:6px}
+
+  /* ---------- 首页 ---------- */
+  .home-hero{max-width:1460px;margin:0 auto;padding:64px 28px 30px;border-bottom:1px solid var(--line)}
+  .home-hero .en{color:var(--ink2);font-size:13px;margin-bottom:10px;letter-spacing:.04em}
+  .home-hero h1{font-size:40px;font-weight:600;letter-spacing:.01em}
+  .home-hero .row2{display:flex;justify-content:space-between;align-items:flex-end;margin-top:14px}
+  .home-hero .sub{color:var(--ink2);font-size:13.5px;max-width:720px}
+  .home-hero .stat{text-align:right;font-size:13px}
+  .home-hero .stat b{display:block;font-size:22px;font-weight:600}
+  .entry-head{max-width:1460px;margin:0 auto;padding:26px 28px 14px;display:flex;justify-content:space-between;font-size:13px;color:var(--ink2)}
+  .grid2{max-width:1460px;margin:0 auto;padding:0 28px 60px;display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+  .pcard{background:var(--panel);border-right:1px solid var(--line);border-bottom:1px solid var(--line);cursor:pointer;transition:background .15s;display:flex;flex-direction:column}
+  .pcard:hover{background:#faf8f6}
+  .pcard .top{display:flex;justify-content:space-between;padding:14px 20px;font-size:12px;color:var(--ink2)}
+  .pcard .top .idx b{color:var(--ink);font-weight:600}
+  .pcard .mono{flex:1;display:flex;align-items:center;justify-content:center;padding:38px 0;font:200 74px/1 "Helvetica Neue",Arial,sans-serif;letter-spacing:.04em;background:#f7f6f5;margin:0 20px}
+  .pcard .bot{display:flex;align-items:center;justify-content:space-between;padding:16px 20px 18px}
+  .pcard .nm{font-size:17px;font-weight:600}
+  .pcard .nm span{color:var(--ink2);font-size:12.5px;font-weight:400;margin-left:8px}
+  .pcard .ds{font-size:12.5px;color:var(--ink2);margin-top:3px}
+  .arrow{width:40px;height:40px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:17px;flex:none;transition:.15s}
+  .pcard:hover .arrow{background:#163fa8;transform:translateX(3px)}
+  .pcard.fx .mono{font-size:44px;font-weight:300}
+
+  /* ---------- 品种看板 ---------- */
+  .pills{background:var(--panel);border-bottom:1px solid var(--line)}
+  .pills-in{max-width:1460px;margin:0 auto;padding:0 28px;display:flex;gap:6px;overflow-x:auto}
+  .pill{padding:9px 16px;font-size:13px;color:var(--ink2);cursor:pointer;border-radius:99px;margin:8px 0;white-space:nowrap;transition:.13s}
+  .pill:hover{background:#f0eeeb}
+  .pill.active{background:#f0e6da;color:var(--accent);font-weight:600}
+  .board{max-width:1460px;margin:0 auto;padding:22px 28px 70px;display:flex;gap:26px;align-items:flex-start}
+  .sidebar{width:210px;flex:none;position:sticky;top:66px;font-size:13px}
+  .sidebar .sg{margin-bottom:6px}
+  .sidebar a{display:block;padding:7px 12px;color:var(--ink2);border-radius:var(--radius);cursor:pointer;border-left:2px solid transparent}
+  .sidebar a:hover{background:#eeecea;color:var(--ink)}
+  .sidebar a.active{background:var(--panel);color:var(--ink);border-left-color:var(--accent);font-weight:600;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+  .sidebar .grp{font-size:11px;color:#a8a49e;letter-spacing:.1em;padding:12px 12px 4px}
+  .content{flex:1;min-width:0}
+  .anchor-banner{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:var(--radius);padding:18px 22px;margin-bottom:18px}
+  .anchor-banner .lab{font-size:11px;letter-spacing:.18em;color:var(--accent);font-weight:700;margin-bottom:6px}
+  .anchor-banner p{font-size:14.5px}
+  .gtitle{font-size:15px;font-weight:700;margin:22px 0 10px;display:flex;align-items:center;gap:8px}
+  .gtitle::before{content:"";width:8px;height:8px;background:var(--accent);display:inline-block}
+  .gtitle .en{font-size:11.5px;color:var(--ink2);font-weight:400}
+  .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .cards2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .ncard{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:15px 17px;transition:.15s;scroll-margin-top:70px}
+  .ncard:hover{border-color:#d5ccc0;box-shadow:0 2px 8px rgba(60,45,30,.06)}
+  .ncard h4{font-size:14px;display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-bottom:3px}
+  .ncard .no{font:600 10.5px Consolas,monospace;color:#fff;background:#8a8680;border-radius:3px;padding:1px 6px}
+  .ncard.star{border-left:3px solid #e0452f}
+  .ncard.star .no{background:#e0452f}
+  .freq{font-size:10.5px;border-radius:3px;padding:1px 6px;font-weight:600}
+  .f-d{background:#eef3fa;color:#3a5f8a}.f-w{background:#eff6f1;color:#2f7d4f}.f-m{background:#f6f0e6;color:#9c5f2c}.f-q{background:#f3eef8;color:#6b4f8a}
+  .attr{font-size:10.5px;color:var(--ink2)}
+  .qa{font-size:12.5px;color:var(--accent);margin:5px 0}
+  .kv{font-size:12.5px;margin:3px 0;color:#3c3a37}
+  .kv b{color:var(--ink)}
+  .src{margin-top:7px;padding-top:7px;border-top:1px dashed var(--line);font-size:11.5px;color:var(--ink2)}
+  .warn{color:#b4453a}.ok{color:#2f7d4f}
+  .starlab{font-size:10.5px;color:#e0452f;font-weight:700}
+
+  /* ---------- 树/矩阵/数据源 页 ---------- */
+  .page{max-width:1200px;margin:0 auto;padding:34px 28px 70px}
+  .page h2{font-size:24px;font-weight:600;margin-bottom:6px}
+  .page .lead{color:var(--ink2);font-size:13px;margin-bottom:20px;max-width:760px}
+  .tree{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px 20px;font-size:13.5px}
+  .t-item{border-left:1px dashed var(--line);margin-left:8px;padding-left:16px}
+  .t-head{display:flex;align-items:center;gap:8px;cursor:pointer;user-select:none;padding:4px 6px;border-radius:4px}
+  .t-head:hover{background:#f4ece2}
+  .t-arrow{width:13px;color:var(--accent);font-size:10px;transition:.15s;flex:none;display:inline-block}
+  .t-item.closed>.t-head .t-arrow{transform:rotate(-90deg)}
+  .t-item.closed>.t-kids{display:none}
+  .t-code{font:600 12px Consolas,monospace;color:var(--accent);min-width:34px}
+  .t-name{font-weight:600}
+  .t-desc{color:var(--ink2);font-size:12px;padding:3px 6px}
+  .tree-actions{margin-bottom:10px;font-size:12px}
+  .tree-actions a{color:var(--accent);cursor:pointer;margin-right:14px}
+  .tbl-wrap{overflow-x:auto;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius)}
+  table{border-collapse:collapse;width:100%;font-size:12.5px}
+  th,td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:center;white-space:nowrap}
+  th{background:#f5f3f0;font-weight:600;font-size:12px}
+  td:first-child,th:first-child{text-align:left;white-space:normal;min-width:130px}
+  td.ind{text-align:left;white-space:normal;min-width:240px;color:var(--ink2);font-size:11.5px}
+  .d2{color:var(--accent);font-weight:700}.d1{color:#8a9ab0}
+  .legend{font-size:12px;color:var(--ink2);margin-top:10px}
+  .layer{margin-bottom:12px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+  .layer-head{display:flex;align-items:center;gap:12px;padding:13px 16px;cursor:pointer;user-select:none}
+  .layer-head:hover{background:#faf8f6}
+  .l-badge{font:700 11.5px Consolas,monospace;color:#fff;border-radius:5px;padding:3px 9px;flex:none}
+  .l1{background:#2f7d4f}.l2{background:#3a5f8a}.l3{background:#9c5f2c}.l4{background:#8a6f9c}.l5{background:#77706a}
+  .l-title{font-weight:600}.l-sub{font-size:11.5px;color:var(--ink2);margin-left:auto}
+  .layer-body{display:none;padding:2px 16px 14px}
+  .layer.open .layer-body{display:block}
+  .l-arrow{color:var(--ink2);font-size:10px;transition:.15s}
+  .layer.open .l-arrow{transform:rotate(90deg)}
+  #search{width:100%;padding:9px 14px;border:1px solid var(--line);border-radius:6px;font-size:13px;background:var(--panel);margin-bottom:14px;outline:none}
+  #search:focus{border-color:var(--accent)}
+  .hidden-by-search{display:none!important}
+  .ncard>h4{cursor:pointer;user-select:none}
+  .ncard>h4 .caret{float:right;color:var(--ink2);font-size:11px;transition:.15s}
+  .ncard.collapsed .nbody{display:none}
+  .ncard.collapsed>h4 .caret{transform:rotate(-90deg)}
+  .ncard.collapsed>h4{margin-bottom:0}
+  .t-desc.link{cursor:pointer}
+  .t-desc.link:hover{background:#f4ece2;color:var(--ink)}
+  @keyframes flash{0%{background:#fdeeda}100%{background:var(--panel)}}
+  .ncard.flash{animation:flash 1.6s}
+  footer{max-width:1460px;margin:0 auto;padding:24px 28px 40px;color:var(--ink2);font-size:12px;border-top:1px solid var(--line)}
+  @media(max-width:1100px){.cards3{grid-template-columns:1fr 1fr}.grid2{grid-template-columns:1fr}.sidebar{display:none}.board{padding:16px}}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="#/"><span class="sq">▮▮</span>金属研究框架 <small>METALS FRAMEWORK</small></a>
+    <div class="mtabs" id="mtabs"></div>
+    <div class="right"><span class="dotlive"></span>数据持续更新 · 2026-08-11 v4（API 化普查已并入）</div>
+  </div>
+</div>
+<div class="pills" id="pills" style="display:none"><div class="pills-in" id="pills-in"></div></div>
+<div id="app"></div>
+<footer>
+  配套资产台账 <code>D:/Kimi/有色与新能源产业链_研究目录映射_20260810.md</code> ｜ 方法论手册 <code>D:/Kimi/有色金属研究框架_通用目录树与数据源_20260811.md</code><br>
+  排版与点进方式参考 YZK Research（项目索引 → 品种看板：顶栏模块 tab + 左侧条目组 + 右侧卡片网格）｜ 单文件 HTML，可离线打开
+</footer>
+
+<script>
+/* ==================== 基础数据 ==================== */
+const COMMS = [
+ {id:"cu", code:"CU", name:"铜数据面板", en:"Copper", color:"#b06a32", anchorS:"矿定价 · 消费面向电网/地产后周期/AI",
+  anchor:"<b>矿端定价</b>（TC 负值=矿最紧的叙事）；宏观属性六金属最重（铜博士）。消费面向电网（第一大）/地产后周期家电/AI 服务器；矿端久期居中（扰动多但大项目管线可见，Grasberg 爬产等可预期）。",
+  upgrades:["3.1 矿端（资本开支五年视角+大事件时间轴）","2.4 价差（洋山溢价）"],
+  src:"TC 📊 ID01154994｜洋山溢价 📊 s20015675｜升贴水 📊 ID01677008｜社库 📊 ID00188319｜持仓 📊 FU00017551（日）｜LME 库存 📊 a10134435（日）｜下游开工：铜杆 ID01067717/铜管 a10015025/铜板带 a10015276（2026-08-11 普查 ✅）｜📁 铜/全球铜企季度产量梳理.xlsx + 2026文章/铜财报.xlsx（ICSG sheet）",
+  red:"FreePort PTFI 并表可回收磅；BHP 财年止 6 月；Teck QB 100%；South32=Sierra Gorda 45%；Anglo-Teck 交割后切口径",
+  gap:"需求端已补：铜杆/铜管/铜板带开工率 API 化（2026-08-11 普查，均实测新鲜）",
+  ov:{"2.1":"📊 沪铜总持仓 FU00017551（日，替代 Excel 资金面 sheet）＋ zhiji_kline(CU)/新浪 CU0","2.2":"📊 电解铜1#升贴水 ID01677008；基差 FU00024310；SMM/生意社交叉","2.4":"📊 洋山溢价 s20015675；电解铜进口盈亏 ID01990790；📁 Mysteel 进出口盈亏","3.1.5":"📊 铜精矿进口 TC 指数 ID01154994（日）","4.1":"📊 SHFE 铜 FU00015994 / BC 库存 FU00057200（周）；LME 铜 a10134435（日，✅2026-08-11 普查，可替代 Excel 铜表）；COMEX ID00302664","4.3":"📊 电解铜现货库存上海 ID00188319（日）","5.1":"📊 铜杆产能利用率 ID01067717（Mysteel 月）/ 铜管开工率 a10015025（SMM 月，周度 a12811632）/ 铜板带开工率 a10015276（SMM 月）——2026-08-11 普查新增 ✅"}},
+ {id:"al", code:"AL", name:"铝数据面板", en:"Aluminum", color:"#7a8a9c", anchorS:"冶炼端（电力）定价 · 消费面向地产/汽车/光伏",
+  anchor:"<b>冶炼端定价</b>——产能天花板 4500 万吨 + 电力成本；中国是边际供应方。消费三条主线都沾：地产（型材）、汽车（轻量化）、光伏（边框支架）。",
+  upgrades:["2.5 估值（氧化铝-电解铝利润链）","6.3 制品出口（铝材分地区=需求侧一等变量）","特色：铝水比例、期权风险溢价"],
+  src:"氧化铝价 📊 ID00188139｜SHFE 库存 📊 ID00188281｜社库 📊 ID00188307｜基差 📊 FU00024308｜LME 库存 📊 a10134438（日）｜电解铝产量 📊 a10124317（月）/a12804267（周）｜氧化铝产量 📊 a10015944（月）｜铝土矿进口 📊 a10016324｜下游开工：铝型材 a10031808（周）/铝板带 a10016011（月）｜资讯：阿拉丁 ✅+爱择 ⚠️｜📁 铝/全球铝企季度产量梳理.xlsx（三板块）+ CRU outlook",
+  red:"权益 vs 合并混杂；湿吨（力拓/俄铝/Metro）；财年错位（South32 止 6 月、印度三家止 3 月）；美铝收购 South32 铝资产后两家口径均变；⚠️铝土矿别用 a10167788（空数据坑）",
+  gap:"需求端已补：铝型材/铝板带开工率 API 化（2026-08-11 普查 ✅）；Press Metal/Century/Metro 待补",
+  ov:{"2.2":"📊 SHFE 铝基差 FU00024308；SMM A00 现货价","2.5":"氧化铝价 📊 ID00188139（日）→ 电解铝利润链自建","3.2.1":"📊 电解铝产量 a10124317（SMM 月，7 月 387.4 万吨）/ a12804267（周）/ ID01445793（Mysteel 日）；氧化铝产量 a10015944（月）——2026-08-11 普查新增 ✅","4.1":"📊 SHFE 铝期货库存 ID00188281（日）；LME 铝 a10134438（日，✅普查，可替代 Excel 铝表）","4.3":"📊 电解铝现货社库中国 ID00188307（日）","5.1":"📊 铝型材龙头开工率 a10031808（SMM 周）/ 铝板带开工率 a10016011（月，周度 a10031809）——2026-08-11 普查新增 ✅","6.1":"📊 铝土矿进口量 a10016324（海关月，6 月 2032 万吨）；⚠️勿用 a10167788（空数据坑）"}},
+ {id:"pb", code:"PB", name:"铅数据面板", en:"Lead", color:"#6b7280", anchorS:"再生铅定价 · 消费面向电池刚需 · ⚠️未建库",
+  anchor:"<b>再生铅定价</b>——「废电瓶价格→再生利润→再生产量」是铅价的核心调节阀：价跌破再生成本→减产托底，价涨出利润→复产压顶，上下沿都由再生侧划定。原生铅只是稳定器；需求单一（电池替换刚需），价格弹性主要来自再生供应侧。",
+  upgrades:["3.2 拆原生 vs 再生双轨","5 需求集中（电池成品库存+两轮车政策）"],
+  src:"建库启动包（2026-08-11 普查 ✅ 全部实测新鲜）：铅精矿 TC 📊 a10127385（日，200-250 元/金属吨）｜再生粗铅产量 📊 a10017062（月，7 月 23.75 万吨）｜废电瓶价 📊 ID01245255（日，多地区系列）｜铅锭社库 📊 ID00188315｜铅酸电池开工率 📊 ID01030005（月，分类型 ID01030001/02/04）｜SHFE 库存 📊 FU00015325（周）｜LME 库存 📊 a10134441（日）｜ILZSG ✅ 月度",
+  red:"（建库时登记：原生 vs 再生口径、TC 元/金属吨、废旧电瓶地区价差）",
+  gap:"核心 ID 已备齐（7 个，2026-08-11 普查）——可启动建库：公司产量表 → 接入平台 COMMODITIES → ⏰ 定时任务",
+  ov:{"3.1.5":"📊 铅精矿加工费（国产）a10127385（SMM 日）；Mysteel 分地区：昆明 ID01320067/宝鸡 ID01320078/济源 ID01320083/郴州 ID01320092/个旧 ID01320151","3.2.3":"📊 再生粗铅产量 a10017062（SMM 月）+ 废电瓶价格 ID01245255（日）——再生定价主轨两件套 ✅","4.1":"📊 SHFE 铅库存 FU00015325（周）；LME 铅 a10134441（日）","4.3":"📊 铅锭现货库存 ID00188315（Mysteel）；SMM 五地周度 a10017065-70","5.1":"📊 铅蓄电池开工率 ID01030005（月，7 月 64.6%）"},
+  charts:[
+   {f:"铅_沪铅主连_季节性_20260811.png", t:"沪铅主连收盘价（元/吨）", k:"季节性", src:"知几/新浪"},
+   {f:"铅_TC_季节性_20260811.png", t:"铅精矿加工费TC（元/金属吨）", k:"季节性", src:"SMM"},
+   {f:"铅_再生粗铅产量_季节性_20260811.png", t:"再生粗铅产量（万吨）", k:"季节性", src:"SMM"},
+   {f:"铅_废电瓶价_季节性_20260811.png", t:"启动白壳废电瓶汇总价（元/吨）", k:"季节性", src:"Mysteel"},
+   {f:"铅_铅锭社库_季节性_20260811.png", t:"铅锭现货社会库存（万吨）", k:"季节性", src:"Mysteel"},
+   {f:"铅_电池开工率_季节性_20260811.png", t:"铅酸蓄电池开工率（%）", k:"季节性", src:"Mysteel"},
+   {f:"铅_SHFE库存_季节性_20260811.png", t:"SHFE 铅期货库存（吨）", k:"季节性", src:"Mysteel"},
+   {f:"铅_LME库存_季节性_20260811.png", t:"LME 铅库存（吨）", k:"季节性", src:"SMM"},
+  ]},
+ {id:"zn", code:"ZN", name:"锌数据面板", en:"Zinc", color:"#5b7a8c", anchorS:"矿定价但消费弱 · 消费面向地产基建镀锌",
+  anchor:"<b>本质与铜一样是矿端定价</b>（TC 周期→锭端传导）；区别在于<b>消费端偏弱</b>——镀锌压舱地产/基建，需求弹性差，宏观向上时跟涨不如铜，趋势更依赖矿端自身松紧。2026 叙事=矿端转松、锭端过剩渐近。",
+  upgrades:["3.1 矿端最深（资本开支/扰动率/指引下调/老矿品位老化）","3.1.5 TC 单列","5.1 镀涂初端"],
+  src:"TC 三地 📊 ID01320080/ID01320188/ID01320154｜升贴水 📊 ID02038785｜社库 📊 ID00188329｜SHFE 库存 📊 ID00188293｜LME 库存 📊 a10134450（日）｜精炼锌产量 📊 ID01510883（月）｜下游开工：镀锌 a10097188（周）/压铸 a10001884/氧化锌 a10001831｜锌锭进口盈亏 📊 ID01030236（日）｜镀锌板卷产量 📊 ID00187499（周）｜📁 锌数据库-锭篇/需求篇 + Mysteel 锌产业数据库（111 sheet）+ ILZSG + WoodMac",
+  red:"万金属吨 vs 万吨精炼锌；payable/权益/100% 混杂；两次覆盖事故教训：编辑前先关 Excel、以磁盘为准（guard ⏰ 03e489e1）",
+  gap:"核心指标已 API 化（2026-08-11 普查新增 7 个 ID，锭篇/需求篇主干可摆脱 Excel）；Mysteel 111 sheet 长尾项可继续镜像",
+  ov:{"2.2":"📊 SMM 0#锌锭升贴水·上海 ID02038785；SHFE 锌基差 FU00024317","2.4":"📊 锌锭进口盈亏（含税）ID01030236（日）；不含税 ID01030238、比值 ID01030234——普查新增 ✅","3.1.5":"📊 锌精矿 TC 三地：昆明 ID01320080 / 赤峰 ID01320188 / 济源 ID01320154（日）","3.2.1":"📊 精炼锌产量 ID01510883（Mysteel 月，7 月 48.84 万吨）；SMM 分省月度 a10148072/73 等备选——普查新增 ✅","4.1":"📊 SHFE 锌期货库存 ID00188293；日度候选 FU00016291；LME 锌 a10134450（日，✅普查，可替代 Excel 锌表）","4.3":"📊 Mysteel 锌锭现货库存中国 ID00188329（日）","5.1":"📊 镀锌开工率 a10097188（SMM 周，月度 a10001822）/ 压铸锌合金开工率 a10001884（月）/ 氧化锌开工率 a10001831（月，周度 a10097212）/ 镀锌板卷产量 ID00187499（周，约 118 万吨）——普查新增 ✅"}},
+ {id:"ni", code:"NI", name:"镍数据面板", en:"Nickel", color:"#7a8c5b", anchorS:"边际看印尼 · 消费面向不锈钢/三元电池",
+  anchor:"<b>定价锚</b>——供应端印尼（中间品放量 + RKAB 配额政策）；双下游（不锈钢=量、三元电池=预期）。品种内三分层：一级镍/NPI/中间品，价格联动但供需独立。",
+  upgrades:["3.3 海外（印尼单列：RKAB=最强先行指标）","NPI 转高冰镍窗口","湿法/火法成本分层"],
+  src:"2026-08-11 普查前 0 个 ID → 现有 12 个全实测新鲜：中国 NPI 月产 📊 a10018516｜印尼 NPI 📊 a10193590｜印尼 MHP 📊 a10193623 / 高冰镍 a10193624｜纯镍社库（镍板）📊 a10018953（周）｜镍铁库存 📊 ID00185743｜金川镍板升贴水 📊 s20019092 / 镍豆 a10018886（日）｜电池级硫酸镍 📊 s20000172（日）/ 产量 a10018597（月）｜300系不锈钢产量 📊 a10019689 / 库存 ID01527702（周）｜SHFE 镍 📊 FU00014934｜LME 镍 📊 a10134444｜📁 镍/全球镍企季度产量梳理.xlsx + 2026文章/镍季度生产报告.xlsx + 印尼电力/开工统计 xlsx",
+  red:"PTVI 80% offtake；NIC 季度=100% 项目而年度=权益（勿相加）；Eramet WBN 100% vs 集团 38.7% 勿混；⚠️镍豆社库序列恒 0（口径待核）；镍铁升贴水无直接指标（用到厂/出厂价 ID01878121/22 替代）",
+  gap:"已解决：国内高频全 API 化（2026-08-11 普查，彻底摆脱周报 PDF 手抄）",
+  ov:{"2.2":"📊 金川镍板升贴水 s20019092 / 镍豆升贴水 a10018886（日）——普查新增 ✅","2.5":"📊 电池级硫酸镍 s20000172（日价）/ 硫酸镍产量 a10018597（月）——普查新增 ✅","3.2.1":"📊 中国 NPI 产量 a10018516（SMM 月，7 月 64.2 万吨实物）；分省/分工艺 Mysteel ID00185656-66 备选——普查新增 ✅","3.3.1":"📊 印尼 NPI a10193590（月，13.03 万镍吨）/ 印尼 MHP a10193623 / 印尼高冰镍 a10193624——普查新增 ✅","4.1":"📊 SHFE 镍库存 FU00014934（周）；LME 镍 a10134444（日）","4.3":"📊 纯镍社库（镍板）a10018953（周，13.0 万吨）；镍铁库存 ID00185743（月）；⚠️镍豆社库恒 0 口径待核","5.1":"📊 不锈钢 300 系产量 a10019689（月，174.5 万吨）/ 300 系 78 家库存 ID01527702（周，66 万吨）——普查新增 ✅","3.3.3":"印尼 RKAB 配额=产量先行指标（Weda Bay 2026 初批仅 12Mwmt vs 2025 42Mwmt）；⏰ 周一扫描 51265eed"}},
+ {id:"sn", code:"SN", name:"锡数据面板", en:"Tin", color:"#8c6b9c", anchorS:"矿定价且久期最长 · 消费面向电子焊料 · 建库样板",
+  anchor:"<b>矿端定价，久期比铜锌更长</b>——资源稀缺、矿山集中（缅甸/刚果金/印尼）、新增项目管线薄，矿端叙事以年为单位持续。<b>消费面向不同</b>：锡≈电子金属（焊料→半导体/消费电子，跟 SOX 周期），与铜锌的地产基建链两套驱动——宏观联动看 SPX/SOX 而非中国地产链。小品种+低库存放大波动。",
+  upgrades:["3.1.4 分国别单页（缅甸/刚果金）","3.3.2 印尼高频（ICDX 周度）","9.2 宏观相关性当矛盾写","4.5 隐形库存拟合"],
+  src:"40+ 个 ID 全表见 周报更新图/_锡研究框架指标目录.md｜普查新增（2026-08-11 ✅）：总持仓 📊 FU00017555（日，替代资金面 sheet）｜锡精矿产量 📊 ID01590150（月）｜焊料产量 📊 a12870406（月）/ 开工率 a10083975（月）｜精炼锡进口盈亏 📊 a10099490（日）｜📁 锡数据库.xlsx + Mysteel 锡线下数据.xlsx + 锡平衡表新.xlsx｜15 个出图脚本+PPT 双流水线（⏰ 周六 20:10 f7937c3f / 20:23 5d74cab1）",
+  red:"Mysteel 贸易商成交口径 2025-12 起变更；Comtrade 巴西离群月剔除；海关月度次月中下旬才出",
+  gap:"残余 Excel 依赖仅 3 项（普查确认 zhiji 无）：精炼锡进出口中国总量（只有分国别）、贸易商日度成交量、WBMS 月度平衡（年度锚可用 ID00265309/52）",
+  ov:{"2.1":"📊 沪锡总持仓 FU00017555（日，✅普查，替代 Excel 资金面列17/18）＋ zhiji_kline(SN)/新浪 SN0","2.2":"📊 品牌升贴水 11 个：云锡 ID01319883、云亨 ID01319876、云山 ID01319877、云祥 ID01319881、云象 ID01319873、云帆 ID01319875、金海 ID01319869、金龙 ID01319868、江锡 ID01319871、南山中锡 ID01319872、皇岗 ID01319870","2.3":"📊 LME 结算 FU00015894；0-3 升贴水 a10099105；现货口径 j02797783","2.4":"📊 沪伦比 a10156329（SMM）；锡锭进口利润 ID01590826（Mysteel）；精炼锡进口盈亏 a10099490（SMM 日，普查新增 ✅）","2.5":"📊 锡冶炼利润 ID02105841（Mysteel 日度）","3.1.3":"📊 中国锡精矿产量 ID01590150（Mysteel 月，5 月 6530 吨）——✅普查，替代 Mysteel 线下数据 sheet","3.1.4":"📊 锡矿进口 a10003098；缅甸 a10099495；刚果金 a10099501（月度）","3.1.5":"📊 云南40% ID01538256 / 江西60% ID01538257（Mysteel 日度）","3.2.1":"📊 精炼锡产量 a10003083（SMM 月度）","3.2.2":"📊 精炼锡开工率 a10003128（SMM 月度）","3.2.3":"📊 再生锡产量 a10099502（SMM 月度）","3.3.1":"📊 印尼精锡出口 ID01593795；马来出口 ID01659306；马来锡矿进口 ID02323330；巴西出口 ID02319139（⚠️离群月剔除，GM00229794 校验）","3.3.2":"📊 印尼 ICDX 成交量 FU00082529（周度，比出口早）","4.1":"📊 SHFE 锡库存 FU00015998；LME 锡 a10006434 + 分地区：香港 a12820654/巴生 a10006465/新加坡 a10006450/巴尔的摩 a10006459","4.2":"📊 LME 注册仓单 FU00015901 / 注销仓单 FU00015902","4.3":"📊 Mysteel 锡社库 ID01517441（周度）","4.5":"⚙️ _make_invisible_stock.py（社库-SHFE 拟合）","5.1":"📊 焊料产量 a12870406（SMM 月，6 月 9295 吨）/ 焊料开工率 a10083975（月，7 月 72.8%，分规模 a10083972/73/74）——✅普查替代 Excel；⚠️贸易商日度成交 zhiji 无，保留 Mysteel 线下数据","5.2":"📊 手机 CM0000017803；集成电路 CM0000017738；SOX GM00194406；半导体销售额 ID01552325","6.2":"⚠️精炼锡进出口中国总量 zhiji 无（仅分国别月度可加总），保留 📁 Mysteel 线下数据","9.2":"⚙️ _make_oi_corr_charts.py（锡 vs SPX/SOX 60 日滚动相关）"}},
+ {id:"li", code:"LC", name:"锂数据面板", en:"Lithium", color:"#4f8a7a", anchorS:"成本曲线+政策定价 · 消费面向动力电池/储能",
+  anchor:"<b>定价锚</b>——产能过剩周期里锚在<b>成本曲线右侧分位</b>（云母/回收成本=上方压力，盐湖成本=下方支撑）+ <b>政策扰动</b>（枧下窝停复产类事件驱动）；需求高增长但已被充分预期，交易的是预期差。",
+  upgrades:["3.4 锂矿发运（到港先行）","4.2 广期所仓单（定价权大）","4 库存三口径并列","5.3 排产两版修正轨迹","5.2 需求链到单车带电量"],
+  src:"40+ 个 ID 见 D:/Kimi/碳酸锂数据源回溯总目录.md｜普查新增（2026-08-11 ✅）：电碳日价 📊 s20000222 / 工碳 s22715484｜SC6 月度 ID01722298（⚠️日度已停更 2025-09）｜周度产量 a12715547（含分原料 a12723865/66/67、a12754398）｜周度库存分上下游 a10172019/20（+其他 a10172021/总计 a10172022）｜广期所仓单 FU00058102（日）｜📁 锂/全球锂企季度产量梳理.xlsx + 华泰平衡底稿",
+  red:"SC6×0.125 折 LCE（扎布耶不适用）；澳矿 FY 止 6 月日历映射；SQM=销量；MinRes=两矿 100%",
+  gap:"PLS/MinRes 26Q2、Sigma 26Q1、赣锋 2023、华友 2023/2025 待复核；SC6 日度美元价停更（2025-09），只剩月度 ID01722298——高频需另找源或接受月度颗粒度",
+  ov:{"2.2":"📊 电碳 s20000222 / 工碳 s22715484（SMM 日均价，普查新增 ✅）；电碳指数 s20156891、电碳-工碳价差 j00123038 备选","2.5":"📊 锂辉石精矿 SC6 CIF 均价 ID01722298（Mysteel 月，2195 美元/吨）；⚠️日度 ID01294969/ID01551908 已停更 2025-09","3.2.1":"📊 SMM 碳酸锂产量 a10006555（月）+ 周度 a12715547（普查新增 ✅，分原料：锂辉石 a12723865/云母 a12723866/盐湖 a12723867/回收 a12754398）","4.2":"📊 广期所碳酸锂仓单 FU00058102（日，55687 手）——普查新增 ✅；SMM 仓单日报 a12715139 备选","4.3":"📊 碳酸锂库存总计 a10097628（月）+ 周度分上下游 a10172019（冶炼厂）/a10172020（下游）（普查新增 ✅）；氢氧化锂 m24146235","6.2":"📊 碳酸锂进口 a10006557 / 出口 a10006558；智利对华 a12804361","5.2":"📊 铁锂产量 a10001859/开工 a10001517；三元 a10001951/52/53；电芯 动力 a12731610/储能 a12715571；乘联会 a12805241/42"}},
+ {id:"si", code:"SI", name:"硅数据面板", en:"Silicon", color:"#c08a3e", anchorS:"双品种：工业硅成本定价 + 多晶硅政策定价",
+  anchor:"<b>工业硅=成本定价</b>（分地区电价：新疆/云南/四川丰枯切换）；<b>多晶硅=政策+产能出清定价</b>（反内卷限产/收储叙事 vs 过剩现实，排产与库存验证）。消费面向：光伏链/有机硅/铝合金。",
+  upgrades:["0 拆双品种（工业硅+多晶硅）","2.2 分牌号价格（553/421）","7.3 电价成本分地区","3.4 开炉情况（先行）","3.2.1 百川 vs SMM 双源并列"],
+  src:"2026-08-11 普查前全空白 → 现有 14 个实测新鲜：553# 📊 ID01305502 / 421# ID01305501（日）｜工业硅月产 📊 ID01448337 + 西北周度样本 a12795314｜广期所仓单 📊 FU00050831（日，30387 手）｜多晶硅致密料 📊 ID01294894（日，33 元/kg）/ 周产 a12795354 / 周库存 ID02032074｜硅片周产 📊 a10169475 / M10 日价 ID01668673｜TOPCon 组件 📊 ID02393383（日）｜DMC 周产 📊 a12750025 / 月均 a12767870｜下游原料工业硅库存 📊 a12811428（周）｜📁 硅产业/全球硅企季度产量梳理.xlsx + 光伏产业链平衡.xlsx + 产业链数据库 97 sheet",
+  red:"铁合金在线 2023 年仅覆盖 9-12 月；通威 26Q1=1.0/26Q2=0.2 为实际残量；Elkem=销量口径；两板块自用重叠（~1.08 系数），总计不可跨板块相加；菜花料日度已停更（P 型退出，以 N 型致密料为主锚）",
+  gap:"唯一硬缺口：工业硅全口径社库/厂库（zhiji 未收录，仍需铁合金在线/百川）；多晶硅排产无独立指标（只有预测平衡表 a10148714 族/硅片预测 a10169448）",
+  ov:{"2.2":"📊 工业硅 553# ID01305502 / 421# ID01305501（Mysteel 日，新疆汇总价；分区域分牌号齐全）——普查新增 ✅","2.5":"📊 多晶硅 N 型致密料 ID01294894（日）；⚠️菜花料日度 ID01668700 停更 2025-11（P 型退出）","3.2.1":"📊 工业硅产量 ID01448337（Mysteel 月，39.6 万吨）+ 西北样本周度 a12795314（SMM）；多晶硅周产 a12795354（SMM）——普查新增 ✅；铁合金在线分企业月度仍是公司级基准","4.2":"📊 广期所工业硅仓单 FU00050831（日）；分仓库 FU00050810-93100——普查新增 ✅","4.3":"📊 多晶硅库存 ID02032074（Mysteel 周，24.94 万吨）+ 下游原料工业硅库存 a12811428（SMM 周）；⚠️工业硅全口径社库 zhiji 未收录，保留铁合金在线/百川","5.2":"📊 硅片产量 a10169475（SMM 周，11.92 GW）/ M10 硅片日价 ID01668673 / TOPCon 组件 ID02393383（日）；有机硅 DMC 周产 a12750025 / 月均 a12767870——普查新增 ✅","7.3":"📁 产业链数据库/成本自算（新疆/云南/四川电价）","3.4":"开炉情况=铁合金在线口径（📁 光伏产业链平衡.xlsx/工业硅-开工及产量与成本-2025）"}},
+];
+
+/* 品种图表库（_metal_charts.py 出图，_patch_html_charts.py 回写） */
+window.CHARTS = {"al": [{"p": "金属图表库/AL/主连_季节性_20260811.png", "t": "铝主连收盘价（元/吨）", "k": "季节性", "src": "知几/新浪", "end": "2026-08-10", "n": "2.1"}, {"p": "金属图表库/AL/氧化铝价_季节性_20260811.png", "t": "氧化铝汇总价格（中国）（元/吨）", "k": "季节性", "src": "Mysteel", "end": "2026-08-11", "n": "2.2"}, {"p": "金属图表库/AL/基差_季节性_20260811.png", "t": "SHFE 铝基差（元/吨）", "k": "季节性", "src": "SHFE", "end": "2026-08-10", "n": "2.2"}, {"p": "金属图表库/AL/SHFE库存_季节性_20260811.png", "t": "SHFE 铝期货库存（吨）", "k": "季节性", "src": "Mysteel", "end": "2026-08-10", "n": "4.1"}, {"p": "金属图表库/AL/LME库存_季节性_20260811.png", "t": "LME 铝库存（吨）", "k": "季节性", "src": "SMM", "end": "2026-08-07", "n": "4.1"}, {"p": "金属图表库/AL/社库_季节性_20260811.png", "t": "电解铝现货社会库存（中国）（万吨）", "k": "季节性", "src": "Mysteel", "end": "2026-08-10", "n": "4.3"}, {"p": "金属图表库/AL/电解铝产量_季节性_20260811.png", "t": "电解铝产量（中国）（万吨）", "k": "季节性", "src": "SMM", "end": "2026-07-31", "n": "3.2.1"}, {"p": "金属图表库/AL/氧化铝产量_季节性_20260811.png", "t": "氧化铝产量（中国）（万吨）", "k": "季节性", "src": "SMM", "end": "2026-07-31", "n": "3.2.1"}, {"p": "金属图表库/AL/铝土矿进口_季节性_20260811.png", "t": "铝土矿进口量（中国）（吨）", "k": "季节性", "src": "海关", "end": "2026-06-30", "n": "3.1.4"}, {"p": "金属图表库/AL/铝型材开工_季节性_20260811.png", "t": "铝型材龙头企业开工率（%）", "k": "季节性", "src": "SMM", "end": "2026-08-06", "n": "5.1"}, {"p": "金属图表库/AL/铝板带开工_季节性_20260811.png", "t": "铝板带开工率（%）", "k": "季节性", "src": "SMM", "end": "2026-07-31", "n": "5.1"}], "cu": [{"p": "金属图表库/CU/主连_季节性_20260811.png", "t": "铜主连收盘价（元/吨）", "k": "季节性", "src": "知几/新浪", "end": "2026-08-10", "n": "2.1"}, {"p": "金属图表库/CU/升贴水_季节性_20260811.png", "t": "电解铜1#升贴水（上海）（元/吨）", "k": "季节性", "src": "SMM", "end": "2026-08-11", "n": "2.2"}, {"p": "金属图表库/CU/TC_季节性_20260811.png", "t": "铜精矿进口TC指数（美元/吨）", "k": "季节性", "src": "Mysteel", "end": "2026-08-07", "n": "3.1.5"}, {"p": "金属图表库/CU/洋山溢价_季节性_20260811.png", "t": "洋山铜溢价（美元/吨）", "k": "季节性", "src": "SMM", "end": "2026-08-11", "n": "0"}, {"p": "金属图表库/CU/SHFE库存_季节性_20260811.png", "t": "SHFE 铜期货库存（吨）", "k": "季节性", "src": "Mysteel", "end": "2026-08-10", "n": "4.1"}, {"p": "金属图表库/CU/LME库存_季节性_20260811.png", "t": "LME 铜库存（吨）", "k": "季节性", "src": "SMM", "end": "2026-08-07", "n": "4.1"}, {"p": "金属图表库/CU/社库_季节性_20260811.png", "t": "电解铜现货库存（上海）（万吨）", "k": "季节性", "src": "Mysteel", "end": "2026-08-10", "n": "4.3"}, {"p": "金属图表库/CU/总持仓_季节性_20260811.png", "t": "沪铜总持仓量（手）", "k": "季节性", "src": "SHFE", "end": "2026-08-10", "n": "2.1"}, {"p": "金属图表库/CU/铜杆开工_季节性_20260811.png", "t": "精铜制杆产能利用率（%）", "k": "季节性", "src": "Mysteel", "end": "2026-07-31", "n": "5.1"}, {"p": "金属图表库/CU/铜管开工_季节性_20260811.png", "t": "铜管企业开工率（%）", "k": "季节性", "src": "SMM", "end": "2026-07-31", "n": "5.1"}, {"p": "金属图表库/CU/铜板带开工_季节性_20260811.png", "t": "铜板带企业开工率（%）", "k": "季节性", "src": "SMM", "end": "2026-07-31", "n": "5.1"}], "lc": [{"p": "金属图表库/LC/主连_线性_20260811.png", "t": "碳酸锂主连收盘价（元/吨）", "k": "线性", "src": "知几/新浪", "end": "2026-08-10", "n": "2.1"}, {"p": "金属图表库/LC/电碳价_季节性_20260811.png", "t": "电池级碳酸锂均价（元/吨）", "k": "季节性", "src": "SMM", "end": "2026-08-11", "n": "2.2"}, {"p": "金属图表库/LC/工碳价_季节性_20260811.png", "t": "工业级碳酸锂均价（元/吨）", "k": "季节性", "src": "SMM", "end": "2026-08-11", "n": "2.2"}, {"p": "金属图表库/LC/SC6_季节性_20260811.png", "t": "锂辉石精矿6% CIF均价（美元/吨）", "k": "季节性", "src": "Mysteel", "end": "2026-08-31", "n": "2.2"}, {"p": "金属图表库/LC/产量_季节性_20260811.png", "t": "碳酸锂产量（中国）（吨）", "k": "季节性", "src": "SMM", "end": "2026-07-31", "n": "3.2.1"}, {"p": "金属图表库/LC/周度产量_线性_20260811.png", "t": "碳酸锂周度产量（吨）", "k": "线性", "src": "SMM", "end": "2026-08-06", "n": "3.2.1"}, {"p": "金属图表库/LC/库存冶炼厂_季节性_20260811.png", "t": "碳酸锂样本库存（冶炼厂）（吨）", "k": "季节性", "src": "SMM", "end": "2026-08-06", "n": "4.4"}, {"p": "金属图表库/LC/库存下游_季节性_20260811.png", "t": "碳酸锂样本库存（下游）（吨）", "k": "季节性", "src": "SMM", "end": "2026-08-06", "n": "4.4"}, {"p": "金属图表库/LC/仓单_线性_20260811.png", "t": "广期所碳酸锂仓单（手）", "k": "线性", "src": "GFEX", "end": "2026-08-10", "n": "4.2"}, {"p": "金属图表库/LC/铁锂产量_季节性_20260811.png", "t": "磷酸铁锂产量（吨）", "k": "季节性", "src": "SMM", "end": "2026-07-31", "n": "5.1"}, {"p": "金属图表库/LC/碳酸锂进口_季节性_20260811.png", "t": "碳酸锂进口量（中国）（吨）", "k": "季节性", "src": "SMM", "end": "2026-07-31", "n": "6.2"}], "ni": [{"p": "金属图表库/NI/主连_季节性_20260811.png", "t": "镍主连收盘价（元/吨）", "k": "季节性", "src": "知几/新浪", "end": "2026-08-10", "n": "2.1"}, {"p": "金属图表库/NI/中国NPI产量_季节性_20260811.png", "t": "中国镍生铁（NPI）产量（千吨实物）", "k": "季节性", "src": "SMM", "end": "2026-07-31", "n": "3.2.1"}, {"p": "金属图表库/NI/印尼NPI产量_季节性_20260811.png", "t": "印尼镍生铁（NPI）产量（万镍吨）", "k": "季节性", "src": "SMM", "end": "2026-07-31", "n": "3.3.1"}, {"p": "金属图表库/NI/印尼MHP产量_季节性_20260811.png", "t": "印尼 MHP 产量（万镍吨）", "k": "季节性", "src": "SMM", "end": "2026-07-31", "n": "3.3.1"}, {"p": "金属图表库/NI/印尼高冰镍产量_季节性_20260811.png", "t": "印尼高冰镍产量（万镍吨）", "k": "季节性", "src": "SMM", "end": "2026-07-31", "n": "3.3.1"}, {"p": "金属图表库/NI/纯镍社库_季节性_20260811.png", "t": "纯镍社会库存（镍板）（吨）", "k": "季节性", "src": "SMM", "end": "2026-08-07", "n": "4.3"}, {"p": "金属图表库/NI/镍铁库存_季节性_20260811.png", "t": "镍生铁库存合计（万吨实物）", "k": "季节性", "src": "Mysteel", "end": "2026-06-30", "n": "4.4"}, {"p": "金属图表库/NI/金川镍升贴水_季节性_20260811.png", "t": "1#金川镍升贴水（元/吨）", "k": "季节性", "src": "SMM", "end": "2026-08-11", "n": "2.2"}, {"p": "金属图表库/NI/硫酸镍价_季节性_20260811.png", "t": "电池级硫酸镍均价（元/吨）", "k": "季节性", "src": "SMM", "end": "2026-08-11", "n": "2.2"}, {"p": "金属图表库/NI/硫酸镍产量_季节性_20260811.png", "t": "硫酸镍产量（吨实物）", "k": "季节性", "src": "SMM", "end": "2026-07-31", "n": "3.2.1"}, {"p": "金属图表库/NI/不锈钢300产量_季节性_20260811.png", "t": "不锈钢 300 系产量（万吨）", "k": "季节性", "src": "SMM", "end": "2026-07-31", "n": "5.1"}, {"p": "金属图表库/NI/不锈钢300库存_季节性_20260811.png", "t": "不锈钢 300 系库存（78家）（万吨）", "k": "季节性", "src": "Mysteel", "end": "2026-08-07", "n": "4.3"}, {"p": "金属图表库/NI/SHFE库存_季节性_20260811.png", "t": "SHFE 镍期货库存（吨）", "k": "季节性", "src": "Mysteel", "end": "2026-08-07", "n": "4.1"}, {"p": "金属图表库/NI/LME库存_季节性_20260811.png", "t": "LME 镍库存（吨）", "k": "季节性", "src": "SMM", "end": "2026-08-07", "n": "4.1"}], "pb": [{"p": "金属图表库/PB/主连_季节性_20260811.png", "t": "铅主连收盘价（元/吨）", "k": "季节性", "src": "知几/新浪", "end": "2026-08-10", "n": "2.1"}, {"p": "金属图表库/PB/TC_季节性_20260811.png", "t": "铅精矿加工费TC（国产）（元/金属吨）", "k": "季节性", "src": "SMM", "end": "2026-08-07", "n": "3.1.5"}, {"p": "金属图表库/PB/再生粗铅产量_季节性_20260811.png", "t": "再生粗铅产量（万吨）", "k": "季节性", "src": "SMM", "end": "2026-07-31", "n": "3.2.3"}, {"p": "金属图表库/PB/废电瓶价_季节性_20260811.png", "t": "启动白壳废电瓶汇总价（阜阳）（元/吨）", "k": "季节性", "src": "Mysteel", "end": "2026-08-11", "n": "2.2"}, {"p": "金属图表库/PB/铅锭社库_季节性_20260811.png", "t": "铅锭现货社会库存（万吨）", "k": "季节性", "src": "Mysteel", "end": "2026-08-10", "n": "4.3"}, {"p": "金属图表库/PB/电池开工率_季节性_20260811.png", "t": "铅酸蓄电池开工率（%）", "k": "季节性", "src": "Mysteel", "end": "2026-07-31", "n": "5.1"}, {"p": "金属图表库/PB/SHFE库存_季节性_20260811.png", "t": "SHFE 铅期货库存（吨）", "k": "季节性", "src": "Mysteel", "end": "2026-08-07", "n": "4.1"}, {"p": "金属图表库/PB/LME库存_季节性_20260811.png", "t": "LME 铅库存（吨）", "k": "季节性", "src": "SMM", "end": "2026-08-07", "n": "4.1"}], "si": [{"p": "金属图表库/SI/主连_季节性_20260811.png", "t": "硅主连收盘价（元/吨）", "k": "季节性", "src": "知几/新浪", "end": "2026-08-10", "n": "2.1"}, {"p": "金属图表库/SI/主连_线性_20260811.png", "t": "多晶硅主连收盘价（元/吨）", "k": "线性", "src": "知几/新浪", "end": "2026-08-10", "n": "2.1"}, {"p": "金属图表库/SI/553价_季节性_20260811.png", "t": "工业硅553#汇总价（新疆）（元/吨）", "k": "季节性", "src": "Mysteel", "end": "2026-08-11", "n": "2.2"}, {"p": "金属图表库/SI/421价_季节性_20260811.png", "t": "工业硅421#汇总价（新疆）（元/吨）", "k": "季节性", "src": "Mysteel", "end": "2026-08-11", "n": "2.2"}, {"p": "金属图表库/SI/工业硅月产_季节性_20260811.png", "t": "工业硅产量（中国）（吨）", "k": "季节性", "src": "Mysteel", "end": "2026-07-31", "n": "3.2.1"}, {"p": "金属图表库/SI/西北周产_线性_20260811.png", "t": "西北工业硅样本产量（吨）", "k": "线性", "src": "SMM", "end": "2026-08-06", "n": "3.2.1"}, {"p": "金属图表库/SI/仓单_季节性_20260811.png", "t": "广期所工业硅仓单（手）", "k": "季节性", "src": "GFEX", "end": "2026-08-10", "n": "4.2"}, {"p": "金属图表库/SI/致密料价_季节性_20260811.png", "t": "多晶硅N型致密料市场价（元/kg）", "k": "季节性", "src": "Mysteel", "end": "2026-08-07", "n": "2.2"}, {"p": "金属图表库/SI/多晶硅周产_线性_20260811.png", "t": "多晶硅产量（吨）", "k": "线性", "src": "SMM", "end": "2026-08-06", "n": "3.2.1"}, {"p": "金属图表库/SI/多晶硅库存_线性_20260811.png", "t": "多晶硅库存（中国）（万吨）", "k": "线性", "src": "Mysteel", "end": "2026-08-07", "n": "4.3"}, {"p": "金属图表库/SI/硅片周产_季节性_20260811.png", "t": "硅片产量（GW）", "k": "季节性", "src": "SMM", "end": "2026-08-06", "n": "5.1"}, {"p": "金属图表库/SI/硅片价_季节性_20260811.png", "t": "硅片M10-182N型中间价（元/片）", "k": "季节性", "src": "Mysteel", "end": "2026-08-11", "n": "2.2"}, {"p": "金属图表库/SI/组件价_线性_20260811.png", "t": "TOPCon组件210集中式中间价（元/瓦）", "k": "线性", "src": "Mysteel", "end": "2026-08-11", "n": "2.2"}, {"p": "金属图表库/SI/DMC周产_季节性_20260811.png", "t": "有机硅DMC产量（万吨）", "k": "季节性", "src": "SMM", "end": "2026-08-07", "n": "5.1"}, {"p": "金属图表库/SI/DMC月均_线性_20260811.png", "t": "有机硅DMC均价（元/吨）", "k": "线性", "src": "SMM", "end": "2026-07-31", "n": "2.2"}, {"p": "金属图表库/SI/下游原料库存_线性_20260811.png", "t": "下游原料工业硅库存（万吨）", "k": "线性", "src": "SMM", "end": "2026-08-06", "n": "4.4"}], "sn": [{"p": "金属图表库/SN/主连_季节性_20260811.png", "t": "锡主连收盘价（元/吨）", "k": "季节性", "src": "知几/新浪", "end": "2026-08-10", "n": "2.1"}, {"p": "金属图表库/SN/TC云南_季节性_20260811.png", "t": "锡精矿TC（云南40%）（元/吨）", "k": "季节性", "src": "Mysteel", "end": "2026-08-11", "n": "3.1.5"}, {"p": "金属图表库/SN/TC江西_季节性_20260811.png", "t": "锡精矿TC（江西60%）（元/吨）", "k": "季节性", "src": "Mysteel", "end": "2026-08-11", "n": "3.1.5"}, {"p": "金属图表库/SN/沪伦比_季节性_20260811.png", "t": "锡沪伦比（SMM现货）（比值）", "k": "季节性", "src": "SMM", "end": "2026-08-10", "n": "2.4"}, {"p": "金属图表库/SN/进口利润_季节性_20260811.png", "t": "锡锭进口利润（元/吨）", "k": "季节性", "src": "Mysteel", "end": "2026-08-10", "n": "2.4"}, {"p": "金属图表库/SN/锡精矿产量_季节性_20260811.png", "t": "中国锡精矿产量（吨）", "k": "季节性", "src": "Mysteel", "end": "2026-05-31", "n": "3.1.3"}, {"p": "金属图表库/SN/精炼锡产量_季节性_20260811.png", "t": "精炼锡产量（中国）（吨）", "k": "季节性", "src": "SMM", "end": "2026-07-31", "n": "3.2.1"}, {"p": "金属图表库/SN/开工率_季节性_20260811.png", "t": "精炼锡开工率（%）", "k": "季节性", "src": "SMM", "end": "2026-07-31", "n": "3.2.2"}, {"p": "金属图表库/SN/再生锡产量_季节性_20260811.png", "t": "再生锡产量（吨）", "k": "季节性", "src": "SMM", "end": "2026-07-31", "n": "3.2.3"}, {"p": "金属图表库/SN/SHFE库存_季节性_20260811.png", "t": "SHFE 锡期货库存（吨）", "k": "季节性", "src": "Mysteel", "end": "2026-08-10", "n": "4.1"}, {"p": "金属图表库/SN/LME库存_季节性_20260811.png", "t": "LME 锡库存（吨）", "k": "季节性", "src": "SMM", "end": "2026-08-07", "n": "4.1"}, {"p": "金属图表库/SN/社库_季节性_20260811.png", "t": "锡锭社会库存（吨）", "k": "季节性", "src": "Mysteel", "end": "2026-08-07", "n": "4.3"}, {"p": "金属图表库/SN/总持仓_季节性_20260811.png", "t": "沪锡总持仓量（手）", "k": "季节性", "src": "SHFE", "end": "2026-08-10", "n": "2.1"}, {"p": "金属图表库/SN/焊料产量_季节性_20260811.png", "t": "锡焊料产量（吨）", "k": "季节性", "src": "SMM", "end": "2026-06-30", "n": "5.1"}, {"p": "金属图表库/SN/焊料开工率_季节性_20260811.png", "t": "锡焊料企业开工率（%）", "k": "季节性", "src": "SMM", "end": "2026-07-31", "n": "5.1"}, {"p": "金属图表库/SN/LME升贴水_季节性_20260811.png", "t": "LME 锡 0-3 升贴水（美元/吨）", "k": "季节性", "src": "SMM", "end": "2026-08-10", "n": "2.3"}], "zn": [{"p": "金属图表库/ZN/主连_季节性_20260811.png", "t": "锌主连收盘价（元/吨）", "k": "季节性", "src": "知几/新浪", "end": "2026-08-10", "n": "2.1"}, {"p": "金属图表库/ZN/TC昆明_季节性_20260811.png", "t": "锌精矿TC（昆明50%）（元/吨）", "k": "季节性", "src": "Mysteel", "end": "2026-08-11", "n": "3.1.5"}, {"p": "金属图表库/ZN/TC赤峰_季节性_20260811.png", "t": "锌精矿TC（赤峰）（元/吨）", "k": "季节性", "src": "Mysteel", "end": "2026-08-11", "n": "3.1.5"}, {"p": "金属图表库/ZN/升贴水_季节性_20260811.png", "t": "0#锌锭升贴水（上海）（元/吨）", "k": "季节性", "src": "SMM", "end": "2026-08-11", "n": "2.2"}, {"p": "金属图表库/ZN/基差_季节性_20260811.png", "t": "SHFE 锌基差（元/吨）", "k": "季节性", "src": "SHFE", "end": "2026-08-10", "n": "2.2"}, {"p": "金属图表库/ZN/SHFE库存_季节性_20260811.png", "t": "SHFE 锌期货库存（吨）", "k": "季节性", "src": "Mysteel", "end": "2026-08-10", "n": "4.1"}, {"p": "金属图表库/ZN/LME库存_季节性_20260811.png", "t": "LME 锌库存（吨）", "k": "季节性", "src": "SMM", "end": "2026-08-07", "n": "4.1"}, {"p": "金属图表库/ZN/社库_季节性_20260811.png", "t": "锌锭现货库存（中国）（万吨）", "k": "季节性", "src": "Mysteel", "end": "2026-08-10", "n": "4.3"}, {"p": "金属图表库/ZN/精炼锌产量_季节性_20260811.png", "t": "精炼锌产量（中国）（万吨）", "k": "季节性", "src": "Mysteel", "end": "2026-07-31", "n": "3.2.1"}, {"p": "金属图表库/ZN/镀锌开工_季节性_20260811.png", "t": "镀锌开工率（%）", "k": "季节性", "src": "SMM", "end": "2026-08-06", "n": "5.1"}, {"p": "金属图表库/ZN/压铸开工_季节性_20260811.png", "t": "压铸锌合金开工率（%）", "k": "季节性", "src": "SMM", "end": "2026-07-31", "n": "5.1"}, {"p": "金属图表库/ZN/氧化锌开工_季节性_20260811.png", "t": "氧化锌开工率（%）", "k": "季节性", "src": "SMM", "end": "2026-07-31", "n": "5.1"}, {"p": "金属图表库/ZN/进口盈亏_季节性_20260811.png", "t": "锌锭进口盈亏（含税）（元/吨）", "k": "季节性", "src": "Mysteel", "end": "2026-08-11", "n": "2.4"}, {"p": "金属图表库/ZN/镀锌板卷产量_季节性_20260811.png", "t": "镀锌板卷产量（中国）（万吨）", "k": "季节性", "src": "Mysteel", "end": "2026-08-07", "n": "5.1"}]};
+const CHARTS = window.CHARTS;
+const commCharts = c => (CHARTS[c.id] && CHARTS[c.id].length ? CHARTS[c.id] : (c.charts || null));
+
+/* 通用节点（mod=所属模块, grp=侧栏分组） */
+const MODULES = [
+ {id:"overview", name:"概览"},
+ {id:"price", name:"价格"},
+ {id:"supply", name:"供应"},
+ {id:"inventory", name:"库存"},
+ {id:"demand", name:"需求"},
+ {id:"trade", name:"进出口"},
+ {id:"balance", name:"成本·平衡·宏观"},
+];
+const NODES = [
+/* ---- 概览 ---- */
+ {no:"0.1",mod:"overview",grp:"品种身份证",name:"合约要素",freq:["日","f-d"],attr:"基础",q:"合约怎么算钱",c:"交易所/代码/乘数/最小变动价位/交割品级/夜盘。决定 1 点=多少元/手，是止损换算和仓位计算的基础。",s:"交易所官网合约表 ✅；📊 zhiji products API（product/name/exch/mult/tick 一次拉全 73 品种）"},
+ {no:"0.3",mod:"overview",grp:"品种身份证",name:"定价锚",freq:["—","f-q"],attr:"框架",q:"价格由产业链哪一层决定",c:"三类范式：矿定价（铜/锌/锡，区别在消费面向与矿端久期：锡最长/铜居中/锌最短）；冶炼·成本定价（铝=电力+天花板；工业硅=电价）；再生定价（铅）。锂/镍/多晶硅=政策+成本曲线定价。",s:"研究判断，无外部源"},
+ {no:"1.2",mod:"overview",grp:"综述与策略",name:"主要矛盾",freq:["周","f-w"],attr:"输出",q:"当期定价的核心变量",c:"每个矛盾=一个可证伪的命题+挂跟踪指标+验证频率。写法范式：锡周报=矛盾驱动；铝周报=数据面板。",s:"从 2~9 章提炼"},
+/* ---- 价格 ---- */
+ {no:"2.1",mod:"price",grp:"盘面",name:"盘面结构",freq:["日","f-d"],attr:"同步",q:"市场定价多少、曲线什么形状、资金进出",c:"主连K线；期限结构（连一/二/三月差，back=紧 contango=松）；成交量；持仓量；波动率；技术面（⏰四框架扫描 d14ae6cb）。",s:"📊 zhiji_kline（freq=D/60/15）<span class=warn>坑：60min/15min 参数静默降级日线、具体合约代码被忽略返回主连</span>；具体合约走新浪 InnerFuturesNewService；持仓=📁品种数据库资金面 sheet / 交易所会员排名"},
+ {no:"2.2",mod:"price",grp:"现货",name:"现货与升贴水",freq:["日","f-d"],attr:"同步",q:"现货紧不紧，期现谁带谁",c:"基准现货价；牌号升贴水；基差；现货成交氛围。",s:"📊 SMM 镜像日度；Mysteel 💰；生意社 🌐✅ 交叉"},
+ {no:"2.3",mod:"price",grp:"海外",name:"海外价格",freq:["日","f-d"],attr:"同步",q:"外盘什么价、海外现货松紧",c:"LME 官方三月结算价；LME 0-3 升贴水；COMEX；海外分地区现货升贴水。",s:"LME 官网 <span class=warn>❌403</span> → 📊 zhiji 镜像（FU 系结算价 + a100 系升贴水）；COMEX 走 akshare/东财"},
+ {no:"2.4",mod:"price",grp:"价差",name:"价差体系",freq:["日","f-d"],attr:"同步",q:"货往哪流",c:"沪伦比（现货/盘面）；进口盈亏/利润；区域价差（洋山溢价）；品种间比值。比价>平衡价→进口窗口开→供应压力随后放大，用进出口章验证。",s:"📊 SMM 沪伦比/进口利润系；回退 📁 Mysteel 进出口盈亏 sheet"},
+ {no:"2.5",mod:"price",grp:"估值",name:"估值与利润",freq:["日/周","f-w"],attr:"同步",q:"当前价格贵不贵",c:"成本曲线分位；冶炼利润（利润→供应弹性的开关）；原料-成品比价；期权隐含（可选）。",s:"📊 Mysteel 日度利润测算；券商成本模型 💰 标来源"},
+/* ---- 供应 ---- */
+ {no:"3.1.1",mod:"supply",grp:"矿端/资源端",name:"海外矿·公司财报产量（真源）",freq:["季","f-q"],attr:"同步",q:"海外矿山/冶炼公司实际出了多少",c:"全球分矿山/分公司季度产量表→财报平台（铜13家海外+6国内/锌矿30+家/铝三板块/镍三板块/锂资源20家/硅双板块）。披露节奏：季后约 3 周主波。流程铁律：看更新日志→联网核查原文→先备份→写入→日志→build_site.py→汇总。",s:"公司 IR 页 / SEC EDGAR ✅ / ASX / 港交所 / 巨潮 ✅（POST API）；⏰ 每品种 8 个年度循环任务"},
+ {no:"3.1.2",mod:"supply",grp:"矿端/资源端",name:"海外矿·分国别/分矿山行业总量",freq:["月/年","f-m"],attr:"同步",q:"行业口径的海外矿总量与结构",c:"分国别/分矿山月度-年度产量，与公司财报表（3.1.1）交叉验证：公司对不齐行业总量时找统计口径差异。矿山级年度参考=📁铜财报.xlsx/全球铜矿产量(kt) 范式。",s:"ICSG 铜 / ILZSG 锌铅 ✅ 月度（📁锌/ILZSG Monthly Data xlsx）；USGS MCS 年刊 ✅；💰 WoodMac/CRU outlook（已存 xlsx）；券商矿山数据库"},
+ {no:"3.1.3",mod:"supply",grp:"矿端/资源端",name:"国内矿产量",freq:["月","f-m"],attr:"同步",q:"国内矿山月度产出",c:"第三方月度产量（实物吨）。",s:"📁 Mysteel 线下数据（中国锡精矿产量 sheet 范式）💰；📊 锡精矿产量 ID01590150（Mysteel 月）"},
+ {no:"3.1.4",mod:"supply",grp:"矿端/资源端",name:"矿进口量与分国别",freq:["月","f-m"],attr:"滞后15~20天",q:"原料流入多少、从哪来",c:"海关月度进口量；重点国别单列成页（缅甸/刚果金范式）。",s:"📊 海关镜像 a10003xxx 系；海关总署 stats.customs.gov.cn ⚠️在线查"},
+ {no:"3.1.5",mod:"supply",grp:"矿端/资源端",name:"TC 加工费",freq:["日/周","f-d"],attr:"先行",q:"矿松紧最灵敏的温度计",c:"矿松→TC 涨、矿紧→TC 跌；分地区报价。",s:"📊 Mysteel/SMM 日度（锌/锡/铜 ID 见品种页）"},
+ {no:"3.1.6",mod:"supply",grp:"矿端/资源端",name:"扰动与事件",freq:["事件","f-q"],attr:"先行",q:"供应端的突发冲击",c:"事故/罢工/政策 → 近 3 个月供应扰动梳理表（减=红/增=绿，含恢复进展与 2027 预期列）。",s:"📁 平台 disruptions.json（40 条）+ news.json；⏰ 周一 09:11 扫描 51265eed"},
+ {no:"3.1.7",mod:"supply",grp:"矿端/资源端",name:"新增项目与资本开支",freq:["季/年","f-q"],attr:"先行1~5年",q:"未来供应从哪来",c:"项目进度表；矿企资本开支趋势+指引下调家数+老矿品位老化（锌周报五年视角范式）。",s:"📁 锡矿潜在项目.xlsx 范式；公司财报；iFinD 插件"},
+ {no:"3.2.1",mod:"supply",grp:"冶炼端·国内",name:"冶炼产量",freq:["周/月","f-m"],attr:"同步",q:"精炼端实际出了多少货",c:"SMM 月度 / Mysteel 分口径（锌 53家/37家原生/16家再生）/ 百川周度——双源并列不混合；硅=铁合金在线分企业月度（基准）。",s:"📊 SMM 月度系；📁 Mysteel 产业数据库 💰；百川 💰；cnfeol ⚠️登录态"},
+ {no:"3.2.2",mod:"supply",grp:"冶炼端·国内",name:"开工率与检修",freq:["周/月","f-m"],attr:"同步",q:"开工到什么程度、谁在检修",c:"开工率；检修减产表（含恢复进展）。",s:"📊 SMM 开工率系；📁 海外锌锭减停产整理 范式 → disruptions.json"},
+ {no:"3.2.3",mod:"supply",grp:"冶炼端·国内",name:"再生/二次供应",freq:["月","f-m"],attr:"同步",q:"二次供应的调节阀",c:"铅=再生铅（废电瓶→利润→产量，定价主轨）；锡=再生锡；铜=废杂铜。各品种权重不同。",s:"📊 锡再生产量 a10099502；铅再生链=第三方周度（废电瓶价格/再生利润）"},
+ {no:"3.2.4",mod:"supply",grp:"冶炼端·国内",name:"冶炼利润→供应弹性",freq:["日/周","f-w"],attr:"先行",q:"亏损多久会减产",c:"接 2.5：利润负值持续时间 vs 减产兑现的时间差观察。",s:"📊 Mysteel 日度利润系"},
+ {no:"3.3.1",mod:"supply",grp:"冶炼端·海外",name:"海外冶炼·分国别产量/出口",freq:["月","f-m"],attr:"同步",q:"海外冶炼谁增谁减",c:"分国别精炼产量（协会月度）+ 海外冶炼厂季度产量表（锌「海外锌冶炼」范式、公司季报）+ 分国别出口量。",s:"📊 海关镜像（印尼/马来/巴西范式）；UN Comtrade 🌐✅（ID023 系镜像）"},
+ {no:"3.3.2",mod:"supply",grp:"冶炼端·海外",name:"海外高频校验",freq:["周","f-w"],attr:"先行",q:"出口数据出来前先看什么",c:"交易所高频成交量（比月度出口早）。",s:"📊 印尼 ICDX 成交量 FU00082529（周度）"},
+ {no:"3.3.3",mod:"supply",grp:"冶炼端·海外",name:"海外政策变量",freq:["事件","f-q"],attr:"先行",q:"配额/禁令/制裁",c:"印尼 RKAB 配额（镍）、锡出口许可、制裁（Sherritt 古巴类）。",s:"政府公告+新闻扫描（⏰ 51265eed）"},
+ {no:"3.3.4",mod:"supply",grp:"冶炼端·海外",name:"海外能源与电价",freq:["日/周","f-d"],attr:"先行",q:"海外电价怎么影响供应",c:"电力占电解铝/锌冶炼成本 30~40%：欧洲电价/天然气飙升→冶炼亏损→减产停产（2021-22 欧洲铝锌减产范式）；反过来中东/马来/印尼低电价=新增产能的成本优势（产能迁移方向）。电价是海外冶炼开工率的前瞻变量，先于产量数据 1~2 个季度。",s:"国内电力现货（📊 Mysteel 日度）：广东日前/实时 CM01032719/20、山东系列 CM00991856-63；SMM 电解铝分省平均电价（月）a12762859-73 系列（广西/四川/山东/山西/甘肃等）。海外：TTF 天然气 📊 ID01022787（日期货）/ID01022790（现货）/FU00088155（ICE 结算）作欧洲电价代理（欧洲电价与气价高度联动）；EPEX/ENTSO-E 欧洲日前电价 🌐 直接源；美国 PJM（EIA 🌐）。公司减产公告 → 📁 disruptions.json；LME 欧洲库存/升贴水验证"},
+ {no:"3.4",mod:"supply",grp:"供应先行指标",name:"供应先行指标汇总",freq:["周/月","f-m"],attr:"先行1~6月",q:"供应将要怎么变",c:"发运（早1月）/开炉（硅）/配额/资本开支与指引。矛盾能否兑现的验证器，每期必过。",s:"第三方资讯 💰/📊 镜像；公司财报"},
+/* ---- 库存 ---- */
+ {no:"4.1",mod:"inventory",grp:"显性库存",name:"交易所库存",freq:["日","f-d"],attr:"同步",q:"显性库存绝对水平与方向",c:"SHFE/LME/COMEX 总库存+LME 分地区；六金属对比图。",s:"📊 FU 系日度（锡 FU00015998、铝 ID00188281、锌 ID00188293、铜 FU00015994）；LME 📊 a10006434+分地区；📁 品种日度数据模板五表 → ⚙️_six_metals_inventory.py"},
+ {no:"4.2",mod:"inventory",grp:"显性库存",name:"仓单",freq:["日","f-d"],attr:"同步偏领先",q:"提货意愿——比库存早",c:"注册/注销仓单（注销增=提货强）；广期所仓单对锂/硅盘面定价权大。",s:"📊 FU00015901/FU00015902（锡范式）；交易所官网 ✅"},
+ {no:"4.3",mod:"inventory",grp:"社会库存",name:"社会库存",freq:["周","f-w"],attr:"同步偏滞后",q:"交易所之外的现货淤积",c:"社库+交易所=全显性库存；季节性对比。",s:"📊 Mysteel 周度（锡 ID01517441、锌日度 ID00188329）；SMM 周度；钢联终端 💰"},
+ {no:"4.4",mod:"inventory",grp:"工厂库存",name:"工厂库存",freq:["月/周","f-m"],attr:"同步",q:"货压在上游还是下游",c:"上游厂库（未售压力）/下游原料库存（备货意愿）/下游成品库存（电池成品范式）。",s:"📊 SMM 月度/周度分上下游；📁 品种数据库平衡 sheet"},
+ {no:"4.5",mod:"inventory",grp:"隐性库存",name:"隐性/在途库存",freq:["周/月","f-m"],attr:"同步",q:"低显性库存是真紧还是转移",c:"社库-交易所差值拟合；港口库存；保税区。",s:"⚙️ _make_invisible_stock.py 范式；Mysteel 💰 港口/保税"},
+/* ---- 需求 ---- */
+ {no:"5.1",mod:"demand",grp:"初级消费",name:"初级消费",freq:["日/周/月","f-w"],attr:"同步",q:"下游直接在买多少",c:"现货日度成交（最快温度计——反弹时成交跟不跟决定成色）；分品种初端清单：铜=铜杆 📊ID01067717/铜管 a10015025/铜板带 a10015276/电线电缆；铝=铝型材 a10031808/铝板带 a10016011/铝杆/铝箔；锌=镀锌 a10097188/压铸 a10001884/氧化锌 a10001831/镀锌板卷 ID00187499；铅=铅酸电池开工 ID01030005；镍=不锈钢300系 a10019689/库存 ID01527702；锡=焊料 a12870406/开工 a10083975+马口铁；锂=正极（铁锂 a10001859/三元 a10001951 系）+电芯 a12731610/a12715571；硅=硅片 a10169475/DMC a12750025/铝合金开工。",s:"📁 Mysteel 线下数据/贸易商日度成交（⚠️口径 2025-12 起变更）；📊 各初端开工率/产量 ID 见上（普查 ✅）"},
+ {no:"5.2.1",mod:"demand",grp:"终端消费·宏观主线",name:"AI/电子",freq:["日/月","f-m"],attr:"滞后",q:"半导体与电子链景气",c:"半导体销售额/SOX 指数/服务器出货/手机产量/集成电路产量/PCB。挂钩品种：锡（焊料，弹性最大）、铜（AI 服务器+电网侧）。海外：韩国半导体出口、台湾电子出口订单、美国数据中心投资。",s:"📊 SOX GM00194406（日）；全球半导体销售额 ID01552325（月）；智能手机 CM0000017803（月）；集成电路 CM0000017738（月）；服务器/数据中心=券商/IDC 圈 💰"},
+ {no:"5.2.2",mod:"demand",grp:"终端消费·宏观主线",name:"地产基建",freq:["月","f-m"],attr:"滞后",q:"地产链走到哪一步",c:"新开工/竣工/销售面积（竣工=铝型材/线缆，新开工=远期镀锌）；镀锌开工率、铝型材开工率为高频验证；水泥产量交叉。挂钩：锌/铝/铜。海外：美国新屋开工/成屋销售（📊知几宏观系）、欧洲建筑许可（Eurostat）。",s:"统计局月度（📊 知几 CM 系搜「房地产」）；📊 镀锌开工率 a10097188（周）；铝型材开工 a10031808（周）"},
+ {no:"5.2.3",mod:"demand",grp:"终端消费·宏观主线",name:"汽车",freq:["周/月","f-w"],attr:"同步",q:"汽车总量与结构（新能源渗透）",c:"乘联会零售/批发/出口；中汽协产量；新能源渗透率；单车用量（各品种单耗×产量）。两轮车政策=铅特色。海外：美国轻型车销量 📊ID01740143（月）、欧美新能源车 📊a12732371/72/73、欧洲 ACEA 注册。",s:"📊 乘联会 a12805241/42（零售/出口）；官网 cpcaauto.com ✅；中汽协 💰/📊 镜像；单车用量自建模型"},
+ {no:"5.2.4",mod:"demand",grp:"终端消费·宏观主线",name:"电网/电力",freq:["月/年","f-m"],attr:"滞后",q:"电网投资兑现节奏",c:"电网基本建设投资（国网/南网规划 vs 实际完成）；电线电缆开工率；变压器/开关产量。铜第一大下游、铝线缆替代。海外：全球电网投资（IEA 口径）、美国变压器短缺/交期、中国电力设备出口。",s:"国家能源局/国网公告 🌐；SMM 电线电缆开工率 💰/📊 搜「电线电缆 开工率」；统计局产量 📊 CM 系"},
+ {no:"5.2.5",mod:"demand",grp:"终端消费·宏观主线",name:"新能源（光伏/储能/风电）",freq:["周/月","f-m"],attr:"同步",q:"光伏与储能的真实拉动",c:"光伏新增装机（能源局月度）；组件排产/出口；硅片产量（周）；储能招标与装机。挂钩：硅/锂/铝（边框）/铜锡（焊带电气）。海外：📊SMM 海外装机月度 a12857960；分国别官方源（美国 SEIA/EIA/USITC、欧洲 BMWI/MITECO/GSE、印度 MERCOM、日本 JPEA、澳洲 APVI、巴西 ANEEL——清单见 印尼电力/光伏数据库_海外消费数据源清单_20260806.md）；海外组件价 InfoLink/EnergyTrend。",s:"国家能源局 🌐✅ 月度；📊 硅片周产 a10169475、组件价 ID02393383；北极星储能 ✅/CNESA；组件排产 💰 SMM/百川"},
+ {no:"5.2.6",mod:"demand",grp:"终端消费·宏观主线",name:"电池（动力/储能/铅酸）",freq:["月","f-m"],attr:"同步",q:"电池产量与装车",c:"动力电池产量/装机量（分铁锂/三元）；储能电池；电池出口；电池成品库存（铅酸范式）。挂钩：锂/镍/铅/铝（电池箔）。海外：电池出口分类型（海关）、欧美电池产能投产、海外储能装机。",s:"中国汽车动力电池产业创新联盟（月度，🌐 转载）；📊 铁锂 a10001859、三元 a10001951/52/53、电芯 a12731610/a12715571；铅酸开工 ID01030005"},
+ {no:"5.2.7",mod:"demand",grp:"终端消费·宏观主线",name:"传统工业/消费",freq:["月","f-m"],attr:"滞后",q:"传统下游的底",c:"家电（空调/冰箱产量与排产）；马口铁；PVC；有机硅 DMC；白电出口。海外：耐用品消费、镀锡板海外需求。",s:"统计局 📊 CM 系；产业在线 💰（家电排产）；📊 DMC 周产 a12750025/月均 a12767870"},
+ {no:"5.3",mod:"demand",grp:"需求先行",name:"需求先行指标",freq:["月","f-m"],attr:"先行1~2月",q:"需求将要怎么变",c:"下游排产（月中/月初月末两版，看修正轨迹——碳酸锂范式）；订单指数；抢出口（关税窗口）。",s:"第三方排产调研 💰 SMM/百川/鑫椤；PMI 新订单 📊 知几宏观系"},
+/* ---- 进出口 ---- */
+ {no:"6.1",mod:"trade",grp:"进口",name:"原料进口",freq:["月","f-m"],attr:"滞后",q:"矿/精矿流入量",c:"量+分国别。",s:"📊 a10003098 锡矿 / a10001433 锂精矿尼日利亚 类"},
+ {no:"6.2",mod:"trade",grp:"进出口",name:"精炼金属进出口",freq:["月","f-m"],attr:"滞后",q:"净进口方向与量级",c:"进口/出口/净进口；验证 2.4 价差判断。",s:"📊 a10006557/58 类；📁 Mysteel 精锡进出口 sheet 范式"},
+ {no:"6.3",mod:"trade",grp:"出口",name:"制品出口",freq:["月","f-m"],attr:"同步",q:"半成品的海外需求",c:"铝材/铝制品分地区（EU-27 等）——铝的需求侧一等变量；锡制品。",s:"📊 海关镜像；📁 铝周报出口结构章节范式"},
+ {no:"6.4",mod:"trade",grp:"先行",name:"海外对华发运",freq:["月","f-m"],attr:"先行1月",q:"进口数据出来前先看什么",c:"智利/印尼等对华出口发运。",s:"📊 智利硫酸锂出口中国 a12804361 类"},
+/* ---- 成本·平衡·宏观 ---- */
+ {no:"7.1",mod:"balance",grp:"成本与利润",name:"成本曲线与分位",freq:["季","f-q"],attr:"同步",q:"价格离成本多远",c:"C1/完全成本曲线；价格分位决定下跌空间；跌破现金成本=供应出清信号。",s:"公司年报 C1 🌐；券商成本曲线 💰 标来源；自建模型（精矿价×单耗+加工费+能源）"},
+ {no:"7.2",mod:"balance",grp:"成本与利润",name:"日度利润测算",freq:["日","f-d"],attr:"同步",q:"利润→减产的传导",c:"第三方日度利润；利润负值持续时间 vs 减产兑现的时间差。",s:"📊 Mysteel 系（锡 ID02105841）"},
+ {no:"7.3",mod:"balance",grp:"成本与利润",name:"能源/原料成本项",freq:["月","f-m"],attr:"先行",q:"成本端在怎么动",c:"电力（国内：铝/工业硅分地区电价、丰枯切换；海外：欧洲电价→海外冶炼减产，见 3.3.4）；精矿（接 3.1.5 TC）；辅料。",s:"📁 产业链数据库成本 sheet（自算范式）；地方电价公告"},
+ {no:"7.4",mod:"balance",grp:"成本与利润",name:"辅料与副产收益（硫酸/硫磺）",freq:["日/周","f-d"],attr:"先行",q:"冶炼副产怎么影响供应",c:"硫酸是铜锌冶炼副产（1 吨铜约副产 3~4 吨酸）：酸价高→冶炼利润改善→开工意愿强；酸价低甚至胀库倒贴→倒逼减产，是 TC 之外冶炼利润的第二条腿（TC 为负时尤其关键）。硫磺是制酸原料，决定酸的成本底。铅冶炼同理（SMM 精炼铅成本含硫酸项）。",s:"📊 硫酸 Mysteel 分地区日度：江苏 ID01241097/山东 ID01241108/江西 ID01387509/福建 ID01387521/广东 ID01387535；SMM 冶炼酸（广西出厂价）周度 s22724971；SMM 精炼铅成本-硫酸价格 a10127388；硫磺 Mysteel 中国固体 ID01723352/液体 ID01723351（日）"},
+ {no:"8.1",mod:"balance",grp:"供需平衡",name:"年度锚（行业协会）",freq:["月/年","f-q"],attr:"滞后定方向",q:"全年过剩还是短缺",c:"全球供需年度锚+月度跟踪。",s:"ICSG 铜 / ILZSG 锌铅 / INSG 镍 / IAI 铝 🌐✅ 免费月度；WBMS（📁 Mysteel 库镜像）；USGS ✅"},
+ {no:"8.2",mod:"balance",grp:"供需平衡",name:"自建平衡表",freq:["季/月","f-q"],attr:"—",q:"自己的供需结论",c:"季度月度跟踪平衡表。",s:"📁 锡平衡表新.xlsx / 锌2025平衡表 / 光伏产业链平衡 范式"},
+ {no:"8.3",mod:"balance",grp:"供需平衡",name:"表观消费拟合",freq:["月","f-m"],attr:"—",q:"需求侧缺数据时的替代",c:"表观消费=产量+净进口-出口±库存变化。",s:"自建，源自 3/4/6 章"},
+ {no:"8.4",mod:"balance",grp:"供需平衡",name:"多口径对照",freq:["季","f-q"],attr:"—",q:"各家平衡差多少",c:"SMM 官方平衡 / 券商（标来源，E 值过期作废）/ 自建，三者并列。",s:"📊 知几搜「供需平衡」；💰 券商库"},
+ {no:"9.1",mod:"balance",grp:"宏观联动",name:"美元/利率/流动性",freq:["日","f-d"],attr:"先行于情绪",q:"金融环境松紧",c:"美债收益率、DXY、流动性指标。",s:"📊 美债 10 年 GM0000032808；知几宏观系"},
+ {no:"9.2",mod:"balance",grp:"宏观联动",name:"风险偏好/权益联动",freq:["日","f-d"],attr:"同步",q:"这轮涨跌是品种自身还是宏观",c:"SPX/SOX 60 日滚动相关；>0.7 且事件密集时升级为独立章节（锡 2026 跟随 SPX 案例）。",s:"⚙️ _make_oi_corr_charts.py 范式；📊 SOX GM00194406"},
+ {no:"9.3",mod:"balance",grp:"宏观联动",name:"品种间联动",freq:["日","f-d"],attr:"同步",q:"相对强弱与比价机会",c:"铜锡比/金银比/油铜比；同需求主线品种相对强弱（接需求矩阵）。",s:"自建，源自 2.1 行情"},
+];
+
+const MATRIX = {
+  head:["需求主线","国内跟踪指标","海外跟踪指标","铜","铝","铅","锌","镍","锡","锂","硅"],
+  rows:[
+    ["AI/电子","SOX 📊GM00194406（日）· 半导体销售额 📊ID01552325（月）· 手机 📊CM0000017803 · 集成电路 📊CM0000017738 · PCB/服务器出货（💰）","韩国半导体出口 · 台湾电子出口订单 · 美国数据中心投资（💰）· 全球半导体销售额（同左 ID01552325 即全球口径）","●","","","","","●●","",""],
+    ["地产基建","新开工/竣工/销售（统计局 📊CM系）· 镀锌开工率 📊a10097188（周）· 铝型材开工 📊a10031808（周）· 水泥产量交叉","美国新屋开工/成屋销售（📊知几宏观系）· 欧洲建筑许可（Eurostat 🌐）· 海外型钢/镀锌需求（💰）","●","●●","","●●","●","","",""],
+    ["汽车","乘联会零售/出口 📊a12805241/42 · 中汽协产量 · 新能源渗透率 · 终端周度销量（碳酸锂周报范式）· 单车用量自建模型","美国轻型车销量 📊ID01740143（月）· 欧美新能源车 📊a12732371/72/73（月）· 欧洲汽车注册（ACEA 🌐）","●","●●","●●","●","●","●","●●",""],
+    ["电网/电力","电网基本建设投资（能源局/国网 🌐）· 电线电缆开工率（SMM 💰）· 变压器产量（统计局）· 铝代铜节奏","全球电网投资（IEA 口径）· 美国变压器交期/短缺 · 中国电力设备出口（海关 📊）","●●","●","","","","","",""],
+    ["新能源(光伏/储能/风电)","能源局装机月度 🌐✅ · 组件排产（💰 SMM/百川）· 硅片周产 📊a10169475 · 组件价 📊ID02393383 · 储能招标（北极星 ✅/CNESA）","海外光伏装机 📊a12857960（SMM 月）· 海外组件价（InfoLink/EnergyTrend 🌐）· 美国 SEIA 季度/EIA 月度出货/USITC 进口 · 欧洲 BMWI德/MITECO西/GSE意月度 · 印度 MERCOM/日本 JPEA/澳洲 APVI/巴西 ANEEL（详见 印尼电力/光伏数据库_海外消费数据源清单_20260806.md）","●","●","","","","●","●●","●●"],
+    ["电池(动力/储能/铅酸)","创新联盟产量/装机（月）· 铁锂 📊a10001859 · 三元 📊a10001951/52/53 · 电芯 📊a12731610/a12715571 · 铅酸开工 📊ID01030005","电池出口分类型（海关 📊）· 欧美电池产能投产（💰）· 海外储能装机（BNEF/CNESA）","","●","●●","","●●","","●●",""],
+    ["传统工业/消费","家电产量/排产（统计局/产业在线 💰）· 马口铁 · PVC · 有机硅 DMC 📊a12750025/a12767870","海外耐用品消费（💰）· 镀锡板/马口铁海外需求","●","●","","●","","●","","●"],
+    ["海外现货与净进口","出口利润与出口量（铝材出口=需求侧一等变量，见 6.3 制品出口）","LME 0-3 升贴水（锡 📊a10099105）· 海外现货溢价（美中西铝溢价/欧洲日本升水 💰）· 日韩美印精炼金属净进口（锡周报 slide38 范式）· 贸易政策（关税/双反）","●","●●","●","●","●","●●","●","●"],
+  ],
+  note:"镍-地产基建=不锈钢；锡-新能源=焊带；硅-传统工业=有机硅/铝合金（工业硅）；锂-汽车=动力电池、新能源=储能。海外光伏分国别数据源清单：D:/拷贝文件/E/永安/印尼电力/光伏数据库_海外消费数据源清单_20260806.md"
+};
+
+const LAYERS = [
+{badge:"L1",cls:"l1",title:"官方源（最优先，免费）",sub:"交易所 · 海关 · 统计局 · 行业协会 · USGS",body:`<table>
+<tr><th>源</th><th>状态</th><th style="text-align:left">用途与访问</th></tr>
+<tr><td>SHFE/DCE/CZCE/GFEX</td><td class=ok>✅</td><td class=ind>库存/仓单/会员持仓/合约规则；官网可解析，日度库存用 📊 FU 系镜像更稳</td></tr>
+<tr><td>LME/COMEX 官网</td><td class=warn>❌403</td><td class=ind>全走 📊 zhiji 镜像（FU 系 + a100 系）</td></tr>
+<tr><td>海关总署</td><td>⚠️</td><td class=ind>stats.customs.gov.cn 在线查；实际用 📊 知几海关镜像（a10003xxx/CM 系）</td></tr>
+<tr><td>国家统计局</td><td class=ok>✅</td><td class=ind>终端产量（手机/集成电路/汽车），📊 CM 系镜像</td></tr>
+<tr><td>ICSG铜/ILZSG锌铅/INSG镍/IAI铝</td><td class=ok>✅</td><td class=ind>年度平衡锚+月度全球产量；官网月度数据表</td></tr>
+<tr><td>USGS MCS</td><td class=ok>✅</td><td class=ind>储量/年产年度锚，pubs.usgs.gov 年刊 PDF 直下</td></tr></table>`},
+{badge:"L2",cls:"l2",title:"公司源（产量/成本/指引真源）",sub:"IR · SEC · ASX · 港交所 · 巨潮",body:`<table>
+<tr><th>通道</th><th>状态</th><th style="text-align:left">适用</th></tr>
+<tr><td>公司 IR 页季报</td><td class=ok>✅</td><td class=ind>海外矿企季度产量——Alphamin/Minsur/Timah/FreePort/BHP/PLS/SQM 等</td></tr>
+<tr><td>SEC EDGAR</td><td class=ok>✅免费API</td><td class=ind>美股（FreePort/Albemarle/Century，8-K EX-99.1）</td></tr>
+<tr><td>ASX/港交所</td><td class=ok>✅</td><td class=ind>澳矿（PLS/MinRes/IGO/NIC）、港股（MMG/宏桥/力勤/天华）</td></tr>
+<tr><td>巨潮资讯</td><td class=ok>✅JSON API</td><td class=ind>A 股全部（紫金/云锡/华友/格林美/合盛/盐湖…）</td></tr></table>
+<p class=legend>铁律：<b>禁止编造</b>，找不到标「未找到」；推算值注明方法；写 Excel 前先备份、更新后追加更新日志。</p>`},
+{badge:"L3",cls:"l3",title:"第三方资讯（高频基本面主力）",sub:"SMM · Mysteel · 百川 · 铁合金在线 · 阿拉丁 · 爱择",body:`<table>
+<tr><th>源</th><th>状态</th><th style="text-align:left">主力用途</th></tr>
+<tr><td>SMM（📊知几镜像）</td><td class=ok>✅</td><td class=ind>现货价/升贴水/月度产量开工/周度库存/进出口——高频第一源</td></tr>
+<tr><td>Mysteel 钢联</td><td class=ok>✅💰已有</td><td class=ind>社库周度/日度成交/TC/冶炼利润；终端导出 + 知几镜像（ID01 系）</td></tr>
+<tr><td>百川盈孚</td><td class=ok>✅💰已有</td><td class=ind>化工/产能/周度产量（与 SMM 双源并列不混合）</td></tr>
+<tr><td>铁合金在线 cnfeol</td><td>⚠️登录态</td><td class=ind>硅系基准源（分企业月度产量）；失效需重登</td></tr>
+<tr><td>阿拉丁 aladdiny</td><td class=ok>✅账号yaqh</td><td class=ind>铝供应端资讯（几内亚/中东/澳洲）；免登录列表 API 已打通</td></tr>
+<tr><td>爱择 azchina-cn</td><td>⚠️列表免费</td><td class=ind>铝独家/调研标题扫描；正文需会员（无账号）</td></tr>
+<tr><td>亚洲金属/鑫椤/高工</td><td>💰</td><td class=ind>小金属/锂电材料口径（长江电新库主力源）</td></tr>
+<tr><td>生意社</td><td class=ok>✅免费</td><td class=ind>现货价交叉核对</td></tr>
+<tr><td>北极星储能/CNESA/乘联会</td><td class=ok>✅</td><td class=ind>储能招标、新能源车零售（cpcaauto.com 带浏览器头可爬）</td></tr></table>`},
+{badge:"L4",cls:"l4",title:"券商数据库（框架参考，数值慎用）",sub:"华泰 · 中信 · 长江 · 兴证 · CRU · WoodMac",body:`
+<p class=kv>已入库：华泰碳酸锂供需平衡（43.8MB）、中信锂数据库、长江电新高频价格库、兴证新能源金属、CRU 铝 outlook、WoodMac 锌 outlook、铜 market-outlook（<code>D:/拷贝文件/E/永安/2026文章/</code> 及各品种目录）。</p>
+<p class=kv>规则：<b>取框架与口径说明；数值引用必标券商名；带 E 的预测值过期一律作废</b>；两券商口径冲突时并列记录。</p>`},
+{badge:"L5",cls:"l5",title:"聚合与技术通道（自动化底座）",sub:"zhiji · 新浪 · 东财 · akshare",body:`<table>
+<tr><th>通道</th><th>状态</th><th style="text-align:left">说明</th></tr>
+<tr><td>zhiji（知几）API</td><td class=ok>✅主通道</td><td class=ind>SMM 全系+Mysteel 镜像+海关/交易所/宏观；HTTP 拉全量用 curl 子进程；MCP 回显只给最新 5 条；<span class=warn>kline 坑：60min/15min 参数降级日线、忽略具体合约代码</span></td></tr>
+<tr><td>新浪财经</td><td>⚠️间歇</td><td class=ind>期货日K/分钟K/实时；<b>具体合约行情唯一通道</b>；偶发断连需重试</td></tr>
+<tr><td>东方财富 push2</td><td>⚠️间歇</td><td class=ind>偶发 502；回退 push2delay/新浪</td></tr>
+<tr><td>akshare</td><td class=ok>✅</td><td class=ind>主连行情/逐月合约期限结构面板</td></tr>
+<tr><td>Wind/iFinD</td><td class=warn>❌</td><td class=ind>无终端；券商库里的 Wind 块只有缓存值</td></tr>
+<tr><td>github.com</td><td>⚠️被墙</td><td class=ind>平台部署绕行：gh API 直推（_gh_api_push.py）</td></tr></table>`},
+];
+
+const SHARED = [
+ ["财报跟踪平台","8 品种公司产量真源 → build_site.py 重建（更新 Excel 后必跑）；news.json / disruptions.json 信息流；外网 yafco-tracker（GitHub Pages）。"],
+ ["六金属库存对比图","⚙️ _six_metals_inventory.py（📁 品种日度数据模板五表 + 锡走 tin-insight 内嵌数据）。"],
+ ["四框架技术扫描","⚙️ _fourframe_scan_zhiji.py，73 品种日线+60min，⏰ 交易日 6 档（d14ae6cb）→ 最强/最弱/中性待突破/性价比各 3。"],
+ ["消融实验","周报数据更新/消融实验/六金属消融_20260810_交付/（供需-宏观-情绪因子研究）。"],
+ ["宏观共享 ID","美债 10 年 📊 GM0000032808；SOX 📊 GM00194406。"],
+ ["需求主线共享 ID","半导体销售额 📊 ID01552325；手机 📊 CM0000017803；集成电路 📊 CM0000017738；乘联会 📊 a12805241/42。"],
+];
+
+/* ==================== 渲染 ==================== */
+const $app = document.getElementById('app');
+const $mtabs = document.getElementById('mtabs');
+const $pills = document.getElementById('pills');
+const $pillsIn = document.getElementById('pills-in');
+
+function starCodes(comm){ return comm.upgrades.map(u => (u.match(/^[\d.]+/)||[""])[0]).filter(Boolean); }
+function isStar(comm, no){ return starCodes(comm).some(c => no === c || no.startsWith(c + ".")); }
+
+function cardHtml(n, comm){
+  const src = comm && comm.ov[n.no] ? comm.ov[n.no] : n.s;
+  const star = comm && isStar(comm, n.no);
+  const search = (n.no+n.name+n.q+n.c+src).replace(/<[^>]+>/g,'');
+  const imgs = comm ? (commCharts(comm)||[]).filter(c=>c.n===n.no) : [];
+  const imgHtml = imgs.map(c=>`<img src="${encodeURI(c.p)}" style="width:100%;margin-top:8px;border:1px solid var(--line);border-radius:4px" loading="lazy" title="${c.t}">`).join('');
+  return `<div class="ncard${star?' star':''}" id="n${n.no.replace(/\./g,'_')}" data-search="${search}">
+    <h4 onclick="this.parentElement.classList.toggle('collapsed')"><span class="no">${n.no}</span>${n.name}${star?'<span class="starlab">★特色</span>':''}<span class="freq ${n.freq[1]}">${n.freq[0]}</span><span class="attr">[${n.attr}]</span><span class="caret">▾</span></h4>
+    <div class="nbody">
+    <div class="qa">Q｜${n.q}</div>
+    <div class="kv"><b>内容</b>｜${n.c}</div>
+    <div class="src"><b>数据源</b>｜${src}</div>
+    ${imgHtml}
+    </div>
+  </div>`;
+}
+
+function renderHome(){
+  $pills.style.display='none';
+  $mtabs.innerHTML = `<div class="mtab active">数据入口</div><a class="mtab" href="#/tree">通用目录树</a><a class="mtab" href="#/matrix">需求矩阵</a><a class="mtab" href="#/sources">数据源体系</a>`;
+  const cards = COMMS.map((c,i)=>`
+    <div class="pcard" onclick="location.hash='#/c/${c.id}'">
+      <div class="top"><span class="idx"><b>0${i+1}</b> / ${c.code}</span><span>${Object.keys(c.ov).length} 条专属源</span></div>
+      <div class="mono" style="color:${c.color}">${c.code}</div>
+      <div class="bot"><div><div class="nm">${c.name}<span>${c.en}</span></div><div class="ds">${c.anchorS}</div></div><div class="arrow">→</div></div>
+    </div>`).join('');
+  const fx = `
+    <div class="pcard fx" onclick="location.hash='#/tree'">
+      <div class="top"><span class="idx"><b>09</b> / TREE</span><span>11 节点 · 40+ 末级</span></div>
+      <div class="mono" style="color:#8a8680">目录树</div>
+      <div class="bot"><div><div class="nm">通用目录树<span>Framework</span></div><div class="ds">0~10 全骨架 · 搭新品种逐节点填空</div></div><div class="arrow">→</div></div>
+    </div>
+    <div class="pcard fx" onclick="location.hash='#/matrix'">
+      <div class="top"><span class="idx"><b>10</b> / MATRIX</span><span>7 主线 × 8 品种</span></div>
+      <div class="mono" style="color:#4f8a7a">矩阵</div>
+      <div class="bot"><div><div class="nm">需求结构矩阵<span>Demand</span></div><div class="ds">终端消费宏观主线化 · 同主线品种联动验证</div></div><div class="arrow">→</div></div>
+    </div>
+    <div class="pcard fx" onclick="location.hash='#/sources'">
+      <div class="top"><span class="idx"><b>11</b> / DATA</span><span>L1~L5 优先级</span></div>
+      <div class="mono" style="color:#3a5f8a">数据源</div>
+      <div class="bot"><div><div class="nm">数据来源体系<span>Sources</span></div><div class="ds">官方→公司→第三方→券商→聚合通道</div></div><div class="arrow">→</div></div>
+    </div>`;
+  $app.innerHTML = `
+    <div class="home-hero">
+      <div class="en">Metals research framework & data source manual</div>
+      <h1>有色金属与新能源金属研究框架</h1>
+      <div class="row2">
+        <div class="sub">铜 · 铝 · 铅 · 锌 · 镍 · 锡 · 锂 · 硅 ｜ 通用目录树 + 需求矩阵 + 五层数据源 + 品种档案<br>点品种卡片进入看板：顶栏模块 tab · 左侧条目组 · 右侧卡片网格</div>
+        <div class="stat"><b>8</b>品种档案</div>
+      </div>
+    </div>
+    <div class="entry-head"><span>数据入口</span><span>${COMMS.map(c=>c.code).join(' / ')} / 目录树 / 矩阵 / 数据源</span></div>
+    <div class="grid2">${cards}${fx}</div>`;
+}
+
+function renderBoard(cid, mid){
+  const comm = COMMS.find(c=>c.id===cid) || COMMS[0];
+  mid = mid || "overview";
+  const chs0 = commCharts(comm);
+  const mods = chs0 ? [MODULES[0], {id:"charts", name:"图表"}, ...MODULES.slice(1)] : MODULES;
+  if (!mods.find(m=>m.id===mid)) mid = "overview";
+  $mtabs.innerHTML = mods.map(m=>`<a class="mtab${m.id===mid?' active':''}" href="#/c/${cid}/${m.id}">${m.name}</a>`).join('');
+  $pills.style.display='block';
+  $pillsIn.innerHTML = `<a class="pill" href="#/" style="flex:none">← 首页</a>` + COMMS.map(c=>`<a class="pill${c.id===cid?' active':''}" href="#/c/${c.id}/${mid}">${c.code} ${c.name.replace('数据面板','')}</a>`).join('');
+
+  let side = '', content = '';
+  if (mid === "charts" && chs0){
+    side = `<div class="grp">图表</div>` + chs0.map((c,i)=>`<a onclick="document.getElementById('ch${i}').scrollIntoView({behavior:'smooth'})">${c.t}</a>`).join('');
+    content = `<div class="anchor-banner" style="border-left-color:${comm.color}"><div class="lab" style="color:${comm.color}">${comm.code} · 图表库</div><p style="font-size:12.5px;color:var(--ink2)">zhiji API 直出（⚙️_metal_charts.py 每日可重跑刷新）｜历史覆盖 2023 年以来 → 季节性对比图（当年红色加粗）；不足 2023 年 → 线性平滑曲线</p></div>
+      <div class="cards2">` + chs0.map((c,i)=>`
+      <div class="ncard" id="ch${i}" style="padding:10px 12px">
+        <h4 style="margin-bottom:6px">${c.t}<span class="freq f-m">${c.k}</span></h4>
+        <img src="${encodeURI(c.p)}" style="width:100%;border:1px solid var(--line);border-radius:4px" loading="lazy">
+        <div class="src" style="margin-top:5px">来源：${c.src} via 知几 ｜ 数据至 ${c.end} ｜ 制图 2026-08-11</div>
+      </div>`).join('') + `</div>`;
+  } else if (mid === "overview"){
+    side = `<div class="grp">概览</div><a class="active">定价锚</a><a onclick="document.getElementById('ov-up').scrollIntoView()">升级节点</a><a onclick="document.getElementById('ov-src').scrollIntoView()">专属数据源</a><a onclick="document.getElementById('ov-red').scrollIntoView()">口径红线</a><a onclick="document.getElementById('ov-gap').scrollIntoView()">缺口</a>`;
+    content = `
+      <div class="anchor-banner"><div class="lab">定价锚 · PRICING ANCHOR</div><p>${comm.anchor}</p></div>
+      <div class="gtitle" id="ov-up">升级为独立章节的节点 <span class="en">UPGRADES</span></div>
+      <div class="cards2">${comm.upgrades.map(u=>`<div class="ncard star"><div class="kv"><span class="starlab">★</span> ${u}</div></div>`).join('')}</div>
+      <div class="gtitle" id="ov-src">专属数据源 / ID <span class="en">SOURCES</span></div>
+      <div class="ncard"><div class="kv">${comm.src}</div></div>
+      <div class="gtitle" id="ov-red">口径红线 <span class="en">CALIBER</span></div>
+      <div class="ncard"><div class="kv">${comm.red}</div></div>
+      <div class="gtitle" id="ov-gap">缺口 <span class="en">GAPS</span></div>
+      <div class="ncard"><div class="kv">${comm.gap}</div></div>`;
+  } else {
+    const nodes = NODES.filter(n=>n.mod===mid);
+    const groups = [...new Set(nodes.map(n=>n.grp))];
+    side = groups.map(g => `<div class="grp">${g}</div>` + nodes.filter(n=>n.grp===g).map(n=>`<a onclick="document.getElementById('n${n.no.replace(/\./g,'_')}').scrollIntoView({behavior:'smooth'})">${n.no} ${n.name}</a>`).join('')).join('');
+    content = `<div class="anchor-banner" style="border-left-color:${comm.color}"><div class="lab" style="color:${comm.color}">${comm.code} · ${comm.name} · ${MODULES.find(m=>m.id===mid).name}</div><p style="font-size:12.5px;color:var(--ink2)">${comm.anchorS}</p></div>`;
+    for (const g of groups){
+      content += `<div class="gtitle">${g}</div><div class="cards3">${nodes.filter(n=>n.grp===g).map(n=>cardHtml(n, comm)).join('')}</div>`;
+    }
+  }
+  $app.innerHTML = `<div class="board"><div class="sidebar">${side}</div><div class="content">${content}</div></div>`;
+}
+
+function renderTree(){
+  $pills.style.display='none';
+  $mtabs.innerHTML = `<a class="mtab" href="#/">数据入口</a><div class="mtab active">通用目录树</div><a class="mtab" href="#/matrix">需求矩阵</a><a class="mtab" href="#/sources">数据源体系</a>`;
+  const TREE = [
+   ["0","品种身份证"],["1","综述与策略（输出层）"],["2","行情与价格体系"],["3","供应"],["4","库存"],["5","需求"],["6","进出口"],["7","成本与利润"],["8","供需平衡"],["9","宏观与联动"],["10","数据资产台账"]];
+  let th = `<div class="tree-actions"><a id="exA">全部展开</a><a id="coA">全部收起</a></div>`;
+  for (const [code, name] of TREE){
+    const kids = NODES.filter(n => n.no === code || n.no.startsWith(code + "."));
+    // 按中间层分组（3.1.1 → 3.1；2.1 这类两层节点直接挂顶层）
+    const mids = [];
+    for (const k of kids){
+      const parts = k.no.split(".");
+      const mid = parts.length >= 3 ? parts[0] + "." + parts[1] : null;
+      let g = mids.find(m => m.mid === mid);
+      if (!g){ g = {mid, grp: mid ? k.grp : null, items: []}; mids.push(g); }
+      g.items.push(k);
+    }
+    th += `<div class="t-item"><div class="t-head"><span class="t-arrow">▼</span><span class="t-code">${code}</span><span class="t-name">${name}</span><span class="attr">${kids.length} 项</span></div><div class="t-kids t-item">`;
+    for (const g of mids){
+      if (g.mid){
+        th += `<div class="t-item"><div class="t-head"><span class="t-arrow">▼</span><span class="t-code">${g.mid}</span><span class="t-name" style="font-weight:500">${g.grp}</span><span class="attr">${g.items.length} 项</span></div><div class="t-kids t-item">`;
+        for (const k of g.items) th += `<div class="t-desc link" onclick="jumpNode('${k.no.replace(/\./g,'_')}')"><b style="color:var(--accent)">${k.no}</b> ${k.name}｜${k.q}</div>`;
+        th += `</div></div>`;
+      } else {
+        for (const k of g.items) th += `<div class="t-desc link" onclick="jumpNode('${k.no.replace(/\./g,'_')}')"><b style="color:var(--accent)">${k.no}</b> ${k.name}｜${k.q}</div>`;
+      }
+    }
+    th += `</div></div>`;
+  }
+  $app.innerHTML = `<div class="page"><h2>通用目录树</h2><p class="lead">点击节点展开/收起。下方卡片为每个末级节点的完整说明（通用口径；品种专属数据源见各品种看板）。</p>
+    <input id="search" placeholder="搜索节点 / 数据源 / 指标ID …（如 TC、仓单、排产、ID01320080）">
+    <div class="tree">${th}</div>
+    <div class="gtitle" style="margin-top:26px">节点详解</div>
+    <div class="cards3" id="allcards">${NODES.map(n=>cardHtml(n, null).replace('class="ncard', 'class="ncard collapsed')).join('')}</div></div>`;
+  document.querySelectorAll('.t-head').forEach(h => h.onclick = () => h.parentElement.classList.toggle('closed'));
+  document.getElementById('exA').onclick = () => document.querySelectorAll('.t-item').forEach(i=>i.classList.remove('closed'));
+  document.getElementById('coA').onclick = () => document.querySelectorAll('.tree > .t-item').forEach(i=>i.classList.add('closed'));
+  document.getElementById('search').oninput = function(){
+    const q = this.value.trim().toLowerCase();
+    document.querySelectorAll('#allcards .ncard').forEach(c => c.classList.toggle('hidden-by-search', q && !c.dataset.search.toLowerCase().includes(q)));
+  };
+}
+
+function renderMatrix(){
+  $pills.style.display='none';
+  $mtabs.innerHTML = `<a class="mtab" href="#/">数据入口</a><a class="mtab" href="#/tree">通用目录树</a><div class="mtab active">需求矩阵</div><a class="mtab" href="#/sources">数据源体系</a>`;
+  let mh = `<tr>${MATRIX.head.map(h=>`<th>${h}</th>`).join('')}</tr>`;
+  for (const r of MATRIX.rows){
+    mh += `<tr><td><b>${r[0]}</b></td><td class="ind">${r[1]}</td><td class="ind">${r[2]}</td>` + r.slice(3).map(v=>`<td class="${v==='●●'?'d2':(v==='●'?'d1':'')}">${v||'—'}</td>`).join('') + `</tr>`;
+  }
+  $app.innerHTML = `<div class="page"><h2>需求结构矩阵（品种 × 宏观主线）</h2>
+    <p class="lead">终端消费按宏观主线归组而非按品种切碎：同主线品种联动验证（半导体回升时锡弹性应大于铜）；一强一弱给比价交易线索；新品种接入先填矩阵位置。</p>
+    <div class="tbl-wrap"><table>${mh}</table></div>
+    <p class="legend"><span class="d2">●●</span> = 主力需求（第一大下游）　<span class="d1">●</span> = 重要需求　— = 占比小或间接<br>注：${MATRIX.note}</p></div>`;
+}
+
+function renderSources(){
+  $pills.style.display='none';
+  $mtabs.innerHTML = `<a class="mtab" href="#/">数据入口</a><a class="mtab" href="#/tree">通用目录树</a><a class="mtab" href="#/matrix">需求矩阵</a><div class="mtab active">数据源体系</div>`;
+  $app.innerHTML = `<div class="page"><h2>数据来源体系（五层优先级）</h2>
+    <p class="lead">查任何数据按 L1→L5 顺序：高层拿不到再往下走；引用低层数据必须标注来源属性。</p>
+    ${LAYERS.map(l=>`<div class="layer"><div class="layer-head"><span class="l-badge ${l.cls}">${l.badge}</span><span class="l-title">${l.title}</span><span class="l-sub">${l.sub}</span><span class="l-arrow">▶</span></div><div class="layer-body">${l.body}</div></div>`).join('')}
+    <div class="gtitle" style="margin-top:26px">跨品种共享资产</div>
+    <div class="cards2">${SHARED.map(([n,d])=>`<div class="ncard"><h4>${n}</h4><div class="kv">${d}</div></div>`).join('')}</div></div>`;
+  document.querySelectorAll('.layer-head').forEach(h => h.onclick = () => h.parentElement.classList.toggle('open'));
+}
+
+function jumpNode(id){
+  const el = document.getElementById('n' + id);
+  if (!el) return;
+  el.classList.remove('collapsed');
+  el.scrollIntoView({behavior:'smooth', block:'center'});
+  el.classList.remove('flash');
+  void el.offsetWidth;
+  el.classList.add('flash');
+}
+
+function render(){
+  const h = location.hash || "#/";
+  const parts = h.replace(/^#\//,'').split('/');
+  window.scrollTo(0,0);
+  if (parts[0] === "c") renderBoard(parts[1], parts[2]);
+  else if (parts[0] === "tree") renderTree();
+  else if (parts[0] === "matrix") renderMatrix();
+  else if (parts[0] === "sources") renderSources();
+  else renderHome();
+}
+window.addEventListener('hashchange', render);
+render();
+</script>
+</body>
+</html>
