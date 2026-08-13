@@ -441,7 +441,7 @@ function cardHtml(n, comm){
   const imgs = comm ? (commCharts(comm)||[]).filter(c=>c.n===n.no) : [];
   const imgHtml = imgs.map(c=>`<img src="${encodeURI(c.p)}" style="width:100%;margin-top:8px;border:1px solid var(--line);border-radius:4px" loading="lazy" title="${c.t}">`).join('');
   return `<div class="ncard${star?' star':''}" id="n${n.no.replace(/\./g,'_')}" data-search="${search}">
-    <h4 onclick="this.parentElement.classList.toggle('collapsed')"><span class="no">${n.no}</span>${n.name}${star?'<span class="starlab">★特色</span>':''}<span class="freq ${n.freq[1]}">${n.freq[0]}</span><span class="attr">[${n.attr}]</span><span class="caret">▾</span></h4>
+    <h4 onclick="this.parentElement.classList.toggle('collapsed')"><span class="no">${n.no}</span>${n.name}${star?'<span class="starlab">★特色</span>':''}<span class="freq ${n.freq[1]}">${n.freq[0]}</span><span class="attr">[${n.attr}]</span>${imgs.length===0?'<span class="attr" style="color:#c0392b;border:1px solid #c0392b;border-radius:3px;padding:0 3px;margin-left:4px">缺图</span>':''}<span class="caret">▾</span></h4>
     <div class="nbody">
     <div class="qa">Q｜${n.q}</div>
     <div class="kv"><b>内容</b>｜${n.c}</div>
