@@ -176,6 +176,14 @@
   .tl-comm span.tl-more{background:#8a8680;cursor:default}
   .tl-dir{font:10.5px Consolas,monospace;color:#a8a49e;flex:none;max-width:320px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .t-head .t-dir{font:10.5px Consolas,monospace;color:#a8a49e;font-weight:400}
+  /* 第四级：叶节点下的品种×图表子目录 */
+  .tl-tog{width:12px;flex:none;font-size:9px;color:var(--ink2);cursor:pointer;transition:.15s;display:inline-block}
+  .tl-tog.open{transform:rotate(90deg);color:var(--accent)}
+  .t-sub{margin:1px 0 3px 52px;border-left:1px dashed var(--line);padding-left:10px}
+  .t-subrow{display:flex;align-items:center;gap:8px;padding:2px 6px;font-size:12px;color:var(--ink2);border-radius:3px}
+  .t-subrow:hover{background:#f4ece2;color:var(--ink)}
+  .tl-chip{padding:1px 5px;border-radius:3px;font-weight:600;color:#fff;font-size:9px;flex:none}
+  .tl-sub-t{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1;min-width:0}
   @keyframes flash{0%{background:#fdeeda}100%{background:var(--panel)}}
   .ncard.flash{animation:flash 1.6s}
   footer{max-width:1460px;margin:0 auto;padding:24px 28px 40px;color:var(--ink2);font-size:12px;border-top:1px solid var(--line)}
@@ -735,7 +743,18 @@ function renderTree(){
       : '';
     const dir = NODE_DIR[k.no] ? `<span class="tl-dir" title="${NODE_DIR[k.no]}">${NODE_DIR[k.no]}</span>` : '';
     const target = cs.length ? `goNode('${cs[0].id}','${k.mod}','n${nid}')` : `jumpNode('${nid}')`;
-    return `<div class="t-desc link t-leaf" onclick="${target}"><span class="tl-code">${k.no}</span><span class="tl-name">${k.name}</span><span class="tl-q">${k.q}</span>${dir}${chips}</div>`;
+    // 第四级：该节点下分品种的图表/资产明细（默认收起，▸ 展开）
+    let tog = '<span class="tl-tog"></span>', subs = '';
+    if (cs.length){
+      tog = `<span class="tl-tog" title="展开分品种明细" onclick="event.stopPropagation();this.classList.toggle('open');var s=this.closest('.t-leafwrap').querySelector('.t-sub');s.style.display=this.classList.contains('open')?'':'none'">▸</span>`;
+      subs = `<div class="t-sub" style="display:none">` + cs.map(c => {
+        const list = (commCharts(c) || []).filter(x => x.n === k.no);
+        const ends = [...new Set(list.map(x => x.end).filter(Boolean))].join(' / ');
+        const titles = list.map(x => (x.t || '').replace(/（.*?）/g, '')).join(' · ');
+        return `<div class="t-subrow link" onclick="goNode('${c.id}','${k.mod}','n${nid}')"><span class="tl-chip" style="background:${c.color}">${c.code}</span><span class="tl-sub-t">${titles || c.name}</span><span class="tl-dir">${ends ? '至 ' + ends : ''}</span></div>`;
+      }).join('') + `</div>`;
+    }
+    return `<div class="t-leafwrap"><div class="t-desc link t-leaf" onclick="${target}">${tog}<span class="tl-code">${k.no}</span><span class="tl-name">${k.name}</span><span class="tl-q">${k.q}</span>${dir}${chips}</div>${subs}</div>`;
   };
   let th = `<div class="tree-actions"><a id="exA">全部展开</a><a id="coA">全部收起</a></div>`;
   for (const [code, name, tdir] of TREE){
@@ -762,14 +781,14 @@ function renderTree(){
     }
     th += `</div></div>`;
   }
-  $app.innerHTML = `<div class="page"><h2>通用目录树</h2><p class="lead">点击节点行展开/收起；叶行右侧彩色块=该节点已有图表的品种，点色块直达对应品种看板节点，点行跳入首个有图品种（无图品种则定位到下方详解卡）。</p>
+  $app.innerHTML = `<div class="page"><h2>通用目录树</h2><p class="lead">节点行展开/收起；叶行 ▸ 展开第四级（分品种图表/资产明细，含数据截止日，点击直达）；右侧色块=该节点有图的品种，点色块直达对应品种看板节点，点行跳入首个有图品种（无图则定位到下方详解卡）。</p>
     <input id="search" placeholder="搜索节点 / 数据源 / 指标ID …（如 TC、仓单、排产、ID01320080）">
     <div class="tree">${th}</div>
     <div class="gtitle" style="margin-top:26px">节点详解</div>
     <div class="cards3" id="allcards">${NODES.map(n=>cardHtml(n, null).replace('class="ncard', 'class="ncard collapsed')).join('')}</div></div>`;
   document.querySelectorAll('.t-head').forEach(h => h.onclick = () => h.parentElement.classList.toggle('closed'));
-  document.getElementById('exA').onclick = () => document.querySelectorAll('.t-item').forEach(i=>i.classList.remove('closed'));
-  document.getElementById('coA').onclick = () => document.querySelectorAll('.tree > .t-item').forEach(i=>i.classList.add('closed'));
+  document.getElementById('exA').onclick = () => { document.querySelectorAll('.t-item').forEach(i=>i.classList.remove('closed')); document.querySelectorAll('.t-sub').forEach(s=>s.style.display=''); document.querySelectorAll('.tl-tog').forEach(t=>t.classList.add('open')); };
+  document.getElementById('coA').onclick = () => { document.querySelectorAll('.tree > .t-item').forEach(i=>i.classList.add('closed')); document.querySelectorAll('.t-sub').forEach(s=>s.style.display='none'); document.querySelectorAll('.tl-tog').forEach(t=>t.classList.remove('open')); };
   document.getElementById('search').oninput = function(){
     const q = this.value.trim().toLowerCase();
     document.querySelectorAll('#allcards .ncard').forEach(c => c.classList.toggle('hidden-by-search', q && !c.dataset.search.toLowerCase().includes(q)));
