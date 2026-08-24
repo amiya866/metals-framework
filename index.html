@@ -166,6 +166,14 @@
   .ncard.collapsed>h4{margin-bottom:0}
   .t-desc.link{cursor:pointer}
   .t-desc.link:hover{background:#f4ece2;color:var(--ink)}
+  /* v4 目录树叶行：编号+名称+问题+品种图映射 chips */
+  .t-leaf{display:flex;align-items:center;gap:8px}
+  .tl-code{font:600 11px Consolas,monospace;color:var(--accent);min-width:40px;flex:none}
+  .tl-name{color:var(--ink);flex:none}
+  .tl-q{color:var(--ink2);font-size:11.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1;min-width:0}
+  .tl-comm{display:flex;gap:3px;margin-left:auto;flex:none}
+  .tl-comm span{padding:1px 5px;border-radius:3px;font-weight:600;color:#fff;font-size:9px;cursor:pointer}
+  .tl-comm span.tl-more{background:#8a8680;cursor:default}
   @keyframes flash{0%{background:#fdeeda}100%{background:var(--panel)}}
   .ncard.flash{animation:flash 1.6s}
   footer{max-width:1460px;margin:0 auto;padding:24px 28px 40px;color:var(--ink2);font-size:12px;border-top:1px solid var(--line)}
@@ -691,6 +699,24 @@ function renderTree(){
   setNav('tree');
   const TREE = [
    ["0","品种身份证"],["1","综述与策略（输出层）"],["2","行情与价格体系"],["3","供应"],["4","库存"],["5","需求"],["6","进出口"],["7","成本与利润"],["8","供需平衡"],["9","信息速递"],["10","数据资产台账"]];
+  // 节点 → 有图品种映射（chips，点击直达该品种看板对应节点卡）
+  const nodeComms = {};
+  for (const c of COMMS){
+    for (const ch of (commCharts(c) || [])){
+      if (!ch.n || ch.n === "0") continue;
+      (nodeComms[ch.n] = nodeComms[ch.n] || []);
+      if (!nodeComms[ch.n].some(x => x.id === c.id)) nodeComms[ch.n].push(c);
+    }
+  }
+  const leafHtml = (k) => {
+    const nid = k.no.replace(/\./g,'_');
+    const cs = nodeComms[k.no] || [];
+    const chips = cs.length
+      ? `<span class="tl-comm">${cs.slice(0,8).map(c=>`<span style="background:${c.color}" title="${c.name}" onclick="event.stopPropagation();goNode('${c.id}','${k.mod}','n${nid}')">${c.code}</span>`).join('')}${cs.length>8?`<span class="tl-more">+${cs.length-8}</span>`:''}</span>`
+      : '';
+    const target = cs.length ? `goNode('${cs[0].id}','${k.mod}','n${nid}')` : `jumpNode('${nid}')`;
+    return `<div class="t-desc link t-leaf" onclick="${target}"><span class="tl-code">${k.no}</span><span class="tl-name">${k.name}</span><span class="tl-q">${k.q}</span>${chips}</div>`;
+  };
   let th = `<div class="tree-actions"><a id="exA">全部展开</a><a id="coA">全部收起</a></div>`;
   for (const [code, name] of TREE){
     const kids = NODES.filter(n => n.no === code || n.no.startsWith(code + "."));
@@ -703,19 +729,20 @@ function renderTree(){
       if (!g){ g = {mid, grp: mid ? k.grp : null, items: []}; mids.push(g); }
       g.items.push(k);
     }
-    th += `<div class="t-item"><div class="t-head"><span class="t-arrow">▼</span><span class="t-code">${code}</span><span class="t-name">${name}</span><span class="attr">${kids.length} 项</span></div><div class="t-kids t-item">`;
+    const nMapped = kids.filter(k => (nodeComms[k.no]||[]).length).length;
+    th += `<div class="t-item"><div class="t-head"><span class="t-arrow">▼</span><span class="t-code">${code}</span><span class="t-name">${name}</span><span class="attr">${kids.length} 项 · ${nMapped} 项有图</span></div><div class="t-kids t-item">`;
     for (const g of mids){
       if (g.mid){
         th += `<div class="t-item"><div class="t-head"><span class="t-arrow">▼</span><span class="t-code">${g.mid}</span><span class="t-name" style="font-weight:500">${g.grp}</span><span class="attr">${g.items.length} 项</span></div><div class="t-kids t-item">`;
-        for (const k of g.items) th += `<div class="t-desc link" onclick="jumpNode('${k.no.replace(/\./g,'_')}')"><b style="color:var(--accent)">${k.no}</b> ${k.name}｜${k.q}</div>`;
+        for (const k of g.items) th += leafHtml(k);
         th += `</div></div>`;
       } else {
-        for (const k of g.items) th += `<div class="t-desc link" onclick="jumpNode('${k.no.replace(/\./g,'_')}')"><b style="color:var(--accent)">${k.no}</b> ${k.name}｜${k.q}</div>`;
+        for (const k of g.items) th += leafHtml(k);
       }
     }
     th += `</div></div>`;
   }
-  $app.innerHTML = `<div class="page"><h2>通用目录树</h2><p class="lead">点击节点展开/收起。下方卡片为每个末级节点的完整说明（通用口径；品种专属数据源见各品种看板）。</p>
+  $app.innerHTML = `<div class="page"><h2>通用目录树</h2><p class="lead">点击节点行展开/收起；叶行右侧彩色块=该节点已有图表的品种，点色块直达对应品种看板节点，点行跳入首个有图品种（无图品种则定位到下方详解卡）。</p>
     <input id="search" placeholder="搜索节点 / 数据源 / 指标ID …（如 TC、仓单、排产、ID01320080）">
     <div class="tree">${th}</div>
     <div class="gtitle" style="margin-top:26px">节点详解</div>
