@@ -735,11 +735,31 @@ function renderBoard(cid, mid){
 
 function renderTree(qs){
   setNav('tree');
-  // 品种筛选状态（hash query：#/tree?m=cu&has=1）
+  // 品种筛选状态：hash query（#/tree?m=cu&has=1）优先；无参时回读 localStorage 记忆并补到 hash
+  const LS_KEY = 'mf_tree_filter';
+  const loadTF = () => { try { const o = JSON.parse(localStorage.getItem(LS_KEY) || '{}'); return { m: COMMS.some(c=>c.id===o.m) ? o.m : '', has: !!o.has }; } catch(e){ return {m:'', has:false}; } };
+  const saveTF = (m, has) => { try { localStorage.setItem(LS_KEY, JSON.stringify({m, has})); } catch(e){} };
+  if (!qs){
+    const st = loadTF();
+    if (st.m || st.has){
+      const p = new URLSearchParams(); if (st.m) p.set('m', st.m); if (st.has) p.set('has', '1');
+      location.replace('#/tree?' + p.toString()); // hashchange 触发重渲染
+      return;
+    }
+  }
   const qp = new URLSearchParams(qs || '');
   const mf = COMMS.some(c => c.id === qp.get('m')) ? qp.get('m') : '';
   const hasOnly = qp.get('has') === '1';
   window.TREE_QS = qs || '';
+  if (qs) saveTF(mf, hasOnly); // hash 显式带参数 → 以 hash 为准并覆盖存储
+  // tree 页：顶部品种 pill 联动筛选（原地筛选不跳看板），高亮与筛选条同步；其他页面 setNav 重建 pills 自动恢复原导航
+  $pillsIn.querySelectorAll('.pill').forEach(a => {
+    const mm = a.className.match(/\bc-(\w+)\b/);
+    if (!mm) return;
+    const id = mm[1];
+    a.classList.toggle('active', mf === id);
+    a.onclick = e => { e.preventDefault(); treeSetFilter(id); };
+  });
   const TF_COLORS = {cu:'#b06a32',al:'#7a8a9c',pb:'#6b7280',zn:'#5b7a8c',ni:'#7a8c5b',sn:'#8c6b9c',li:'#4f8a7a',si:'#6b8c8c'};
   const TREE = [
    ["0","品种身份证",""],["1","综述与策略（输出层）",""],["2","行情与价格体系","金属图表库/{品种}/"],["3","供应","网站构建/供应端（财报+outlook）→ caibao-hub"],["4","库存","金属图表库/{品种}/"],["5","需求","网站构建/消费端/（汽车+光伏清单）"],["6","进出口",""],["7","成本与利润",""],["8","供需平衡","金属图表库/（平衡表迁入中）"],["9","信息速递","网站构建/小作文平台/"],["10","数据资产台账","网站构建/README + 数据源回溯/"]];
@@ -1222,6 +1242,8 @@ function treeNav(mut){
   const p = new URLSearchParams(window.TREE_QS || '');
   mut(p);
   const q = p.toString();
+  // 每次筛选变更即持久化（含清空→默认值，防止无参 hash 被记忆状态回填）
+  try { localStorage.setItem('mf_tree_filter', JSON.stringify({m: p.get('m') || '', has: p.get('has') === '1'})); } catch(e){}
   location.hash = '#/tree' + (q ? '?' + q : '');
 }
 function treeSetFilter(m){ treeNav(p => { if (m) p.set('m', m); else p.delete('m'); }); }
