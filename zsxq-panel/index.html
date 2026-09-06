@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>知识星球 · 前沿信息收录 分类面板</title>
+<style>
+  :root{
+    --bg:#14171c; --bg2:#1b1f26; --card:#20252e; --line:#2c333f;
+    --ink:#e8eaee; --ink2:#9aa3b0; --gold:#d4a94e; --grey:#7c8592;
+    --accent:#4a90a4;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font:14px/1.6 "Microsoft YaHei","PingFang SC",sans-serif}
+  .top{position:sticky;top:0;z-index:9;background:var(--bg2);border-bottom:1px solid var(--line);
+       padding:12px 20px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+  .top h1{font-size:17px;font-weight:600;margin-right:8px}
+  .top .upd{color:var(--ink2);font-size:12px}
+  .controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:12px 20px;border-bottom:1px solid var(--line);background:var(--bg)}
+  .tab{padding:5px 14px;border:1px solid var(--line);border-radius:14px;background:var(--card);
+       color:var(--ink2);cursor:pointer;font-size:13px;user-select:none}
+  .tab.on{color:var(--ink);border-color:var(--accent);background:#233240}
+  .tab .n{font-size:11px;color:var(--ink2);margin-left:4px}
+  .chip{padding:3px 11px;border:1px solid var(--line);border-radius:12px;background:var(--card);
+        color:var(--ink2);cursor:pointer;font-size:12px;user-select:none}
+  .chip.on{color:#fff;border-color:var(--gold);background:#3a3323}
+  .sep{width:1px;height:20px;background:var(--line)}
+  input[type=text]{background:var(--card);border:1px solid var(--line);border-radius:14px;color:var(--ink);
+       padding:5px 14px;font-size:13px;width:220px;outline:none}
+  input[type=text]:focus{border-color:var(--accent)}
+  .list{padding:16px 20px;max-width:960px;margin:0 auto}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px 16px;margin-bottom:10px}
+  .card .meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:12px;color:var(--ink2);margin-bottom:5px}
+  .badge{padding:1px 8px;border-radius:9px;font-size:11px}
+  .badge.hi{background:#3a3323;color:var(--gold);border:1px solid #6b5a2e}
+  .badge.mid{background:#262b33;color:var(--grey);border:1px solid var(--line)}
+  .comm{padding:0 7px;border-radius:8px;font-size:11px;border:1px solid var(--line)}
+  .card a.t{color:var(--ink);font-weight:600;text-decoration:none;font-size:14px}
+  .card a.t:hover{color:var(--accent);text-decoration:underline}
+  .card .sm{color:var(--ink2);font-size:12.5px;margin-top:5px;word-break:break-all}
+  .card .fm{color:var(--ink2);font-size:11.5px;margin-top:5px}
+  .card .fm span{background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:0 6px;margin-right:6px}
+  .empty{color:var(--ink2);text-align:center;padding:40px 0}
+  .hint{color:var(--gold);font-size:12px}
+  .filepick{display:none;padding:10px 20px;color:var(--ink2);font-size:13px}
+</style>
+</head>
+<body>
+<div class="top">
+  <h1>知识星球 · 前沿信息收录 分类面板</h1>
+  <span class="upd" id="upd">载入中…</span>
+  <span class="hint" id="hint"></span>
+  <input type="file" id="filepick" accept=".json" style="display:none">
+</div>
+<div class="controls" id="tabs"></div>
+<div class="controls" id="chips"></div>
+<div class="list" id="list"></div>
+
+<script>
+let DATA=null, cat="研报纪要", comm="all", qual="all", q="";
+const CATS=["研报纪要","宏观外汇","产业快讯","权益策略","其他"];
+const COMMS=[["all","全部"],["cu","铜"],["al","铝"],["pb","铅"],["zn","锌"],["ni","镍"],["sn","锡"],["li","锂"],["si","硅"]];
+const COLORS={cu:"#B8734A",al:"#7A8CA3",pb:"#6B7A8C",zn:"#5B8C5A",ni:"#8C6BAE",sn:"#4A90A4",li:"#C2703E",si:"#7A9E7E"};
+const $=id=>document.getElementById(id);
+
+function esc(s){return (s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+
+function renderTabs(){
+  $("tabs").innerHTML = CATS.map(c=>{
+    const n=(DATA.categories[c]||[]).length;
+    return `<span class="tab ${c===cat?'on':''}" onclick="setCat('${c}')">${c}<span class="n">${n}</span></span>`;
+  }).join("") + `<span class="sep"></span>` +
+  [["all","全部"],["高","高"],["中","中"]].map(([v,l])=>
+    `<span class="chip ${qual===v?'on':''}" onclick="setQual('${v}')">${l}</span>`).join("") +
+  `<span class="sep"></span><input type="text" placeholder="搜索标题/摘要/附件名" value="${esc(q)}" oninput="setQ(this.value)">`;
+  $("chips").innerHTML = COMMS.map(([id,l])=>{
+    const n = id==="all" ? Object.values(DATA.categories).flat().length
+      : Object.values(DATA.categories).flat().filter(i=>(i.comms||[]).includes(id)).length;
+    return `<span class="chip ${comm===id?'on':''}" onclick="setComm('${id}')">${l} ${n}</span>`;
+  }).join("");
+}
+function setCat(c){cat=c;render()}
+function setComm(c){comm=c;render()}
+function setQual(v){qual=v;render()}
+function setQ(v){q=v;renderList()}
+
+function items(){
+  let arr=[...(DATA.categories[cat]||[])];
+  if(comm!=="all") arr=arr.filter(i=>(i.comms||[]).includes(comm));
+  if(qual!=="all") arr=arr.filter(i=>i.quality===qual);
+  if(q){const s=q.toLowerCase();arr=arr.filter(i=>
+    (i.title||"").toLowerCase().includes(s)||(i.summary||"").toLowerCase().includes(s)||
+    (i.files||[]).join(" ").toLowerCase().includes(s));}
+  return arr;
+}
+function renderList(){
+  const arr=items();
+  $("list").innerHTML = arr.length ? arr.map(i=>{
+    const badge = i.quality==="高" ? `<span class="badge hi">高</span>` : `<span class="badge mid">中</span>`;
+    const chips=(i.comms||[]).map(c=>
+      `<span class="comm" style="color:${COLORS[c]||'#999'}">● ${(DATA.names||{})[c]||c}</span>`).join("");
+    const files=(i.files||[]).map(f=>`<span>${esc(f)}</span>`).join("");
+    return `<div class="card"><div class="meta"><span>${i.date}</span>${badge}${chips}
+      <span>阅读 ${i.readers??"-"}</span></div>
+      <a class="t" href="${esc(i.url)}" target="_blank">${esc(i.title)}</a>
+      <div class="sm">${esc(i.summary)}</div>
+      ${files?`<div class="fm">📎 ${files}</div>`:""}</div>`;
+  }).join("") : `<div class="empty">无匹配条目</div>`;
+}
+function render(){renderTabs();renderList()}
+
+function load(d){
+  DATA=d;
+  $("upd").textContent = `更新于 ${(d.updated_at||"").slice(0,16).replace("T"," ")} · 近${d.window_days||90}天 · 低质量已剔除 ${(d.stats&&d.stats.filtered_low)||0} 条`;
+  render();
+}
+// http(s) 下自动 fetch；file:// 下 fetch 失败 → 提示手选 json
+fetch("./data/zsxq_panel.json").then(r=>{if(!r.ok)throw 0;return r.json()}).then(load).catch(()=>{
+  $("upd").textContent="本地模式";
+  $("hint").textContent="本地打开检测：请点击选择 panel/data/zsxq_panel.json";
+  const fp=$("filepick"); fp.style.display="inline";
+  fp.onchange=()=>{const f=fp.files[0]; if(!f)return;
+    const rd=new FileReader(); rd.onload=()=>{try{load(JSON.parse(rd.result));$("hint").textContent="已载入本地文件"}catch(e){$("hint").textContent="JSON 解析失败"}};
+    rd.readAsText(f,"utf-8");};
+});
+</script>
+</body>
+</html>
