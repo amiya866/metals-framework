@@ -16,16 +16,17 @@ th{background:#f0ead6}
 .sym{cursor:pointer;padding:3px 10px;border-radius:5px;margin:2px;display:inline-block;background:#eee}
 .sym.on{background:#b8860b;color:#fff}
 </style></head><body>
-<h2>有色截面多空配置 · 实盘监控 <span style="font-size:14px;color:#888">（每日收盘后刷新）</span></h2>
+<h2>有色截面多空配置 · 实盘监控 <span style="font-size:14px;color:#888">（每日收盘后刷新 ｜ <a href="full.html" style="color:#b8860b">完整回测面板 →</a>）</span></h2>
 <div class="note" id="note"></div>
 <div class="cards" id="cards"></div>
 <div id="ec"></div>
 <div style="margin:8px 0" id="posbox"></div>
+<div class="note" id="whybox"></div>
 <div style="margin:8px 0" id="symbox"></div>
 <div id="bd"></div>
 <h3>调仓记录（近30条）</h3><div id="ev"></div>
 <script>
-const D = {"sig_date": "2026-09-21", "capital": 10000000, "equity": 9988745.8, "cum": -0.0011, "today_pnl": -11254.2, "ann": null, "sharpe": null, "mdd": -0.0011, "curve": [["2026-09-18", 10000000.0], ["2026-09-21", 9988745.8]], "scores": [["镍", 0.292], ["铜", 0.171], ["铅", -0.191], ["锡", -0.226], ["铝", -0.516], ["锌", -0.915]], "longs": ["铜", "铅"], "shorts": ["锌", "镍"], "events": [["2026-09-21", "开空", "镍", -0.544], ["2026-09-21", "平空", "锡", 0.057], ["2026-09-18", "开空", "锌", -0.739], ["2026-09-18", "开空", "锡", -0.946], ["2026-09-18", "开多", "铅", -0.126], ["2026-09-18", "开多", "铜", 0.535]], "breakdown": {"CU": [{"factor": "注销占比", "weight": 0.234, "z": 1.24, "contrib": 0.292}, {"factor": "进口盈亏", "weight": 0.165, "z": 0.06, "contrib": 0.01}, {"factor": "升贴水", "weight": 0.152, "z": -1.6, "contrib": -0.244}, {"factor": "外盘强弱", "weight": 0.136, "z": 0.54, "contrib": 0.074}, {"factor": "TC变化率", "weight": 0.12, "z": -0.97, "contrib": -0.117}, {"factor": "美元指数变化率", "weight": 0.103, "z": 0.9, "contrib": 0.093}, {"factor": "股商背离", "weight": -0.089, "z": -0.71, "contrib": 0.063}], "AL": [{"factor": "股商背离", "weight": 0.515, "z": -0.8, "contrib": -0.41}, {"factor": "动量", "weight": -0.485, "z": 0.22, "contrib": -0.105}], "ZN": [{"factor": "外盘强弱", "weight": 0.384, "z": -0.5, "contrib": -0.192}, {"factor": "动量", "weight": -0.362, "z": 1.34, "contrib": -0.487}, {"factor": "股商背离", "weight": 0.254, "z": -0.93, "contrib": -0.236}], "PB": [{"factor": "动量", "weight": -0.434, "z": 0.9, "contrib": -0.389}, {"factor": "外盘强弱", "weight": -0.313, "z": 0.06, "contrib": -0.019}, {"factor": "股商背离", "weight": -0.254, "z": -0.85, "contrib": 0.217}], "NI": [{"factor": "注销占比", "weight": 0.385, "z": 0.53, "contrib": 0.205}, {"factor": "外盘强弱", "weight": 0.32, "z": 0.13, "contrib": 0.042}, {"factor": "升贴水", "weight": 0.295, "z": 0.16, "contrib": 0.046}], "SN": [{"factor": "SOX", "weight": 0.536, "z": 0.19, "contrib": 0.103}, {"factor": "升贴水", "weight": 0.464, "z": -0.71, "contrib": -0.329}]}, "stale": []};
+const D = {"sig_date": "2026-09-21", "capital": 10000000, "equity": 9988745.8, "cum": -0.0011, "today_pnl": -11254.2, "ann": null, "sharpe": null, "mdd": -0.0011, "curve": [["2026-09-18", 10000000.0], ["2026-09-21", 9988745.8]], "scores": [["镍", 0.292], ["铜", 0.171], ["铅", -0.191], ["锡", -0.226], ["铝", -0.516], ["锌", -0.915]], "longs": ["铜", "铅"], "shorts": ["锌", "镍"], "events": [["2026-09-21", "开空", "镍", -0.544], ["2026-09-21", "平空", "锡", 0.057], ["2026-09-18", "开空", "锌", -0.739], ["2026-09-18", "开空", "锡", -0.946], ["2026-09-18", "开多", "铅", -0.126], ["2026-09-18", "开多", "铜", 0.535]], "breakdown": {"CU": [{"factor": "注销占比", "weight": 0.234, "z": 1.24, "contrib": 0.292}, {"factor": "进口盈亏", "weight": 0.165, "z": 0.06, "contrib": 0.01}, {"factor": "升贴水", "weight": 0.152, "z": -1.6, "contrib": -0.244}, {"factor": "外盘强弱", "weight": 0.136, "z": 0.54, "contrib": 0.074}, {"factor": "TC变化率", "weight": 0.12, "z": -0.97, "contrib": -0.117}, {"factor": "美元指数变化率", "weight": 0.103, "z": 0.9, "contrib": 0.093}, {"factor": "股商背离", "weight": -0.089, "z": -0.71, "contrib": 0.063}], "AL": [{"factor": "股商背离", "weight": 0.515, "z": -0.8, "contrib": -0.41}, {"factor": "动量", "weight": -0.485, "z": 0.22, "contrib": -0.105}], "ZN": [{"factor": "外盘强弱", "weight": 0.384, "z": -0.5, "contrib": -0.192}, {"factor": "动量", "weight": -0.362, "z": 1.34, "contrib": -0.487}, {"factor": "股商背离", "weight": 0.254, "z": -0.93, "contrib": -0.236}], "PB": [{"factor": "动量", "weight": -0.434, "z": 0.9, "contrib": -0.389}, {"factor": "外盘强弱", "weight": -0.313, "z": 0.06, "contrib": -0.019}, {"factor": "股商背离", "weight": -0.254, "z": -0.85, "contrib": 0.217}], "NI": [{"factor": "注销占比", "weight": 0.385, "z": 0.53, "contrib": 0.205}, {"factor": "外盘强弱", "weight": 0.32, "z": 0.13, "contrib": 0.042}, {"factor": "升贴水", "weight": 0.295, "z": 0.16, "contrib": 0.046}], "SN": [{"factor": "SOX", "weight": 0.536, "z": 0.19, "contrib": 0.103}, {"factor": "升贴水", "weight": 0.464, "z": -0.71, "contrib": -0.329}]}, "stale": [], "why": ["<b>多·铜</b>(评分+0.17)：注销占比(z=+1.2→贡献+0.29)、美元指数变化率(z=+0.9→贡献+0.09)；拖累 升贴水(-0.24)", "<b>多·铅</b>(评分-0.19)：股商背离(z=-0.8→贡献+0.22)；拖累 动量(-0.39)", "<b>空·锌</b>(评分-0.91)：无正贡献因子；拖累 动量(-0.49)", "<b>空·镍</b>(评分+0.29)：注销占比(z=+0.5→贡献+0.20)、升贴水(z=+0.2→贡献+0.05)", "今日调仓：平空锡；开空镍"]};
 const NAMES = ['铜','铝','锌','铅','镍','锡'];
 const fmtM = v => (v/10000).toFixed(1) + '万';
 document.getElementById('note').innerHTML =
@@ -43,6 +44,9 @@ document.getElementById('posbox').innerHTML =
   '当前持仓: ' + D.longs.map(s => `<span class="tag tL">多 ${s}</span>`).join(' ') + ' ' +
   D.shorts.map(s => `<span class="tag tS">空 ${s}</span>`).join(' ') +
   '　｜　最新评分: ' + D.scores.map(([n, v]) => `${n} ${v}`).join(' / ');
+document.getElementById('whybox').innerHTML =
+  '<b>今日为何这么配置（' + D.sig_date + '）</b><br>' + D.why.join('<br>') +
+  '<br><span style="color:#888">每行=该持仓腿评分的主要因子来源（z=因子历史分位，贡献=z×权重，加总=该品种总分）；逐因子完整拆解见下方各品种表与 <a href="full.html">完整回测面板</a>。</span>';
 const ch = echarts.init(document.getElementById('ec'));
 ch.setOption({animation: false,
   grid: [{top: 40, height: '60%'}, {top: '74%', height: '16%'}],
