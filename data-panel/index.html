@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>数据接口总面板 · SMM/Mysteel/百川/iFinD</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Microsoft YaHei", sans-serif; background: #f5f6fa; color: #222; padding: 16px; }
+  h1 { font-size: 20px; margin-bottom: 4px; }
+  .meta { color: #888; font-size: 12px; margin-bottom: 14px; }
+  .channels { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 10px; margin-bottom: 14px; }
+  .card { background: #fff; border-radius: 8px; padding: 12px 14px; border-left: 4px solid #4a90d9; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  .card h3 { font-size: 15px; margin-bottom: 6px; }
+  .card p { font-size: 12px; color: #555; line-height: 1.7; }
+  .card .need { color: #c0392b; font-weight: bold; }
+  .card .free { color: #27ae60; font-weight: bold; }
+  .toolbar { display: flex; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; align-items: center; }
+  #q { flex: 1; min-width: 260px; padding: 9px 12px; font-size: 14px; border: 1px solid #ccc; border-radius: 6px; }
+  .chip { padding: 6px 12px; border-radius: 16px; border: 1px solid #bbb; background: #fff; cursor: pointer; font-size: 13px; }
+  .chip.on { background: #4a90d9; color: #fff; border-color: #4a90d9; }
+  .count { font-size: 12px; color: #888; }
+  table { width: 100%; border-collapse: collapse; background: #fff; font-size: 13px; }
+  thead th { position: sticky; top: 0; background: #2c3e50; color: #fff; padding: 8px 6px; text-align: left; font-size: 12px; }
+  tbody td { padding: 6px; border-bottom: 1px solid #eee; }
+  tbody tr:hover { background: #eef4fb; }
+  .src { font-size: 11px; padding: 2px 6px; border-radius: 4px; white-space: nowrap; }
+  .src-SMM { background: #e8f4e8; color: #2d7a2d; }
+  .src-Mysteel { background: #fdf0e4; color: #b0600-0; color: #b06000; }
+  .src-百川 { background: #e8eefc; color: #2b4f9e; }
+  .src-iFinD { background: #f5e8fc; color: #7a2d9e; }
+  .num { font-variant-numeric: tabular-nums; }
+  .st-failed { color: #c0392b; }
+  .key { color: #999; font-size: 11px; }
+</style>
+</head>
+<body>
+<h1>数据接口总面板</h1>
+<div class="meta" id="built"></div>
+<div class="channels" id="channels"></div>
+<div class="toolbar">
+  <input id="q" placeholder="搜索指标名/代码，空格分隔多关键词（如：锡 库存）">
+  <div id="srcChips"></div>
+  <span class="count" id="count"></span>
+</div>
+<table>
+  <thead><tr>
+    <th>来源</th><th>名称</th><th>单位</th><th>频率</th><th>分类</th>
+    <th>最新日期</th><th>最新值</th><th>点数</th><th>状态</th><th>key</th>
+  </tr></thead>
+  <tbody id="tb"></tbody>
+</table>
+<script src="面板数据.js"></script>
+<script>
+const D = window.PANEL_DATA;
+document.getElementById('built').textContent = '数据构建：' + D.built_at + '　|　序列总数：' + D.series.length + '　|　本页只读本地镜像，日更任务自动刷新';
+
+const chDiv = document.getElementById('channels');
+D.channels.forEach(c => {
+  const free = c.account_required.includes('不需要') || c.account_required.startsWith('hq');
+  chDiv.insertAdjacentHTML('beforeend', `<div class="card">
+    <h3>${c.channel}</h3>
+    <p><b>覆盖：</b>${c.coverage}</p>
+    <p><b>配额：</b>${c.quota}　<b>日更：</b>${c.daily_task}</p>
+    <p class="${free ? 'free' : 'need'}"><b>账号：</b>${c.account_required}</p>
+    <p><b>缺口：</b>${c.known_gaps}</p>
+  </div>`);
+});
+
+const srcs = [...new Set(D.series.map(r => r[0]))];
+const chipDiv = document.getElementById('srcChips');
+let activeSrc = null;
+srcs.forEach(s => {
+  const b = document.createElement('button');
+  b.className = 'chip'; b.textContent = s;
+  b.onclick = () => { activeSrc = activeSrc === s ? null : s; render(); 
+    chipDiv.querySelectorAll('.chip').forEach(x => x.classList.toggle('on', x.textContent === activeSrc)); };
+  chipDiv.appendChild(b);
+});
+
+const tb = document.getElementById('tb');
+const q = document.getElementById('q');
+q.addEventListener('input', render);
+
+function esc(s) { return String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+function render() {
+  const kws = q.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  let n = 0, html = '';
+  for (const r of D.series) {
+    if (activeSrc && r[0] !== activeSrc) continue;
+    const hay = (r[2] + ' ' + r[1] + ' ' + r[5]).toLowerCase();
+    if (kws.length && !kws.every(k => hay.includes(k))) continue;
+    if (++n > 300) break;
+    const stCls = r[9] && r[9] !== 'active' ? 'st-failed' : '';
+    html += `<tr><td><span class="src src-${esc(r[0]).replace(/ .*/, '')}">${esc(r[0])}</span></td>
+      <td>${esc(r[2])}</td><td>${esc(r[3])}</td><td>${esc(r[4])}</td><td>${esc(r[5])}</td>
+      <td class="num">${esc(r[6])}</td><td class="num"><b>${esc(r[7] ?? '-')}</b></td>
+      <td class="num">${r[8]}</td><td class="${stCls}">${esc(r[9])}</td>
+      <td class="key">${esc(r[1])}</td></tr>`;
+  }
+  tb.innerHTML = html;
+  document.getElementById('count').textContent = n >= 300 ? '匹配过多，仅显示前 300 条' : `匹配 ${n} 条`;
+}
+render();
+</script>
+</body>
+</html>
