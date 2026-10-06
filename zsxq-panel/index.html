@@ -150,9 +150,13 @@ function cardHtml(i){
 function renderDir(){
   $("list").style.maxWidth="1280px";
   const D=DATA.direction||{};
-  const order=[...Object.keys(DATA.names||{cu:1,al:1,pb:1,zn:1,ni:1,sn:1,li:1,si:1}),...Object.keys(EQNAMES)];
+  const nameOf=sid=>(DATA.names||{})[sid]||(DATA.dir_names||{})[sid]||EQNAMES[sid]||sid;
+  const commKeys=Object.keys(DATA.names||{cu:1,al:1,pb:1,zn:1,ni:1,sn:1,li:1,si:1});
+  const otherKeys=Object.keys(D).filter(sid=>!commKeys.includes(sid))
+    .sort((a,b)=>(D[b].total||0)-(D[a].total||0));
+  const order=[...commKeys,...otherKeys];
   const cards=order.filter(sid=>D[sid]&&D[sid].total>0).map(sid=>{
-    const d=D[sid], name=(DATA.names||{})[sid]||EQNAMES[sid]||sid;
+    const d=D[sid], name=nameOf(sid);
     const sc=d.score, scTxt=(sc>0.2?"偏多":sc<-0.2?"偏空":"分歧")+(sc>0?" +"+sc:" "+sc);
     const scCls=sc>0.2?"c-bull":sc<-0.2?"c-bear":"c-neut";
     const tot=Math.max(d.total,1);
