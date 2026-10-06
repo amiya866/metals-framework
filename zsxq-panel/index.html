@@ -157,20 +157,23 @@ function renderDir(){
   const order=[...commKeys,...otherKeys];
   const cards=order.filter(sid=>D[sid]&&D[sid].total>0).map(sid=>{
     const d=D[sid], name=nameOf(sid);
-    const sc=d.score, scTxt=(sc>0.2?"偏多":sc<-0.2?"偏空":"分歧")+(sc>0?" +"+sc:" "+sc);
-    const scCls=sc>0.2?"c-bull":sc<-0.2?"c-bear":"c-neut";
+    const sc=d.score, scTxt=(sc>0.15?"偏多":sc<-0.15?"偏空":"分歧")+(sc>0?" +"+sc:" "+sc);
+    const scCls=sc>0.15?"c-bull":sc<-0.15?"c-bear":"c-neut";
+    const rel=d.rel||0, relTxt=(rel>0?"+":"")+rel+"pp";
+    const relCls=rel>5?"c-bull":rel<-5?"c-bear":"c-neut";
     const tot=Math.max(d.total,1);
     const items=(d.items||[]).map(it=>{
       const cls=it.dir==="看多"?"bull":it.dir==="看空"?"bear":"neut";
       return `<div class="di"><span class="dt">${it.date.slice(5)}</span><span class="db ${cls}">${it.dir}</span><a href="${esc(it.url)}" target="_blank">${esc(it.title)}</a></div>`;
     }).join("");
     return `<div class="dir-card"><h3>${name}<span class="sc ${scCls}">${scTxt}</span></h3>
-      <div class="dir-counts"><span class="c-bull">看好 <b>${d.bull}</b></span><span class="c-bear">看空 <b>${d.bear}</b></span><span class="c-neut">中性 <b>${d.neutral}</b></span></div>
+      <div class="dir-counts"><span class="c-bull">看好 <b>${d.bull}</b></span><span class="c-bear">看空 <b>${d.bear}</b></span><span class="c-neut">中性 <b>${d.neutral}</b></span><span style="margin-left:auto" class="${relCls}" title="相对全场基线（看多点占比）">vs全场 ${relTxt}</span></div>
       <div class="dir-bar"><div class="b" style="width:${d.bull/tot*100}%"></div><div class="s" style="width:${d.bear/tot*100}%"></div><div class="n" style="width:${d.neutral/tot*100}%"></div></div>
       <div class="dir-items">${items||'<div class="di c-neut">无代表帖</div>'}</div></div>`;
   }).join("");
+  const gshare=Math.round((DATA.dir_global_share||0)*100);
   $("list").innerHTML = cards
-    ? `<div style="padding:12px 20px 0;color:var(--ink2);font-size:12px;max-width:1280px;margin:0 auto">近 ${DATA.dir_window_days||30} 天帖子按方向词打分统计（未按阅读量加权，词规则粗糙仅供参考）· 分数=（看好−看空）/（看好+看空）</div><div class="dir-grid">${cards}</div>`
+    ? `<div style="padding:12px 20px 0;color:var(--ink2);font-size:12px;max-width:1280px;margin:0 auto">近 ${DATA.dir_window_days||30} 天 · 方向词按句门控（纯行情报道不计）· 分数=分来源加权（观点讨论×1.0/产业快讯×0.6/研报纪要×0.5）· 全场看多点占比基线 <b style="color:var(--gold)">${gshare}%</b>（天生多头场，看相对值 vs全场）</div><div class="dir-grid">${cards}</div>`
     : `<div class="empty">方向数据为空</div>`;
 }
 
