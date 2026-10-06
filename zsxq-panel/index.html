@@ -49,6 +49,25 @@
   .empty{color:var(--ink2);text-align:center;padding:40px 0}
   .hint{color:var(--gold);font-size:12px}
   .filepick{display:none;padding:10px 20px;color:var(--ink2);font-size:13px}
+  /* 方向雷达 */
+  .dir-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;padding:16px 20px;max-width:1280px;margin:0 auto}
+  .dir-card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px 14px}
+  .dir-card h3{font-size:15px;display:flex;justify-content:space-between;align-items:baseline}
+  .dir-card h3 .sc{font-size:12px;font-weight:400}
+  .dir-counts{display:flex;gap:12px;font-size:13px;margin:8px 0 6px}
+  .dir-counts b{font-size:16px}
+  .c-bull{color:#e0685f}.c-bear{color:#5aa06a}.c-neut{color:var(--grey)}
+  .dir-bar{display:flex;height:7px;border-radius:4px;overflow:hidden;background:var(--bg);margin-bottom:8px}
+  .dir-bar div{height:100%}
+  .dir-bar .b{background:#e0685f}.dir-bar .s{background:#5aa06a}.dir-bar .n{background:#4a5058}
+  .dir-items{font-size:12px;border-top:1px dashed var(--line);padding-top:7px}
+  .dir-items .di{margin:4px 0;display:flex;gap:6px;align-items:baseline}
+  .dir-items .di .dt{color:var(--ink2);flex-shrink:0}
+  .dir-items .di a{color:var(--ink);text-decoration:none;word-break:break-all}
+  .dir-items .di a:hover{color:var(--accent);text-decoration:underline}
+  .db{flex-shrink:0;padding:0 6px;border-radius:7px;font-size:11px;border:1px solid var(--line)}
+  .db.bull{color:#e0685f;border-color:#6b3a36}.db.bear{color:#5aa06a;border-color:#33543b}.db.neut{color:var(--grey)}
+  .day-h{padding:14px 0 4px;color:var(--gold);font-size:13px;font-weight:600;position:sticky;top:54px;background:var(--bg);z-index:5}
 </style>
 </head>
 <body>
@@ -65,23 +84,34 @@
 <script>
 let DATA=null, comm="all", qual="all", q="";
 const CATS=["研报纪要","观点讨论","产业快讯","宏观外汇","权益策略","其他"];
+const SPECIAL=["方向雷达","最新汇总"];
 let cat=decodeURIComponent((location.hash||"").slice(1));
-if(!CATS.includes(cat)) cat="研报纪要";
+if(![...SPECIAL,...CATS].includes(cat)) cat="方向雷达";
 const COMMS=[["all","全部"],["cu","铜"],["al","铝"],["pb","铅"],["zn","锌"],["ni","镍"],["sn","锡"],["li","锂"],["si","硅"]];
 const COLORS={cu:"#B8734A",al:"#7A8CA3",pb:"#6B7A8C",zn:"#5B8C5A",ni:"#8C6BAE",sn:"#4A90A4",li:"#C2703E",si:"#7A9E7E"};
+const EQNAMES={eq_a股大盘:"A股大盘",eq_科技股:"科技股",eq_有色股:"有色股",eq_新能源股:"新能源股",eq_黄金股:"黄金股",macro:"宏观"};
 const $=id=>document.getElementById(id);
+const isSpecial=()=>SPECIAL.includes(cat);
 
 function esc(s){return (s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
 
 function renderTabs(){
-  $("tabs").innerHTML = CATS.map(c=>{
+  const dirN=Object.values(DATA.direction||{}).filter(d=>d.total>0).length;
+  const dgN=(DATA.digest||[]).length;
+  const specHtml=SPECIAL.map(c=>{
+    const n=c==="方向雷达"?dirN:dgN;
+    return `<span class="tab ${c===cat?'on':''}" onclick="setCat('${c}')">${c}<span class="n">${n}</span></span>`;
+  }).join("");
+  const catHtml=CATS.map(c=>{
     const n=(DATA.categories[c]||[]).length;
     return `<span class="tab ${c===cat?'on':''}" onclick="setCat('${c}')">${c}<span class="n">${n}</span></span>`;
-  }).join("") + `<span class="sep"></span>` +
-  [["all","全部"],["高","高"],["中","中"]].map(([v,l])=>
-    `<span class="chip ${qual===v?'on':''}" onclick="setQual('${v}')">${l}</span>`).join("") +
-  `<span class="sep"></span><input type="text" placeholder="搜索标题/摘要/附件名" value="${esc(q)}" oninput="setQ(this.value)">`;
-  $("chips").innerHTML = COMMS.map(([id,l])=>{
+  }).join("");
+  $("tabs").innerHTML = specHtml + `<span class="sep"></span>` + catHtml +
+    (isSpecial() ? "" : `<span class="sep"></span>` +
+    [["all","全部"],["高","高"],["中","中"]].map(([v,l])=>
+      `<span class="chip ${qual===v?'on':''}" onclick="setQual('${v}')">${l}</span>`).join("") +
+    `<span class="sep"></span><input type="text" placeholder="搜索标题/摘要/附件名" value="${esc(q)}" oninput="setQ(this.value)">`);
+  $("chips").innerHTML = isSpecial() ? "" : COMMS.map(([id,l])=>{
     const n = id==="all" ? Object.values(DATA.categories).flat().length
       : Object.values(DATA.categories).flat().filter(i=>(i.comms||[]).includes(id)).length;
     return `<span class="chip ${comm===id?'on':''}" onclick="setComm('${id}')">${l} ${n}</span>`;
@@ -102,21 +132,61 @@ function items(){
     (i.files||[]).join(" ").toLowerCase().includes(s));}
   return arr;
 }
+function cardHtml(i){
+  const badge = i.quality==="高" ? `<span class="badge hi">高</span>` : `<span class="badge mid">中</span>`;
+  const chips=(i.comms||[]).map(c=>
+    `<span class="comm" style="color:${COLORS[c]||'#999'}">● ${(DATA.names||{})[c]||c}</span>`).join("");
+  const files=(i.files||[]).map(f=>`<span>${esc(f)}</span>`).join("");
+  const pts=(i.points&&i.points.length?i.points:[i.summary]).filter(Boolean);
+  return `<div class="card"><div class="meta"><span>${i.date}</span>${badge}${chips}
+    ${i.category?`<span style="color:var(--grey)">${i.category}</span>`:""}
+    <span>阅读 ${i.readers??"-"}</span></div>
+    <a class="t" href="${esc(i.url)}" target="_blank">${esc(i.title)}</a>
+    <ul class="pts">${pts.map(p=>`<li>${esc(p)}</li>`).join("")}</ul>
+    ${i.full?`<details class="full"><summary>展开全文 ▸</summary><div>${esc(i.full)}</div></details>`:""}
+    ${files?`<div class="fm">📎 ${files}</div>`:""}</div>`;
+}
+
+function renderDir(){
+  $("list").style.maxWidth="1280px";
+  const D=DATA.direction||{};
+  const order=[...Object.keys(DATA.names||{cu:1,al:1,pb:1,zn:1,ni:1,sn:1,li:1,si:1}),...Object.keys(EQNAMES)];
+  const cards=order.filter(sid=>D[sid]&&D[sid].total>0).map(sid=>{
+    const d=D[sid], name=(DATA.names||{})[sid]||EQNAMES[sid]||sid;
+    const sc=d.score, scTxt=(sc>0.2?"偏多":sc<-0.2?"偏空":"分歧")+(sc>0?" +"+sc:" "+sc);
+    const scCls=sc>0.2?"c-bull":sc<-0.2?"c-bear":"c-neut";
+    const tot=Math.max(d.total,1);
+    const items=(d.items||[]).map(it=>{
+      const cls=it.dir==="看多"?"bull":it.dir==="看空"?"bear":"neut";
+      return `<div class="di"><span class="dt">${it.date.slice(5)}</span><span class="db ${cls}">${it.dir}</span><a href="${esc(it.url)}" target="_blank">${esc(it.title)}</a></div>`;
+    }).join("");
+    return `<div class="dir-card"><h3>${name}<span class="sc ${scCls}">${scTxt}</span></h3>
+      <div class="dir-counts"><span class="c-bull">看好 <b>${d.bull}</b></span><span class="c-bear">看空 <b>${d.bear}</b></span><span class="c-neut">中性 <b>${d.neutral}</b></span></div>
+      <div class="dir-bar"><div class="b" style="width:${d.bull/tot*100}%"></div><div class="s" style="width:${d.bear/tot*100}%"></div><div class="n" style="width:${d.neutral/tot*100}%"></div></div>
+      <div class="dir-items">${items||'<div class="di c-neut">无代表帖</div>'}</div></div>`;
+  }).join("");
+  $("list").innerHTML = cards
+    ? `<div style="padding:12px 20px 0;color:var(--ink2);font-size:12px;max-width:1280px;margin:0 auto">近 ${DATA.dir_window_days||30} 天帖子按方向词打分统计（未按阅读量加权，词规则粗糙仅供参考）· 分数=（看好−看空）/（看好+看空）</div><div class="dir-grid">${cards}</div>`
+    : `<div class="empty">方向数据为空</div>`;
+}
+
+function renderDigest(){
+  const arr=DATA.digest||[];
+  if(!arr.length){$("list").innerHTML=`<div class="empty">近 ${DATA.digest_days||7} 天无条目</div>`;return;}
+  let html=`<div style="padding:12px 20px 0;color:var(--ink2);font-size:12px;max-width:960px;margin:0 auto">近 ${DATA.digest_days||7} 天全部入面板消息（按时间倒序，低质量已剔除）</div>`, day="";
+  for(const i of arr){
+    if(i.date!==day){day=i.date;html+=`<div class="day-h">📅 ${day}</div>`;}
+    html+=cardHtml(i);
+  }
+  $("list").innerHTML=html;
+}
+
 function renderList(){
+  $("list").style.maxWidth="960px";
+  if(cat==="方向雷达") return renderDir();
+  if(cat==="最新汇总") return renderDigest();
   const arr=items();
-  $("list").innerHTML = arr.length ? arr.map(i=>{
-    const badge = i.quality==="高" ? `<span class="badge hi">高</span>` : `<span class="badge mid">中</span>`;
-    const chips=(i.comms||[]).map(c=>
-      `<span class="comm" style="color:${COLORS[c]||'#999'}">● ${(DATA.names||{})[c]||c}</span>`).join("");
-    const files=(i.files||[]).map(f=>`<span>${esc(f)}</span>`).join("");
-    const pts=(i.points&&i.points.length?i.points:[i.summary]).filter(Boolean);
-    return `<div class="card"><div class="meta"><span>${i.date}</span>${badge}${chips}
-      <span>阅读 ${i.readers??"-"}</span></div>
-      <a class="t" href="${esc(i.url)}" target="_blank">${esc(i.title)}</a>
-      <ul class="pts">${pts.map(p=>`<li>${esc(p)}</li>`).join("")}</ul>
-      ${i.full?`<details class="full"><summary>展开全文 ▸</summary><div>${esc(i.full)}</div></details>`:""}
-      ${files?`<div class="fm">📎 ${files}</div>`:""}</div>`;
-  }).join("") : `<div class="empty">无匹配条目</div>`;
+  $("list").innerHTML = arr.length ? arr.map(cardHtml).join("") : `<div class="empty">无匹配条目</div>`;
 }
 function render(){renderTabs();renderList()}
 
