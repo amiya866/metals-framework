@@ -144,7 +144,7 @@ function cardHtml(i){
     `<span class="comm" style="color:${COLORS[c]||'#999'}">● ${(DATA.names||{})[c]||c}</span>`).join("");
   const files=(i.files||[]).map(f=>`<span>${esc(f)}</span>`).join("");
   const pts=(i.points&&i.points.length?i.points:[i.summary]).filter(Boolean);
-  const pdg=i.pdf_digest?`<div class="pdg"><div class="pdg-t">📄 ${esc(i.pdf_digest.name)}（PDF要点）</div><ul>${(i.pdf_digest.pts||[]).map(p=>`<li>${esc(p)}</li>`).join("")}</ul></div>`:"";
+  const pdg=i.pdf_digest?`<div class="pdg"><div class="pdg-t">📄 ${esc(i.pdf_digest.name)}（PDF要点）${i.pdf_digest.url?` <a href="${esc(i.pdf_digest.url)}" target="_blank" style="color:var(--accent,#c9a063);text-decoration:underline">下载PDF</a>`:""}</div><ul>${(i.pdf_digest.pts||[]).map(p=>`<li>${esc(p)}</li>`).join("")}</ul></div>`:"";
   return `<div class="card"><div class="meta"><span>${i.date}</span>${badge}${chips}
     ${i.category?`<span style="color:var(--grey)">${i.category}</span>`:""}
     <span>阅读 ${i.readers??"-"}</span></div>
