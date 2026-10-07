@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-07T14:50:56+08:00",
+ "updated_at": "2026-10-07T15:10:34+08:00",
  "source": "主源:纪要小能手_存档.json(2561) + 全量:前沿信息收录_topics_20260905.json(57001) + 直拉补漏近16天(300)",
  "group": "前沿信息收录",
  "window_days": 90,
@@ -33,7 +33,7 @@
      "重庆地区空调渠道交流261006_纪要.pdf",
      "重庆地区空调渠道交流261006_原文.pdf"
     ],
-    "readers": 322,
+    "readers": 334,
     "pdf_digest": {
      "name": "重庆地区空调渠道交流261006_纪要.pdf",
      "pts": [
@@ -66,7 +66,7 @@
      "2026IFA出海家电百花齐放关注新一轮大单品周期261006_纪要.pdf",
      "2026IFA出海家电百花齐放关注新一轮大单品周期261006_原文.pdf"
     ],
-    "readers": 289,
+    "readers": 297,
     "pdf_digest": {
      "name": "=929全国贴息政策影响及国庆节楼市表现前瞻261006_纪要.pdf",
      "pts": [
@@ -103,7 +103,7 @@
      "工作与生活Agent渗透提高AI应用走到哪一步了_国庆不打烊_晚8点栋察系列电话会261006_纪要.pdf",
      "工作与生活Agent渗透提高AI应用走到哪一步了_国庆不打烊_晚8点栋察系列电话会261006_原文.pdf"
     ],
-    "readers": 289,
+    "readers": 297,
     "pdf_digest": {
      "name": "AI散热系列（一）AI算力驱动TIM迭代，石墨烯散热产业化提速261006_纪要.pdf",
      "pts": [
@@ -140,7 +140,7 @@
      "直播电商从流量驱动向品质深耕转轨东方甄选开启品质零售飞轮261006_纪要.pdf",
      "直播电商从流量驱动向品质深耕转轨东方甄选开启品质零售飞轮261006_原文.pdf"
     ],
-    "readers": 289,
+    "readers": 297,
     "pdf_digest": {
      "name": "天风-国庆总结10月金股261006_纪要.pdf",
      "pts": [
@@ -177,7 +177,7 @@
      "珀莱雅大单品拾阶致高阶并表花知晓开启多品牌新章261006_纪要.pdf",
      "珀莱雅大单品拾阶致高阶并表花知晓开启多品牌新章261006_原文.pdf"
     ],
-    "readers": 288,
+    "readers": 296,
     "pdf_digest": {
      "name": "扩内需组合拳落地假期消费平稳增长2026国庆假期那些事儿261006_纪要.pdf",
      "pts": [
@@ -214,7 +214,7 @@
      "华西电子_AI20AGI时代到来261006_纪要.pdf",
      "华西电子_AI20AGI时代到来261006_原文.pdf"
     ],
-    "readers": 286,
+    "readers": 295,
     "pdf_digest": {
      "name": "光模块散热更新-散热系列13-261005_纪要.pdf",
      "pts": [
@@ -248,7 +248,7 @@
      "食饮感知一线把脉旺季酒类系列跟踪日程261006_纪要.pdf",
      "食饮感知一线把脉旺季酒类系列跟踪日程261006_原文.pdf"
     ],
-    "readers": 286,
+    "readers": 295,
     "pdf_digest": {
      "name": "人人都能生成，什么才叫创造261006_纪要.pdf",
      "pts": [
@@ -282,7 +282,7 @@
      "碳化硅SiC行业更新261006_纪要.pdf",
      "碳化硅SiC行业更新261006_原文.pdf"
     ],
-    "readers": 286,
+    "readers": 295,
     "pdf_digest": {
      "name": "矢量网络分析仪VNA行业观点更新261006_纪要.pdf",
      "pts": [
@@ -315,7 +315,7 @@
      "20261007-申万宏源-策略一周回顾展望A股长中期的波段定位.pdf",
      "20261007-中银证券-海外宏观研究专题之一如何从需求角度理解美国通胀压力？.pdf"
     ],
-    "readers": 145,
+    "readers": 162,
     "pdf_digest": {
      "name": "20261007_华新建材（600801）动态点评增发H股一般授权，看好海外长期发展空间.pdf",
      "pts": [
@@ -345,7 +345,7 @@
      "野村-全球外汇与利率月度分析-261006.pdf",
      "野村-亚洲洞察·印度：季风使经济陷入干旱-261005.pdf"
     ],
-    "readers": 140,
+    "readers": 156,
     "pdf_digest": {
      "name": "野村-全球外汇与利率月度分析-261006.pdf",
      "pts": [
@@ -378,7 +378,7 @@
      "伯恩斯坦-全球生物制药：入门——阿尔茨海默病，一个被低估的跨十年机遇？-261006.pdf",
      "伯恩斯坦-亚太核电：韩国队进军美国，谁最受益-261006.pdf"
     ],
-    "readers": 139
+    "readers": 156
    },
    {
     "date": "2026-10-07",
@@ -396,7 +396,7 @@
     "files": [
      "花旗-人工智能·推理前瞻：为规模化智能铺设轨道-261002.pdf"
     ],
-    "readers": 137,
+    "readers": 153,
     "pdf_digest": {
      "name": "花旗-人工智能·推理前瞻：为规模化智能铺设轨道-261002.pdf",
      "pts": [
@@ -424,7 +424,7 @@
     "files": [
      "摩根士丹利-SpaceX（SPCX.O）：不只是SpaceX——名字意味着什么-261005.pdf"
     ],
-    "readers": 137,
+    "readers": 153,
     "pdf_digest": {
      "name": "摩根士丹利-SpaceX（SPCX.O）：不只是SpaceX——名字意味着什么-261005.pdf",
      "pts": [
@@ -459,7 +459,7 @@
      "20261005-中国银河-电子行业9月月报加息预期压缩科技估值，关注AI硬件通胀�.pdf",
      "20261006_A股市场运行周报第112期节日效应影响明显，中线底部迁延，继续保持耐心.pdf"
     ],
-    "readers": 136,
+    "readers": 152,
     "pdf_digest": {
      "name": "20261005_招商证券(香港)_HKStrategyWeeklyMortgageSubsidiesSu.pdf",
      "pts": [
@@ -488,7 +488,7 @@
     "files": [
      "德意志银行-主题研究：最大的市场错配有哪些？2026年10月-261005.pdf"
     ],
-    "readers": 136,
+    "readers": 152,
     "pdf_digest": {
      "name": "德意志银行-主题研究：最大的市场错配有哪些？2026年10月-261005.pdf",
      "pts": [
@@ -520,7 +520,7 @@
      "野村-外汇洞察：外资流入美国组合基金，与新兴市场组合基金流出形成对比-261005.pdf",
      "野村-玉晶光（3406.TW）：光纤连接器与CPO是其能力的理想杠杆-261005.pdf"
     ],
-    "readers": 136
+    "readers": 152
    },
    {
     "date": "2026-10-07",
@@ -548,7 +548,7 @@
      "20261005_天风证券-SOFC优势进一步强化，成长天花板或被低估-2026-10-05.pdf",
      "20261005_有色金属行业跟踪周报美元指数强势，金属价格震�.pdf"
     ],
-    "readers": 135,
+    "readers": 151,
     "pdf_digest": {
      "name": "20261004_国金证券-久期独立行情-2026-10-04.pdf",
      "pts": [
@@ -584,7 +584,7 @@
      "20261006-开源证券-金融工程定期港股量化9月组合超额-0.5%，10月维持大盘价值.pdf",
      "20261006-开源证券-投资策略周报盈利斜率放缓，政策接力渐近.pdf"
     ],
-    "readers": 135,
+    "readers": 151,
     "pdf_digest": {
      "name": "20261006_招商证券_风格轮动择时周报大盘价值占优，市场震荡修复.pdf",
      "pts": [
@@ -614,7 +614,7 @@
      "伯恩斯坦-美国医疗服务：医院就业人数增速维持低位-261006.pdf",
      "伯恩斯坦-全球奢侈品：中西方社交媒体擂台3Q26——香奈儿与杰尼亚保持热度-261006.pdf"
     ],
-    "readers": 135,
+    "readers": 151,
     "pdf_digest": {
      "name": "伯恩斯坦-美国医疗服务：医院就业人数增速维持低位-261006.pdf",
      "pts": [
@@ -643,7 +643,7 @@
     "files": [
      "德意志银行-Tesla Inc（TSLA.US）：3Q26交付量回顾-261005.pdf"
     ],
-    "readers": 135,
+    "readers": 151,
     "pdf_digest": {
      "name": "德意志银行-Tesla Inc（TSLA.US）：3Q26交付量回顾-261005.pdf",
      "pts": [
@@ -677,7 +677,7 @@
      "高盛-亚太组合策略：亚洲股市每日更新-261005.pdf",
      "高盛-中国新能源车周度图表册：2026年第40周——订单环比增9％／同比降52％，零售／批发新能源车渗透率66％／70％-261006.pdf"
     ],
-    "readers": 135,
+    "readers": 151,
     "pdf_digest": {
      "name": "高盛-The 720：台积电3Q预览、科塔克马恒达银行、HDFC银行、爱茉莉太平洋、印度消费、SpaceX、美国半导体-261006.pdf",
      "pts": [
@@ -713,7 +713,7 @@
      "美银证券-亚太科技：PCB用覆铜板——规格升级顺利推进至2027至28年，价格存上行空间-261005.pdf",
      "美银证券-中国化工：10月化工调查——需求预期改善但盈利前景滞后-261005.pdf"
     ],
-    "readers": 134,
+    "readers": 150,
     "pdf_digest": {
      "name": "美银证券-流动性洞察：美国利率——维持做空但信心下降-261005.pdf",
      "pts": [
@@ -747,7 +747,7 @@
      "20261006-浙商国际金融控股-港股策略月报2026年10月港股市场月度展望及配置策略.pdf",
      "20261006-浙商国际金融控股-月度十大金股2026年10月.pdf"
     ],
-    "readers": 431,
+    "readers": 434,
     "pdf_digest": {
      "name": "20261006_交银国际证券_加息或暂缓而非结束——9月美国非农数据点.pdf",
      "pts": [
@@ -778,7 +778,7 @@
      "野村-中国互联网与新媒体：字节跳动主导中国AI短剧价值链-261004.pdf",
      "野村-重磅报告·印度航空：前方跑道漫长-261005.pdf"
     ],
-    "readers": 417
+    "readers": 420
    },
    {
     "date": "2026-10-06",
@@ -796,7 +796,7 @@
     "files": [
      "瑞银-欧洲奢侈品：三季度预览——重设标杆-261005.pdf"
     ],
-    "readers": 396,
+    "readers": 399,
     "pdf_digest": {
      "name": "瑞银-欧洲奢侈品：三季度预览——重设标杆-261005.pdf",
      "pts": [
@@ -833,7 +833,7 @@
      "高盛-智谱（2513.HK）：通往下一前沿与变现的路径更清晰，上调至买入-261005.pdf",
      "高盛-中国：三件事-261004.pdf"
     ],
-    "readers": 393,
+    "readers": 396,
     "pdf_digest": {
      "name": "高盛-ACM Research（ACMR.US）：增长可见度高，产品扩张推升设备价值量；买入-261005.pdf",
      "pts": [
@@ -865,7 +865,7 @@
      "美银证券-印度与东盟：厄尔尼诺与大米——库存充足但流通趋弱-261002.pdf",
      "美银证券-主动型基金持仓更新：对资本开支的敞口相对消费已达峰值-261005.pdf"
     ],
-    "readers": 392,
+    "readers": 395,
     "pdf_digest": {
      "name": "美银证券-全球存储技术：后J曲线周期、美光对比三星与SK海力士、出口强劲-261001.pdf",
      "pts": [
@@ -897,7 +897,7 @@
      "摩根大通-全球大宗商品：大宗商品一周回顾-261002.pdf",
      "摩根士丹利-硬盘驱动器·北美：我们并未因东芝的报道而失眠，原因如下-261002.pdf"
     ],
-    "readers": 392,
+    "readers": 395,
     "pdf_digest": {
      "name": "摩根大通-美国国债：试图用纸杯接住洪流-261002.pdf",
      "pts": [
@@ -926,7 +926,7 @@
     "files": [
      "高盛-中微公司（688012.SS）：刻蚀与沉积新设备发布，存储与先进制程设备将驱动后续增长；买入-261005.pdf"
     ],
-    "readers": 390
+    "readers": 393
    },
    {
     "date": "2026-10-06",
@@ -950,7 +950,7 @@
      "伯恩斯坦-全球酒店与休闲：十亿美元级品牌的消亡，千亿美元级企业的崛起-261005.pdf",
      "伯恩斯坦-亚洲汽车·中国汽车：加速全球扩张——日本主导格局下的东盟机遇-261005.pdf"
     ],
-    "readers": 388
+    "readers": 391
    },
    {
     "date": "2026-10-06",
@@ -970,7 +970,7 @@
      "瑞银-日本汽车、零部件与汽车科技：行业关键洞察（英文版）-261005.pdf",
      "瑞银-日本医疗科技与医疗服务：行业演示材料-261005.pdf"
     ],
-    "readers": 379,
+    "readers": 382,
     "pdf_digest": {
      "name": "瑞银-全球制药：美国相对欧洲制药的估值溢价创历史新高-261005.pdf",
      "pts": [
@@ -1007,7 +1007,7 @@
      "瑞银-谱瑞科技（4966.TW）：9月营收15.03亿新台币，环比增13％／同比降8％；三季度达瑞银／市场预期的98％／91％-261005.pdf",
      "瑞银-全球油气：全球油气估值（2026年10月5日）-261005.pdf"
     ],
-    "readers": 377,
+    "readers": 380,
     "pdf_digest": {
      "name": "瑞银-CME Group Inc.（CME.US）：9月强劲，上调3Q每股收益；年末或迎顺风-261005.pdf",
      "pts": [
@@ -1042,7 +1042,7 @@
      "摩根士丹利-全球主题与美国半导体：电力缺口对半导体意味着什么-261005.pdf",
      "摩根士丹利-硬盘驱动器：东芝消息公布后，我们的渠道调研让我们更看多而非看空-261005.pdf"
     ],
-    "readers": 374,
+    "readers": 377,
     "pdf_digest": {
      "name": "摩根士丹利-Lam Research Corp：GAA的大赢家-261005.pdf",
      "pts": [
@@ -1071,7 +1071,7 @@
     "files": [
      "TMTB 晨间综述 - TMT Breakout --- TMTB Morning Wrap - TMT Breakout(2).pdf"
     ],
-    "readers": 350,
+    "readers": 356,
     "pdf_digest": {
      "name": "TMTB 晨间综述 - TMT Breakout --- TMTB Morning Wrap - TMT Breakout(2).pdf",
      "pts": [
@@ -1108,7 +1108,7 @@
      "高盛-立邦涂料控股（4612.T）：宣布13.5亿美元收购阿克苏诺贝尔东南亚／澳洲装饰漆业务-261005.pdf",
      "高盛-全球一周前瞻：10月5日至10月11日-261004.pdf"
     ],
-    "readers": 343
+    "readers": 346
    },
    {
     "date": "2026-10-06",
@@ -1126,7 +1126,7 @@
     "files": [
      "高盛-统一企业中国（0220.HK）：3Q26前瞻——销售稳健，结构升级部分抵消成本压力；中性-261005.pdf"
     ],
-    "readers": 342,
+    "readers": 345,
     "pdf_digest": {
      "name": "高盛-统一企业中国（0220.HK）：3Q26前瞻——销售稳健，结构升级部分抵消成本压力；中性-261005.pdf",
      "pts": [
@@ -1157,7 +1157,7 @@
      "美银证券-全球利率周刊：利率开始反噬-261002.pdf",
      "美银证券-石油喷涌：3Q26策略手册第一部分——交易更新将推动共识上修（多数个股）-261002.pdf"
     ],
-    "readers": 342,
+    "readers": 345,
     "pdf_digest": {
      "name": "美银证券-汽车：每周汽车补给站——技术管线增强，原材料风险累积-261002.pdf",
      "pts": [
@@ -1189,7 +1189,7 @@
      "伯恩斯坦-美国医疗服务：与Dan Mendelson炉边谈话纪要——医疗行业的颠覆-261005.pdf",
      "伯恩斯坦-硬盘（STX、WDC）：东芝的茶杯风暴-261005.pdf"
     ],
-    "readers": 339,
+    "readers": 343,
     "pdf_digest": {
      "name": "伯恩斯坦-Boeing：回到未来？——上周多项问题得到解决-261005.pdf",
      "pts": [
@@ -1223,7 +1223,7 @@
      "德意志银行-日本宏观与固定收益策略：周报-261002.pdf",
      "德意志银行-长城汽车（2333.HK）：低于预期，9月销量同比降14％，因海外弱于预期-261002.pdf"
     ],
-    "readers": 339,
+    "readers": 343,
     "pdf_digest": {
      "name": "德意志银行-地平线机器人（9660.HK）：8月自动驾驶SoC同比增126％，前视摄像头芯片同比降26％-261002.pdf",
      "pts": [
@@ -1260,7 +1260,7 @@
      "20261002_招商证券_中国海外发展（00688）利润率同比下降，公司于中国香港销售额创同期新高.pdf",
      "20261005-西牛证券-速腾聚创-02498.HK-机器人业务部份抵销车载毛利率压力，聚焦零部件供应.pdf"
     ],
-    "readers": 310,
+    "readers": 313,
     "pdf_digest": {
      "name": "20261001_东吴证券-宏观点评央行PSL降息与定向扩容的信号意义-2026-10-01.pdf",
      "pts": [
@@ -1297,7 +1297,7 @@
      "20261001_2026年H1点评，利润同比增长502.6%.pdf",
      "20261001_传媒行业广电视听科技动态2026年第19期（总第86期�.pdf"
     ],
-    "readers": 308,
+    "readers": 311,
     "pdf_digest": {
      "name": "20260930_中观高频指标旬度跟踪新旧经济指数延续分化，综合景气指数小幅下行.pdf",
      "pts": [
@@ -1332,7 +1332,7 @@
      "20260929-太平洋-招商轮船-601872.SH-2026年H1点评，利润同比大增227.57%.pdf",
      "20260929-中国银河-食品饮料行业中秋国庆跟踪暨26Q4策略动销年内企稳筑底，关注餐供与乳制品.pdf"
     ],
-    "readers": 306,
+    "readers": 309,
     "pdf_digest": {
      "name": "20260921-国新证券股份-1-8月财政收支数据解读8月财政收入同比增速有所回落.pdf",
      "pts": [
@@ -1369,7 +1369,7 @@
      "20260930_北交所定期报告《求是》发表重要文章《加强普惠性、基础性、兜底性民生建设》，多家银行响应房贷贴息新政免申即享.pdf",
      "20260930_产业策略中美建设性战略稳定关系中的能源产业布局与影响.pdf"
     ],
-    "readers": 299,
+    "readers": 302,
     "pdf_digest": {
      "name": "20260929-中国银河-医药行业月报2609聚焦WCLC与ESMO，中国新药持续突破.pdf",
      "pts": [
@@ -1406,7 +1406,7 @@
      "20260930_如何理解本轮市场调整和后续走势？.pdf",
      "20260930_债市基本面点评报告秋旺难掩内需偏弱.pdf"
     ],
-    "readers": 299,
+    "readers": 302,
     "pdf_digest": {
      "name": "20260930_东吴证券-宏桥控股(002379.SZ)-全产业链资产整合落地绿电+深加工扩张高分红价值显现-2026-09-30.pdf",
      "pts": [
@@ -1435,7 +1435,7 @@
     "files": [
      "花旗-立讯精密（002475.SZ）：收购KFM Kingdom，强化金属结构件与海外产能-261002.pdf"
     ],
-    "readers": 191,
+    "readers": 195,
     "pdf_digest": {
      "name": "花旗-立讯精密（002475.SZ）：收购KFM Kingdom，强化金属结构件与海外产能-261002.pdf",
      "pts": [
@@ -1469,7 +1469,7 @@
      "最近哪些标的进入击球区_国庆不打烊_晚8点栋察系列电话会261004_纪要.pdf",
      "最近哪些标的进入击球区_国庆不打烊_晚8点栋察系列电话会261004_原文.pdf"
     ],
-    "readers": 477,
+    "readers": 482,
     "pdf_digest": {
      "name": "专家解读OpenAI工作助理Dots261004_纪要.pdf",
      "pts": [
@@ -1500,7 +1500,7 @@
      "20261005_国泰海通证券_9月抖音服装销售增长降速，Nike预计收入压力延续至FY27-28.pdf",
      "20261005_华泰证券_ExpectationsShiftFromProfitSpiketoS.pdf"
     ],
-    "readers": 456,
+    "readers": 459,
     "pdf_digest": {
      "name": "20261004_浙商证券_伏美替尼辅助治疗NDA获受理，生命周期进一步延长.pdf",
      "pts": [
@@ -1529,7 +1529,7 @@
     "files": [
      "野村-中国运动服饰：就是做不到吗？-261004.pdf"
     ],
-    "readers": 433
+    "readers": 436
    },
    {
     "date": "2026-10-05",
@@ -1547,7 +1547,7 @@
     "files": [
      "摩根大通-高收益能源速评：APA、CNQ、COP等公司业绩要点-261002.pdf"
     ],
-    "readers": 424,
+    "readers": 428,
     "pdf_digest": {
      "name": "摩根大通-高收益能源速评：APA、CNQ、COP等公司业绩要点-261002.pdf",
      "pts": [
@@ -1577,7 +1577,7 @@
      "美银证券-全球外汇周刊：似曾相识的欧元-261002.pdf",
      "美银证券-亚太十大优选股季度报告：推出2026年四季度亚太十大优选股-261001.pdf"
     ],
-    "readers": 423,
+    "readers": 426,
     "pdf_digest": {
      "name": "美银证券-全球外汇周刊：似曾相识的欧元-261002.pdf",
      "pts": [
@@ -1606,7 +1606,7 @@
     "files": [
      "德意志银行-贵金属特别报告：峰值已过——白银逼空（#Silversqueeze）-261002.pdf"
     ],
-    "readers": 421
+    "readers": 424
    },
    {
     "date": "2026-10-05",
@@ -1626,7 +1626,7 @@
      "高盛-印度市场周报：NIFTY下跌3_，连续第8周走低并触及52周低点；估值降至6年低位；印度央行料将鹰派加息；9月回撤驱动因素-261003.pdf",
      "高盛-中国市场周报：市场下跌2_；国常会后定向财政与货币宽松措施出台；9月PMI走高-261003.pdf"
     ],
-    "readers": 421
+    "readers": 424
    },
    {
     "date": "2026-10-05",
@@ -1644,7 +1644,7 @@
     "files": [
      "“Hartnett 称“开始增持一些债券”  ZeroHedge --- A Tail Of Two Cities” Hartnett Says Start Adding Some Bonds  ZeroHedge.pdf"
     ],
-    "readers": 416,
+    "readers": 419,
     "pdf_digest": {
      "name": "“Hartnett 称“开始增持一些债券”  ZeroHedge --- A Tail Of Two Cities” Hartnett Says Start Adding Some Bonds  ZeroHedge.pdf",
      "pts": [
@@ -1681,7 +1681,7 @@
      "20261004_东方证券_Avolon拟出售33架飞机，飞机资产交易保持活跃.pdf",
      "20261004_国金证券_久期独立行情——信用策略备忘录.pdf"
     ],
-    "readers": 408,
+    "readers": 411,
     "pdf_digest": {
      "name": "20261003_招商证券_2026年9月美国就业数据分析再受地方政府拖�.pdf",
      "pts": [
@@ -1718,7 +1718,7 @@
      "20261003_华福证券_9月美国非农就业数据点评怎么看待非农的大幅走弱？.pdf",
      "20261003_华泰证券_9月非农走弱边际降低加息压.pdf"
     ],
-    "readers": 392,
+    "readers": 395,
     "pdf_digest": {
      "name": "20261003_国金证券_Claude发现酶系统，FDA新规推进动物试验替代方案.pdf",
      "pts": [
@@ -1750,7 +1750,7 @@
      "20260930-太平洋-新能源+AI展望（第11期）AIDC供电架构加速变革，储能升级为核心基础设施.pdf",
      "20261001_国金证券-医药行业产业研究周报Claude发现酶系统FDA新规推进动物试验替代方案-2026-10-01.pdf"
     ],
-    "readers": 390,
+    "readers": 393,
     "pdf_digest": {
      "name": "20260930-交银国际证券-Carvykti治疗潜力再获多维数据支持，但定价端短期承压；下调目标价.pdf",
      "pts": [
@@ -1787,7 +1787,7 @@
      "20261002-湘财证券-环保行业周报新型电池全链条绿色升级，绿色制造体系进一步深化.pdf",
      "20261002-湘财证券-计算机行业周报大模型行业迭代观察产品矩阵、科学场景与个人智能体新趋势.pdf"
     ],
-    "readers": 389
+    "readers": 392
    },
    {
     "date": "2026-10-05",
@@ -1815,7 +1815,7 @@
      "20260930-国元证券-有色金属行业双周报钼精矿价格趋稳，钴锂持续调整.pdf",
      "20260930-华鑫证券-胜蓝股份-300843.SZ-公司动态研究报告高速背板连接器新贵，业绩即将进入快速增长期.pdf"
     ],
-    "readers": 385,
+    "readers": 389,
     "pdf_digest": {
      "name": "20260928-中国银河-东南亚之行随笔马来西亚——东南亚半导体产业的无冕之王.pdf",
      "pts": [
@@ -1844,7 +1844,7 @@
     "files": [
      "TMTB 晨间综述 - TMT Breakout --- TMTB Morning Wrap - TMT Breakout(1).pdf"
     ],
-    "readers": 356,
+    "readers": 359,
     "pdf_digest": {
      "name": "TMTB 晨间综述 - TMT Breakout --- TMTB Morning Wrap - TMT Breakout(1).pdf",
      "pts": [
@@ -1880,7 +1880,7 @@
      "中信证券_房地产板块投资策略房地产261005_纪要.pdf",
      "中信证券_房地产板块投资策略房地产261005_原文.pdf"
     ],
-    "readers": 344,
+    "readers": 349,
     "pdf_digest": {
      "name": "为何要重视27年智驾板块的机会261005_原文.pdf",
      "pts": [
@@ -1914,7 +1914,7 @@
      "全栈AI阿里字节等大厂都有哪些进展_国庆不打烊_晚8点栋察系列电话会261005_纪要.pdf",
      "全栈AI阿里字节等大厂都有哪些进展_国庆不打烊_晚8点栋察系列电话会261005_原文.pdf"
     ],
-    "readers": 330,
+    "readers": 335,
     "pdf_digest": {
      "name": "大摩闭门会-宏观策略谈261005_纪要.pdf",
      "pts": [
@@ -1951,7 +1951,7 @@
      "玻璃基板系列（二）量产时间表落定，产业化进入决策前夜261005_纪要.pdf",
      "玻璃基板系列（二）量产时间表落定，产业化进入决策前夜261005_原文.pdf"
     ],
-    "readers": 329,
+    "readers": 334,
     "pdf_digest": {
      "name": "AI眼镜高折射镜片渗透提速XR打开成长新空间261005_纪要.pdf",
      "pts": [
@@ -1977,7 +1977,7 @@
     "files": [
      "野村-美国经济周报：美联储官员暗示10月暂停加息-261002.pdf"
     ],
-    "readers": 470,
+    "readers": 473,
     "pdf_digest": {
      "name": "野村-美国经济周报：美联储官员暗示10月暂停加息-261002.pdf",
      "pts": [
@@ -2014,7 +2014,7 @@
      "瑞银-美国企业硬件与网络：生成式AI最新动态-261002.pdf",
      "瑞银-清洁能源：周度更新（2026年10月第1周）-261002.pdf"
     ],
-    "readers": 450,
+    "readers": 453,
     "pdf_digest": {
      "name": "瑞银-Applied Digital Corp（APLD.US）：Polaris Forge 1新增75兆瓦达成RFS-261002.pdf",
      "pts": [
@@ -2048,7 +2048,7 @@
      "瑞银-中国A股风格指南：低风险反弹，动量消退-261002.pdf",
      "瑞银-中国香港地产：8月奢侈品零售销售放缓-261003.pdf"
     ],
-    "readers": 450,
+    "readers": 453,
     "pdf_digest": {
      "name": "瑞银-全球油气：霍尔木兹海峡追踪（第214至215天）-261002.pdf",
      "pts": [
@@ -2076,7 +2076,7 @@
      "高盛-中国台湾市场周报：TAIEX上涨1_创历史新高，TPEx受小盘轮动带动涨3_；商品与科技股进一步跑赢金融股，宏观数据在美债收益率高企下仍有支撑-261002.pdf",
      "高盛-周度资金流：流入韩国与中国台湾的资金降温-261002.pdf"
     ],
-    "readers": 443,
+    "readers": 446,
     "pdf_digest": {
      "name": "高盛-中国经济展望-261002.pdf",
      "pts": [
@@ -2106,7 +2106,7 @@
      "伯恩斯坦-亚太食品饮料·日本啤酒：长期视角——麦芽税率并轨与结构性增长-261002.pdf",
      "伯恩斯坦-亚洲工业科技：亚洲工业科技晴雨表（2026年8至9月）-261002.pdf"
     ],
-    "readers": 438,
+    "readers": 441,
     "pdf_digest": {
      "name": "伯恩斯坦-亚太食品饮料·日本啤酒：长期视角——麦芽税率并轨与结构性增长-261002.pdf",
      "pts": [
@@ -2143,7 +2143,7 @@
      "高盛-美国汽车与工业科技：Tesla与Rivian的3Q26交付要点-261002.pdf",
      "高盛-欧洲金属与矿业：覆盖概览、盈利预测与现货价格情景-261002.pdf"
     ],
-    "readers": 438,
+    "readers": 441,
     "pdf_digest": {
      "name": "高盛-Freeport-McMoRan Inc（FCX.US）：3Q26运营更新——Grasberg进展顺利且产量超预期；买入-261002.pdf",
      "pts": [
@@ -2180,7 +2180,7 @@
      "高盛-新兴市场资金流：韩国与印度本周继续遭遇外资卖出；新兴亚洲共同基金9月收跌1_（年初至今+24至25_）；对冲基金连续第四个月净卖出亚洲股票-261002.pdf",
      "高盛-亚太市场周报：MXAPJ回落1_，美债收益率压力重现引发亚洲市场全面资金流出，抵消科技股持续强势；季节性因素通常在四季度转为更有利-261002.pdf"
     ],
-    "readers": 438,
+    "readers": 441,
     "pdf_digest": {
      "name": "高盛-欧洲市场周报：3Q26业绩预览——门槛已经抬高-261002.pdf",
      "pts": [
@@ -2216,7 +2216,7 @@
      "20261004_招商证券_月度二手房价格跟踪9月50城二手房价环比跌幅较8月收�.pdf",
      "20261004_中泰证券_多单REITs询价发售，首批煤电项目获批.pdf"
     ],
-    "readers": 393,
+    "readers": 396,
     "pdf_digest": {
      "name": "20261004_东方证券_“耐心资本”再度加码硬科技，一级市场布局持续深化.pdf",
      "pts": [
@@ -2251,7 +2251,7 @@
      "20261003_招商证券_2026年9月美国就业数据分析再受地方政府拖�.pdf",
      "20261003_中国银河_马来西亚——东南亚半导体产业的无冕之王.pdf"
     ],
-    "readers": 364,
+    "readers": 367,
     "pdf_digest": {
      "name": "20261003_国泰海通证券_半导体厂务系统领先服务商，设备、材料赛道蓄势成长.pdf",
      "pts": [
@@ -2288,7 +2288,7 @@
      "20261003_国金证券_Claude发现酶系统，FDA新规推进动物试验替代方案.pdf",
      "20261003_国金证券-医药行业产业研究周报Claude发现酶系统，FDA新规推进动物试验替代方案-2026-10-03.pdf"
     ],
-    "readers": 362,
+    "readers": 365,
     "pdf_digest": {
      "name": "20261002-国联民生证券-比亚迪-002594-系列点评五十9月销量持续增长出海与.pdf",
      "pts": [
@@ -2325,7 +2325,7 @@
      "20261001_国信证券-骆驼股份(601311.SH)-二季度毛利率同比提升汇兑等因素压制利润-2026-10-01.pdf",
      "20261001_计算机行业深度报告大模型系列深度（一）国产大模型竞争重心转向效率与生态，智谱以GLM全栈体系卡位第一梯队.pdf"
     ],
-    "readers": 354,
+    "readers": 357,
     "pdf_digest": {
      "name": "20260930-开源证券-汽车行业点评报告AIDC电力需求高增，柴发与内燃机迎确定性机�.pdf",
      "pts": [
@@ -2362,7 +2362,7 @@
      "20261002_交银国际_交银证券-传奇生物(LEGN.US)-Carvykti治疗潜力再获多维数据支持，但定价端短期承压；下调目标价-2026-.pdf",
      "20261002_开源证券-汽车行业点评报告AIDC电力需求高增，柴发与内燃机迎确定性机遇-2026-10-02.pdf"
     ],
-    "readers": 354,
+    "readers": 357,
     "pdf_digest": {
      "name": "20261001_汽车行业点评报告AIDC电力需求高增，柴发与内燃机迎确定性机�.pdf",
      "pts": [
@@ -2401,7 +2401,7 @@
      "20260930-华鑫证券-胜蓝股份-300843.SZ-公司动态研究报告高速背板连接器新贵，业绩即将进入快速增长期.pdf",
      "20260930-交银国际证券-Carvykti治疗潜力再获多维数据支持，但定价端短期承压；下调目标价.pdf"
     ],
-    "readers": 353,
+    "readers": 356,
     "pdf_digest": {
      "name": "20260930_太平洋证券出口链2026M8家电出口增速较快，空调同比加百分之30.pdf",
      "pts": [
@@ -2438,7 +2438,7 @@
      "20260930_福立旺(688678)3C业绩加速兑现,AI与机器人接力成长-科创板公司动态研究_国海证券_2026-09-28.pdf",
      "20260930_工业企业利润增速持续放缓,高基数拖累当月增速-2026年8月工业企业利润点评 _开源证券 _2026-09-29.pdf"
     ],
-    "readers": 347,
+    "readers": 350,
     "pdf_digest": {
      "name": "20260928-中国银河-东南亚之行随笔马来西亚——东南亚半导体产业的无冕之王.pdf",
      "pts": [
@@ -2467,7 +2467,7 @@
     "files": [
      "瑞银-支付与金融科技创新：Ramp——OnRamp 2026大会要点-261001.pdf"
     ],
-    "readers": 472
+    "readers": 475
    },
    {
     "date": "2026-10-03",
@@ -2486,7 +2486,7 @@
      "20261003_国投证券_9月销售筑底，拿地续冷.pdf",
      "20261003_中国银河_马来西亚——东南亚半导体产业的无冕之王.pdf"
     ],
-    "readers": 466,
+    "readers": 469,
     "pdf_digest": {
      "name": "20261003_国投证券_9月销售筑底，拿地续冷.pdf",
      "pts": [
@@ -2523,7 +2523,7 @@
      "瑞银-全球天然气：距去库存约一个月-261001.pdf",
      "瑞银-新世界发展（0017.HK）：11 SKIES尘埃终于落定-261001.pdf"
     ],
-    "readers": 460
+    "readers": 463
    },
    {
     "date": "2026-10-03",
@@ -2549,7 +2549,7 @@
      "高盛-全球经济评论：若美国禁止柴油出口，谁将受冲击-261002.pdf",
      "高盛-全球信用交易：投资级与高收益债供给展望收官-261001.pdf"
     ],
-    "readers": 438
+    "readers": 441
    },
    {
     "date": "2026-10-03",
@@ -2567,7 +2567,7 @@
     "files": [
      "非农解读.pdf"
     ],
-    "readers": 433,
+    "readers": 436,
     "pdf_digest": {
      "name": "非农解读.pdf",
      "pts": [
@@ -2596,7 +2596,7 @@
     "files": [
      "花旗-Moderna Inc（MRNA.US）：肿瘤管线乐观预期已过度反映——下调至卖出，目标价80美元-260930.pdf"
     ],
-    "readers": 428,
+    "readers": 431,
     "pdf_digest": {
      "name": "花旗-Moderna Inc（MRNA.US）：肿瘤管线乐观预期已过度反映——下调至卖出，目标价80美元-260930.pdf",
      "pts": [
@@ -2625,7 +2625,7 @@
     "files": [
      "野村-中国汽车·电动车：旺季内需疲弱更加明显-261001.pdf"
     ],
-    "readers": 411
+    "readers": 414
    },
    {
     "date": "2026-10-03",
@@ -2651,7 +2651,7 @@
      "野村-中国互联网与新媒体：AI办公智能体——新的战场-261001.pdf",
      "野村-中国互联网与新媒体：税务审查似乎趋严-261002.pdf"
     ],
-    "readers": 409,
+    "readers": 412,
     "pdf_digest": {
      "name": "野村-G10外汇：SDR分析-261001.pdf",
      "pts": [
@@ -2685,7 +2685,7 @@
      "20261003_国金证券_Claude发现酶系统，FDA新规推进动物试验替代方案.pdf",
      "20261003_国泰海通证券_半导体厂务系统领先服务商，设备、材料赛道蓄势成长.pdf"
     ],
-    "readers": 403,
+    "readers": 406,
     "pdf_digest": {
      "name": "20261002_招商证券_中国海外发展（00688）利润率同比下降，公司于中国香港销售额创同期新高.pdf",
      "pts": [
@@ -2721,7 +2721,7 @@
      "瑞银-亚洲炼油：中国10月7日后暂停带许可的成品油出口-261002.pdf",
      "瑞银-中国光纤行业：月度光纤价格追踪——中国价格维持高位，海外价格追涨-261002.pdf"
     ],
-    "readers": 395
+    "readers": 398
    },
    {
     "date": "2026-10-03",
@@ -2747,7 +2747,7 @@
      "20261002_太平洋证券-海通发展(603162.SH)-2026年H1点评，利润同比增长502.6%-2026-10-02.pdf",
      "20261002_太平洋证券-招商轮船(601872.SH)-2026年H1点评，利润同比大增227.57%-2026-10-02.pdf"
     ],
-    "readers": 395,
+    "readers": 398,
     "pdf_digest": {
      "name": "20261001-中信建投-鱼跃医疗-002223-CGM等新品及海外业务快速增长可穿戴.pdf",
      "pts": [
@@ -2784,7 +2784,7 @@
      "20261001-长江证券-兆易创新-603986-存储量价齐升二季度业绩持续高增.pdf",
      "20261001-浙商证券-峰岹科技-688279-点评报告全资收购荷兰传感器公司Sci.pdf"
     ],
-    "readers": 383,
+    "readers": 387,
     "pdf_digest": {
      "name": "20261001-华泰证券-博迈科-603727-新单如期落地.pdf",
      "pts": [
@@ -2819,7 +2819,7 @@
      "20261001_国信证券_互联网行业2026年10月投资策略AI投资进入需求验证期关注.pdf",
      "20261001_华创证券_海外新兴产业日报美债长端收益率再创新高AI基建投入增长核电项.pdf"
     ],
-    "readers": 377,
+    "readers": 380,
     "pdf_digest": {
      "name": "20261001_东方证券_软件叙事有所反转继续关注AIInfra�.pdf",
      "pts": [
@@ -2856,7 +2856,7 @@
      "20261001_东方证券_929购房贴息政策点评聚焦购房刚需央地协同发.pdf",
      "20261001_东方证券_AI重构跨境电商Token出海打造新增长极.pdf"
     ],
-    "readers": 375,
+    "readers": 378,
     "pdf_digest": {
      "name": "20260930-江海证券-金融工程定期报告A股市场快照宽基指数每日投资动态.pdf",
      "pts": [
@@ -2893,7 +2893,18 @@
      "20260930_传媒行业AI游戏供给加速，产业链价值向生成、分发与优质内容延伸－Meta Horizon Create／Studio及国.pdf",
      "20260930_春立医疗(688236)降本增效有效推进,产品管线持续丰富-2026年中报点评_华创证券_2026-09-30.pdf"
     ],
-    "readers": 371
+    "readers": 374,
+    "pdf_digest": {
+     "name": "20260928-国新证券股份-8月规模以上工业利润数据解读8月规模以上工业利润总额同比明显回落.pdf",
+     "pts": [
+      "2026 年9 月28 日",
+      "实现利润总额52719.8 亿元，同比增长15.7%（按可比口径计",
+      "同比增长15.7%，比1-7 月回落1.9 个百分点，比2025 年同期提",
+      "其中，8 月，规模以上工业企业利润总额同比增长4.2%，比7",
+      "1-8 月，采矿业利润总额同比增长35.1%，比1-7 月提高0.2",
+      "个百分点，制造业利润总额同比增长17.4%，比1-7 月回落1.4 个"
+     ]
+    }
    },
    {
     "date": "2026-10-03",
@@ -2919,7 +2930,18 @@
      "瑞银-全球策略：发达市场利率大跌——新兴市场的薄弱环节在哪-261001.pdf",
      "瑞银-全球可持续：ESG新闻与观点，第64卷（2026年10月）-261001.pdf"
     ],
-    "readers": 349
+    "readers": 352,
+    "pdf_digest": {
+     "name": "瑞银-AI研究：AI基础设施趋势及其对CoreWeave、Oracle与超大规模厂商的影响-261001.pdf",
+     "pts": [
+      "Global Research",
+      "per-hour GPU pricing across all SKUs by 25% in July 2026 and that since then (so just in",
+      "the last 2-3 months) it has raised them by another 10%. 2. Could the new bottleneck of",
+      "pricing across all SKUs by 25% in July 2026 and that since then (so just in the last",
+      "2-3 months) it has raised them by another 10%. This will of course take time to",
+      "minimize the stress on the grid, to be a good citizen on the grid”) to get 30-40%"
+     ]
+    }
    },
    {
     "date": "2026-10-03",
@@ -2939,7 +2961,16 @@
      "摩根士丹利-大中华科技硬件：投资者演示材料——3Q26已出现AI获利了结，接下来如何-261002.pdf",
      "摩根士丹利-全球信贷策略与证券化产品研究：AI融资现状——是暂停而非回撤-261001.pdf"
     ],
-    "readers": 342
+    "readers": 345,
+    "pdf_digest": {
+     "name": "摩根士丹利-NVIDIA Corp（(NVDA.O）：NDR印证正面看法，重申首选-261002.pdf",
+     "pts": [
+      "We recently hosted Nvidia CEO Jensen Huang, CFO Colette Kress, and Head of IR",
+      "business. While 90% of investor conversations are around the biggest hyperscalers",
+      "from $20 bn in 2026 to $40 bn in 2027, of which we think is a little more than 50%",
+      "while living up to commitments to return 50% of cash. NVIDIA has mobilized a"
+     ]
+    }
    },
    {
     "date": "2026-10-03",
@@ -2961,7 +2992,18 @@
      "高盛-中国经济活动与政策追踪：10月2日-261002.pdf",
      "高盛-中国软件：智能体与AI原生工具扩张驱动增长——美图因估值合理下调至中性-261002.pdf"
     ],
-    "readers": 336
+    "readers": 339,
+    "pdf_digest": {
+     "name": "高盛-全球经济评论：若美国禁止柴油出口，谁将受冲击-261002.pdf",
+     "pts": [
+      "Megan Peters",
+      "a sudden cutoff of US supply could lower GDP by around 1% in Latin America",
+      "estimate that each sustained 10% increase in diesel prices raises global headline",
+      "rise by around 2% for each week an export ban is in place, effects of this size",
+      "prices have increased by over 90% in Europe and over 80% in the US and Asia since the",
+      "with our commodities team estimating a $0.25/gallon price reduction (or just under 4%"
+     ]
+    }
    },
    {
     "date": "2026-10-03",
@@ -2989,7 +3031,18 @@
      "高盛-力森诺科（4004.T）：东芝据报大幅增产HDD，对硬盘媒体业务构成利好-261002.pdf",
      "高盛-全球金属与矿业：锂行业专家电话会反馈——2027年供应增长面临风险，但中国需求情绪转弱-261002.pdf"
     ],
-    "readers": 335
+    "readers": 338,
+    "pdf_digest": {
+     "name": "高盛-Cboe Global Markets Inc（CBOE.US）：结构性利空消退，指数期权业务更具韧性——上调至中性-261002.pdf",
+     "pts": [
+      "Alexander Blostein, CFA",
+      "de-rated meaningfully with current 2027 EV/EBITDA at 13X (a 9% discount to 3-year",
+      "averages vs. 4% avg discount at CME/ICE/NDAQ). We believe the discount has been",
+      "shares have risen 44.6% vs the S&P 500 up 28.1%, driven by better than expected",
+      "retail has been increasingly more active (we estimate retail accounts for ~50% of",
+      "multi-listed options and >50% of 0DTE SPX options). Although the competitive"
+     ]
+    }
    },
    {
     "date": "2026-10-03",
@@ -3011,7 +3064,18 @@
      "德意志银行-小米集团（1810.HK）：SkyNomad增程系列上市推动9月交付与新订单回升-261001.pdf",
      "德意志银行-小鹏汽车（9868.HK）：9月交付符合指引，Mona L03供应瓶颈10月有望缓解-261001.pdf"
     ],
-    "readers": 329
+    "readers": 332,
+    "pdf_digest": {
+     "name": "德意志银行-理想汽车（2015.HK）：9月销量受i6订单暂停拖累，MEGA与i9带动订单回升-261001.pdf",
+     "pts": [
+      "T2se3r0Ot6kwoPa",
+      "September deliveries declined 6% YoY and 16% MoM to 31,817 units. We",
+      "during the month (the “i6” accounted for 45% of monthly deliveries in August).",
+      "new-generation “L6” SUV are estimated to increase by ~10% MoM to ~11k units",
+      "7% YoY and 2% QoQ to 99,964 units, in line with the company’s guidance of",
+      "estimate full-month new orders increased ~70% MoM to ~53k units, primarily"
+     ]
+    }
    },
    {
     "date": "2026-10-03",
@@ -3035,7 +3099,18 @@
      "伯恩斯坦-全球软件：AI实验室与新型云厂商如何影响云计算（IaaS与PaaS）-261002.pdf",
      "伯恩斯坦-全球油田服务：3Q26达拉斯联储调查（9月30日）仍具支撑性-261001.pdf"
     ],
-    "readers": 326
+    "readers": 329,
+    "pdf_digest": {
+     "name": "伯恩斯坦-美国与欧洲商业服务：Rollins与Rentokil（ROL、RTO.LN）——在AI搜索驱动的世界中取胜（专家网络研讨会）-261002.pdf",
+     "pts": [
+      "US & EU Business Services",
+      "LLMs is “certainly at least 50% to 60%” of the issue”. For a full replay, click here. Our",
+      "business ranked #1 in Google and ChatGPT only ~5% of the time, broadly consistent with",
+      "whose tracked AI visibility increased ~400% within a week of being mentioned in a Reuters",
+      "~80% of the required AI optimization work within three months if highly prioritized, thou…",
+      "EBITDA estimate of $1,033m, a P/E multiple of 30.0x against our NTM+1 EPS estimate of $1.…"
+     ]
+    }
    },
    {
     "date": "2026-10-03",
@@ -3061,7 +3136,18 @@
      "伯恩斯坦-美国机械：机械领先指标——8月数据（40张图表）-261001.pdf",
      "伯恩斯坦-美国通信基础设施：美国数据中心容量——你的立场正在扭曲数字，五种预测方法（及我们的定论）-261001.pdf"
     ],
-    "readers": 325
+    "readers": 328,
+    "pdf_digest": {
+     "name": "伯恩斯坦-Celestica Inc（CLS.US）：OpenAI的Jalapeno对Celestica是否会比谷歌TPU更大？业务可持续性如何-261001.pdf",
+     "pts": [
+      "US Networking & Communications Equipment",
+      "kW of privisoned power (link), and our own estimate that the Jalapeno pod will consume ~8…",
+      "margins. However, even assuming that Celestica is making ~50% margins for OpenAI scale-up…",
+      "dollars per rack. Dividing by $2.2M in total Celestica content implies a 16% gross margin…",
+      "11.5%. Accordingly, even with what we see as very conservative margin assumptions, Jalape…",
+      "Jalapeno, AMD Helios and the 1.6T switching business more broadly, we see ~$25B in YoY re…"
+     ]
+    }
    },
    {
     "date": "2026-10-02",
@@ -3080,7 +3166,18 @@
      "(1) TMTB 收盘综述 - TMT Breakout --- (1) TMTB EOD Wrap - TMT Breakout(1).pdf",
      "US EQUITIES COLOR Q4 DAY 1.pdf"
     ],
-    "readers": 406
+    "readers": 408,
+    "pdf_digest": {
+     "name": "(1) TMTB 收盘综述 - TMT Breakout --- (1) TMTB EOD Wrap - TMT Breakout(1).pdf",
+     "pts": [
+      "TMTB EOD Wrap",
+      "+66bps at the highs, before giving away half. Software +1.6% leading as the SI-loser",
+      "squeeze continued: ACN +15.8% on a clean print vs. very low expectations took IT",
+      "services with it (CTSH +6%;",
+      "exposed apps also caught a bid (HUBS +6.1%;",
+      "TEAM +5.9%). Semis +1.4% didn’t"
+     ]
+    }
    },
    {
     "date": "2026-10-02",
@@ -3098,7 +3195,18 @@
     "files": [
      "TMTB 晨间综述 - TMT Breakout --- TMTB Morning Wrap - TMT Breakout.pdf"
     ],
-    "readers": 402
+    "readers": 404,
+    "pdf_digest": {
+     "name": "TMTB 晨间综述 - TMT Breakout --- TMTB Morning Wrap - TMT Breakout.pdf",
+     "pts": [
+      "TMTB Morning Wrap TMTB 晨间简报",
+      "QQQs +55bps ahead of NFP today with Oil -4% and yields down 2-",
+      "3bps across the curve. BTC +2%",
+      "今天⾮农就业数据公布前，QQQ 上涨 55 个基点，原油下跌 4%",
+      "In Tech, Semis leading the way higher as NVDA +1.7% close to ATHs this morning on",
+      "STX/WDC ~-10% on news"
+     ]
+    }
    }
   ],
   "观点讨论": [
@@ -3118,7 +3226,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 352
+    "readers": 355
    },
    {
     "date": "2026-10-06",
@@ -3136,7 +3244,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 309
+    "readers": 312
    },
    {
     "date": "2026-10-06",
@@ -3154,7 +3262,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 304
+    "readers": 307
    },
    {
     "date": "2026-10-06",
@@ -3175,7 +3283,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 260
+    "readers": 266
    },
    {
     "date": "2026-10-06",
@@ -3196,7 +3304,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 259
+    "readers": 265
    },
    {
     "date": "2026-10-06",
@@ -3216,7 +3324,7 @@
      "li"
     ],
     "files": [],
-    "readers": 259
+    "readers": 265
    },
    {
     "date": "2026-10-06",
@@ -3234,7 +3342,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 258
+    "readers": 264
    },
    {
     "date": "2026-10-06",
@@ -3252,7 +3360,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 258
+    "readers": 264
    },
    {
     "date": "2026-10-06",
@@ -3270,7 +3378,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 250
+    "readers": 253
    },
    {
     "date": "2026-10-06",
@@ -3288,7 +3396,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 245
+    "readers": 248
    },
    {
     "date": "2026-10-06",
@@ -3306,7 +3414,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 243
+    "readers": 246
    },
    {
     "date": "2026-10-06",
@@ -3326,7 +3434,7 @@
      "li"
     ],
     "files": [],
-    "readers": 240
+    "readers": 243
    },
    {
     "date": "2026-10-06",
@@ -3346,7 +3454,7 @@
      "li"
     ],
     "files": [],
-    "readers": 240
+    "readers": 243
    },
    {
     "date": "2026-10-06",
@@ -3366,7 +3474,7 @@
      "li"
     ],
     "files": [],
-    "readers": 239
+    "readers": 242
    },
    {
     "date": "2026-10-06",
@@ -3384,7 +3492,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 236
+    "readers": 239
    },
    {
     "date": "2026-10-06",
@@ -3402,7 +3510,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 234
+    "readers": 237
    },
    {
     "date": "2026-10-06",
@@ -3420,7 +3528,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 232
+    "readers": 235
    },
    {
     "date": "2026-10-06",
@@ -3438,7 +3546,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 220
+    "readers": 224
    },
    {
     "date": "2026-10-06",
@@ -3456,7 +3564,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 210
+    "readers": 216
    },
    {
     "date": "2026-10-06",
@@ -3478,7 +3586,7 @@
      "cu"
     ],
     "files": [],
-    "readers": 205
+    "readers": 211
    },
    {
     "date": "2026-10-06",
@@ -3496,7 +3604,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 203
+    "readers": 209
    },
    {
     "date": "2026-10-06",
@@ -3514,7 +3622,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 202
+    "readers": 208
    },
    {
     "date": "2026-10-06",
@@ -3532,7 +3640,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 201
+    "readers": 207
    },
    {
     "date": "2026-10-06",
@@ -3550,7 +3658,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 199
+    "readers": 204
    },
    {
     "date": "2026-10-06",
@@ -3568,7 +3676,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 197
+    "readers": 202
    },
    {
     "date": "2026-10-06",
@@ -3588,7 +3696,7 @@
      "cu"
     ],
     "files": [],
-    "readers": 196
+    "readers": 202
    },
    {
     "date": "2026-10-06",
@@ -3609,7 +3717,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 175
+    "readers": 180
    },
    {
     "date": "2026-10-06",
@@ -3627,7 +3735,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 175
+    "readers": 180
    },
    {
     "date": "2026-10-06",
@@ -3645,7 +3753,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 174
+    "readers": 179
    },
    {
     "date": "2026-10-06",
@@ -3663,7 +3771,7 @@
      "si"
     ],
     "files": [],
-    "readers": 174
+    "readers": 179
    },
    {
     "date": "2026-10-06",
@@ -3681,7 +3789,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 169
+    "readers": 174
    },
    {
     "date": "2026-10-04",
@@ -3699,7 +3807,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 373
+    "readers": 376
    },
    {
     "date": "2026-10-04",
@@ -3717,7 +3825,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 373
+    "readers": 376
    },
    {
     "date": "2026-10-04",
@@ -3735,7 +3843,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 309
+    "readers": 312
    },
    {
     "date": "2026-10-04",
@@ -3753,7 +3861,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 307
+    "readers": 310
    },
    {
     "date": "2026-10-04",
@@ -3771,7 +3879,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 289
+    "readers": 292
    },
    {
     "date": "2026-10-04",
@@ -3789,7 +3897,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 277
+    "readers": 280
    },
    {
     "date": "2026-10-04",
@@ -3807,7 +3915,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 276
+    "readers": 279
    },
    {
     "date": "2026-10-04",
@@ -3825,7 +3933,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 261
+    "readers": 264
    },
    {
     "date": "2026-10-04",
@@ -3843,7 +3951,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 259
+    "readers": 262
    },
    {
     "date": "2026-10-03",
@@ -3861,7 +3969,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 348
+    "readers": 351
    },
    {
     "date": "2026-10-03",
@@ -3884,7 +3992,7 @@
      "cu"
     ],
     "files": [],
-    "readers": 346
+    "readers": 349
    },
    {
     "date": "2026-10-03",
@@ -3902,7 +4010,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 346
+    "readers": 349
    },
    {
     "date": "2026-10-03",
@@ -3920,7 +4028,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 346
+    "readers": 349
    },
    {
     "date": "2026-10-03",
@@ -3938,7 +4046,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 346
+    "readers": 349
    },
    {
     "date": "2026-10-03",
@@ -3956,7 +4064,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 345
+    "readers": 348
    },
    {
     "date": "2026-10-03",
@@ -3975,7 +4083,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 341
+    "readers": 344
    },
    {
     "date": "2026-10-03",
@@ -3995,7 +4103,7 @@
      "si"
     ],
     "files": [],
-    "readers": 284
+    "readers": 288
    },
    {
     "date": "2026-10-02",
@@ -4016,7 +4124,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 379
+    "readers": 382
    },
    {
     "date": "2026-10-02",
@@ -4034,7 +4142,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 281
+    "readers": 284
    },
    {
     "date": "2026-10-02",
@@ -4052,7 +4160,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 274
+    "readers": 277
    },
    {
     "date": "2026-10-02",
@@ -4070,7 +4178,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 254
+    "readers": 257
    },
    {
     "date": "2026-10-02",
@@ -4088,7 +4196,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 254
+    "readers": 257
    },
    {
     "date": "2026-10-02",
@@ -4108,7 +4216,7 @@
      "cu"
     ],
     "files": [],
-    "readers": 236
+    "readers": 239
    },
    {
     "date": "2026-10-02",
@@ -4126,7 +4234,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 234
+    "readers": 237
    },
    {
     "date": "2026-10-02",
@@ -4144,7 +4252,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 229
+    "readers": 232
    },
    {
     "date": "2026-10-02",
@@ -4162,7 +4270,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 227
+    "readers": 230
    },
    {
     "date": "2026-10-02",
@@ -4180,7 +4288,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 220
+    "readers": 224
    },
    {
     "date": "2026-10-02",
@@ -4198,7 +4306,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 202
+    "readers": 205
    },
    {
     "date": "2026-10-02",
@@ -4217,7 +4325,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 201
+    "readers": 204
    },
    {
     "date": "2026-10-02",
@@ -4237,7 +4345,7 @@
      "cu"
     ],
     "files": [],
-    "readers": 195
+    "readers": 198
    },
    {
     "date": "2026-10-02",
@@ -4257,7 +4365,7 @@
      "li"
     ],
     "files": [],
-    "readers": 194
+    "readers": 197
    },
    {
     "date": "2026-10-02",
@@ -4275,7 +4383,7 @@
     "category": "观点讨论",
     "comms": [],
     "files": [],
-    "readers": 193
+    "readers": 196
    },
    {
     "date": "2026-10-02",
@@ -4295,7 +4403,7 @@
      "cu"
     ],
     "files": [],
-    "readers": 193
+    "readers": 196
    },
    {
     "date": "2026-09-22",
@@ -4974,7 +5082,7 @@
     "category": "产业快讯",
     "comms": [],
     "files": [],
-    "readers": 522
+    "readers": 524
    },
    {
     "date": "2026-10-02",
@@ -4992,7 +5100,7 @@
     "category": "产业快讯",
     "comms": [],
     "files": [],
-    "readers": 221
+    "readers": 225
    },
    {
     "date": "2026-09-22",
@@ -6709,7 +6817,7 @@
     "category": "宏观外汇",
     "comms": [],
     "files": [],
-    "readers": 379
+    "readers": 388
    },
    {
     "date": "2026-10-06",
@@ -6725,7 +6833,7 @@
     "category": "宏观外汇",
     "comms": [],
     "files": [],
-    "readers": 338
+    "readers": 345
    },
    {
     "date": "2026-10-06",
@@ -6741,7 +6849,7 @@
     "category": "宏观外汇",
     "comms": [],
     "files": [],
-    "readers": 226
+    "readers": 229
    },
    {
     "date": "2026-10-04",
@@ -6759,7 +6867,7 @@
     "category": "宏观外汇",
     "comms": [],
     "files": [],
-    "readers": 394
+    "readers": 397
    },
    {
     "date": "2026-10-02",
@@ -6775,7 +6883,7 @@
     "category": "宏观外汇",
     "comms": [],
     "files": [],
-    "readers": 367
+    "readers": 369
    },
    {
     "date": "2026-10-02",
@@ -6791,7 +6899,7 @@
     "category": "宏观外汇",
     "comms": [],
     "files": [],
-    "readers": 325
+    "readers": 327
    },
    {
     "date": "2026-09-22",
@@ -10092,7 +10200,7 @@
     "category": "其他",
     "comms": [],
     "files": [],
-    "readers": 381
+    "readers": 384
    },
    {
     "date": "2026-10-06",
@@ -10108,7 +10216,7 @@
     "category": "其他",
     "comms": [],
     "files": [],
-    "readers": 363
+    "readers": 366
    },
    {
     "date": "2026-10-06",
@@ -10124,39 +10232,7 @@
     "category": "其他",
     "comms": [],
     "files": [],
-    "readers": 341
-   },
-   {
-    "date": "2026-10-06",
-    "title": "英伟达合作伙伴鸿海因人工智能热...",
-    "summary": "英伟达合作伙伴鸿海因人工智能热潮销售额超出预期",
-    "points": [
-     "英伟达合作伙伴鸿海因人工智能热潮销售额超出预期"
-    ],
-    "full": "英伟达合作伙伴鸿海因人工智能热潮销售额超出预期",
-    "source": "知识星球·前沿信息收录",
-    "url": "https://wx.zsxq.com/topic/82258225851244482",
-    "quality": "高",
-    "category": "其他",
-    "comms": [],
-    "files": [],
-    "readers": 337
-   },
-   {
-    "date": "2026-10-06",
-    "title": "⠀",
-    "summary": "⠀",
-    "points": [
-     "⠀"
-    ],
-    "full": "⠀",
-    "source": "知识星球·前沿信息收录",
-    "url": "https://wx.zsxq.com/topic/22258225851218141",
-    "quality": "高",
-    "category": "其他",
-    "comms": [],
-    "files": [],
-    "readers": 337
+    "readers": 347
    },
    {
     "date": "2026-10-06",
@@ -10172,7 +10248,39 @@
     "category": "其他",
     "comms": [],
     "files": [],
-    "readers": 337
+    "readers": 346
+   },
+   {
+    "date": "2026-10-06",
+    "title": "英伟达合作伙伴鸿海因人工智能热...",
+    "summary": "英伟达合作伙伴鸿海因人工智能热潮销售额超出预期",
+    "points": [
+     "英伟达合作伙伴鸿海因人工智能热潮销售额超出预期"
+    ],
+    "full": "英伟达合作伙伴鸿海因人工智能热潮销售额超出预期",
+    "source": "知识星球·前沿信息收录",
+    "url": "https://wx.zsxq.com/topic/82258225851244482",
+    "quality": "高",
+    "category": "其他",
+    "comms": [],
+    "files": [],
+    "readers": 344
+   },
+   {
+    "date": "2026-10-06",
+    "title": "⠀",
+    "summary": "⠀",
+    "points": [
+     "⠀"
+    ],
+    "full": "⠀",
+    "source": "知识星球·前沿信息收录",
+    "url": "https://wx.zsxq.com/topic/22258225851218141",
+    "quality": "高",
+    "category": "其他",
+    "comms": [],
+    "files": [],
+    "readers": 344
    },
    {
     "date": "2026-10-06",
@@ -10190,7 +10298,7 @@
     "category": "其他",
     "comms": [],
     "files": [],
-    "readers": 336
+    "readers": 343
    },
    {
     "date": "2026-10-06",
@@ -10206,7 +10314,7 @@
     "category": "其他",
     "comms": [],
     "files": [],
-    "readers": 335
+    "readers": 342
    },
    {
     "date": "2026-10-06",
@@ -10222,7 +10330,7 @@
     "category": "其他",
     "comms": [],
     "files": [],
-    "readers": 231
+    "readers": 234
    },
    {
     "date": "2026-10-06",
@@ -10238,7 +10346,7 @@
     "category": "其他",
     "comms": [],
     "files": [],
-    "readers": 230
+    "readers": 233
    },
    {
     "date": "2026-10-06",
@@ -10254,7 +10362,7 @@
     "category": "其他",
     "comms": [],
     "files": [],
-    "readers": 226
+    "readers": 232
    },
    {
     "date": "2026-10-06",
@@ -10267,11 +10375,11 @@
     "full": "MS：每个机架所需的 PCB、CCL 和铜箔用量正在成倍增长。 以 PCB 为例，先进 AI PCB 的生产时间是普通 PCB 的~2 倍，令供需紧张状况进一步加剧。",
     "source": "知识星球·前沿信息收录",
     "url": "https://wx.zsxq.com/topic/82258225851848122",
-    "quality": "中",
+    "quality": "高",
     "category": "其他",
     "comms": [],
     "files": [],
-    "readers": 198
+    "readers": 203
    },
    {
     "date": "2026-10-06",
@@ -10283,11 +10391,11 @@
     "full": "瑞银：CPO 价值链",
     "source": "知识星球·前沿信息收录",
     "url": "https://wx.zsxq.com/topic/14425442528511542",
-    "quality": "中",
+    "quality": "高",
     "category": "其他",
     "comms": [],
     "files": [],
-    "readers": 195
+    "readers": 200
    },
    {
     "date": "2026-10-06",
@@ -10303,7 +10411,7 @@
     "category": "其他",
     "comms": [],
     "files": [],
-    "readers": 184
+    "readers": 189
    },
    {
     "date": "2026-10-05",
@@ -10319,7 +10427,7 @@
     "category": "其他",
     "comms": [],
     "files": [],
-    "readers": 285
+    "readers": 289
    },
    {
     "date": "2026-10-04",
@@ -10337,7 +10445,7 @@
     "category": "其他",
     "comms": [],
     "files": [],
-    "readers": 423
+    "readers": 426
    },
    {
     "date": "2026-10-04",
@@ -10353,7 +10461,7 @@
     "category": "其他",
     "comms": [],
     "files": [],
-    "readers": 348
+    "readers": 351
    },
    {
     "date": "2026-10-04",
@@ -10369,7 +10477,7 @@
     "category": "其他",
     "comms": [],
     "files": [],
-    "readers": 335
+    "readers": 338
    },
    {
     "date": "2026-10-04",
@@ -10385,7 +10493,7 @@
     "category": "其他",
     "comms": [],
     "files": [],
-    "readers": 326
+    "readers": 329
    },
    {
     "date": "2026-10-04",
@@ -10402,7 +10510,7 @@
     "category": "其他",
     "comms": [],
     "files": [],
-    "readers": 269
+    "readers": 272
    },
    {
     "date": "2026-10-04",
@@ -10418,7 +10526,7 @@
     "category": "其他",
     "comms": [],
     "files": [],
-    "readers": 265
+    "readers": 268
    },
    {
     "date": "2026-10-04",
@@ -10435,7 +10543,7 @@
     "category": "其他",
     "comms": [],
     "files": [],
-    "readers": 265
+    "readers": 268
    },
    {
     "date": "2026-10-03",
@@ -10451,7 +10559,7 @@
     "category": "其他",
     "comms": [],
     "files": [],
-    "readers": 419
+    "readers": 422
    },
    {
     "date": "2026-10-03",
@@ -10469,7 +10577,7 @@
     "files": [
      "今日上传文件列表.docx"
     ],
-    "readers": 384
+    "readers": 387
    },
    {
     "date": "2026-10-03",
@@ -10485,7 +10593,7 @@
     "category": "其他",
     "comms": [],
     "files": [],
-    "readers": 300
+    "readers": 303
    },
    {
     "date": "2026-10-02",
@@ -10501,7 +10609,7 @@
     "category": "其他",
     "comms": [],
     "files": [],
-    "readers": 391
+    "readers": 393
    },
    {
     "date": "2026-10-02",
@@ -10518,7 +10626,7 @@
     "category": "其他",
     "comms": [],
     "files": [],
-    "readers": 388
+    "readers": 390
    },
    {
     "date": "2026-10-02",
@@ -10534,7 +10642,7 @@
     "category": "其他",
     "comms": [],
     "files": [],
-    "readers": 376
+    "readers": 378
    },
    {
     "date": "2026-10-02",
@@ -10550,7 +10658,7 @@
     "category": "其他",
     "comms": [],
     "files": [],
-    "readers": 373
+    "readers": 375
    },
    {
     "date": "2026-10-02",
@@ -10566,7 +10674,7 @@
     "category": "其他",
     "comms": [],
     "files": [],
-    "readers": 368
+    "readers": 370
    },
    {
     "date": "2026-10-02",
@@ -10582,7 +10690,7 @@
     "category": "其他",
     "comms": [],
     "files": [],
-    "readers": 355
+    "readers": 357
    },
    {
     "date": "2026-10-02",
@@ -10598,7 +10706,7 @@
     "category": "其他",
     "comms": [],
     "files": [],
-    "readers": 355
+    "readers": 357
    },
    {
     "date": "2026-10-02",
@@ -10614,7 +10722,7 @@
     "category": "其他",
     "comms": [],
     "files": [],
-    "readers": 350
+    "readers": 352
    },
    {
     "date": "2026-10-02",
@@ -10630,7 +10738,7 @@
     "category": "其他",
     "comms": [],
     "files": [],
-    "readers": 346
+    "readers": 348
    },
    {
     "date": "2026-10-02",
@@ -10646,7 +10754,7 @@
     "category": "其他",
     "comms": [],
     "files": [],
-    "readers": 252
+    "readers": 255
    },
    {
     "date": "2026-10-02",
@@ -10662,7 +10770,7 @@
     "category": "其他",
     "comms": [],
     "files": [],
-    "readers": 252
+    "readers": 255
    },
    {
     "date": "2026-09-22",
@@ -11731,7 +11839,7 @@
      "20261005_天风证券-SOFC优势进一步强化，成长天花板或被低估-2026-10-05.pdf",
      "20261005_有色金属行业跟踪周报美元指数强势，金属价格震�.pdf"
     ],
-    "readers": 135,
+    "readers": 151,
     "pdf_digest": {
      "name": "20261004_国金证券-久期独立行情-2026-10-04.pdf",
      "pts": [
@@ -11766,7 +11874,7 @@
      "美银证券-亚太科技：PCB用覆铜板——规格升级顺利推进至2027至28年，价格存上行空间-261005.pdf",
      "美银证券-中国化工：10月化工调查——需求预期改善但盈利前景滞后-261005.pdf"
     ],
-    "readers": 134,
+    "readers": 150,
     "pdf_digest": {
      "name": "美银证券-流动性洞察：美国利率——维持做空但信心下降-261005.pdf",
      "pts": [
@@ -11799,7 +11907,7 @@
      "cu"
     ],
     "files": [],
-    "readers": 205
+    "readers": 211
    },
    {
     "date": "2026-10-06",
@@ -11819,7 +11927,7 @@
      "cu"
     ],
     "files": [],
-    "readers": 196
+    "readers": 202
    },
    {
     "date": "2026-10-03",
@@ -11842,7 +11950,7 @@
      "cu"
     ],
     "files": [],
-    "readers": 346
+    "readers": 349
    },
    {
     "date": "2026-10-02",
@@ -11862,7 +11970,7 @@
      "cu"
     ],
     "files": [],
-    "readers": 236
+    "readers": 239
    },
    {
     "date": "2026-10-02",
@@ -11882,7 +11990,7 @@
      "cu"
     ],
     "files": [],
-    "readers": 195
+    "readers": 198
    },
    {
     "date": "2026-10-02",
@@ -11902,7 +12010,7 @@
      "cu"
     ],
     "files": [],
-    "readers": 193
+    "readers": 196
    },
    {
     "date": "2026-09-22",
@@ -24539,7 +24647,7 @@
      "li"
     ],
     "files": [],
-    "readers": 259
+    "readers": 265
    },
    {
     "date": "2026-10-06",
@@ -24559,7 +24667,7 @@
      "li"
     ],
     "files": [],
-    "readers": 240
+    "readers": 243
    },
    {
     "date": "2026-10-06",
@@ -24579,7 +24687,7 @@
      "li"
     ],
     "files": [],
-    "readers": 240
+    "readers": 243
    },
    {
     "date": "2026-10-06",
@@ -24599,7 +24707,7 @@
      "li"
     ],
     "files": [],
-    "readers": 239
+    "readers": 242
    },
    {
     "date": "2026-10-06",
@@ -24621,7 +24729,7 @@
      "cu"
     ],
     "files": [],
-    "readers": 205
+    "readers": 211
    },
    {
     "date": "2026-10-05",
@@ -24649,7 +24757,7 @@
      "20260930-国元证券-有色金属行业双周报钼精矿价格趋稳，钴锂持续调整.pdf",
      "20260930-华鑫证券-胜蓝股份-300843.SZ-公司动态研究报告高速背板连接器新贵，业绩即将进入快速增长期.pdf"
     ],
-    "readers": 385,
+    "readers": 389,
     "pdf_digest": {
      "name": "20260928-中国银河-东南亚之行随笔马来西亚——东南亚半导体产业的无冕之王.pdf",
      "pts": [
@@ -24688,7 +24796,7 @@
      "20260930-华鑫证券-胜蓝股份-300843.SZ-公司动态研究报告高速背板连接器新贵，业绩即将进入快速增长期.pdf",
      "20260930-交银国际证券-Carvykti治疗潜力再获多维数据支持，但定价端短期承压；下调目标价.pdf"
     ],
-    "readers": 353,
+    "readers": 356,
     "pdf_digest": {
      "name": "20260930_太平洋证券出口链2026M8家电出口增速较快，空调同比加百分之30.pdf",
      "pts": [
@@ -24727,7 +24835,18 @@
      "高盛-力森诺科（4004.T）：东芝据报大幅增产HDD，对硬盘媒体业务构成利好-261002.pdf",
      "高盛-全球金属与矿业：锂行业专家电话会反馈——2027年供应增长面临风险，但中国需求情绪转弱-261002.pdf"
     ],
-    "readers": 335
+    "readers": 338,
+    "pdf_digest": {
+     "name": "高盛-Cboe Global Markets Inc（CBOE.US）：结构性利空消退，指数期权业务更具韧性——上调至中性-261002.pdf",
+     "pts": [
+      "Alexander Blostein, CFA",
+      "de-rated meaningfully with current 2027 EV/EBITDA at 13X (a 9% discount to 3-year",
+      "averages vs. 4% avg discount at CME/ICE/NDAQ). We believe the discount has been",
+      "shares have risen 44.6% vs the S&P 500 up 28.1%, driven by better than expected",
+      "retail has been increasingly more active (we estimate retail accounts for ~50% of",
+      "multi-listed options and >50% of 0DTE SPX options). Although the competitive"
+     ]
+    }
    },
    {
     "date": "2026-10-02",
@@ -24747,7 +24866,7 @@
      "li"
     ],
     "files": [],
-    "readers": 194
+    "readers": 197
    },
    {
     "date": "2026-09-22",
@@ -29384,7 +29503,7 @@
      "si"
     ],
     "files": [],
-    "readers": 174
+    "readers": 179
    },
    {
     "date": "2026-10-03",
@@ -29404,7 +29523,7 @@
      "si"
     ],
     "files": [],
-    "readers": 284
+    "readers": 288
    },
    {
     "date": "2026-09-22",
@@ -32690,35 +32809,35 @@
      "title": "📑中国电池与材料：铜箔涨价后供...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/45548554841814118",
-     "readers": 205
+     "readers": 211
     },
     {
      "date": "2026-10-03",
      "title": "摩根大通：英伟达 Vera R...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/45548581228588588",
-     "readers": 346
+     "readers": 349
     },
     {
      "date": "2026-10-02",
      "title": "【中泰电子|美光】业绩超预期，...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/22258281454184551",
-     "readers": 236
+     "readers": 239
     },
     {
      "date": "2026-10-02",
      "title": "巴拿马委员会建议有序关闭巴拿马...",
      "dir": "看空",
      "url": "https://wx.zsxq.com/topic/14425458121181822",
-     "readers": 195
+     "readers": 198
     },
     {
      "date": "2026-10-02",
      "title": "第一量子回应称巴拿马委员会建议...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/14425458121181112",
-     "readers": 193
+     "readers": 196
     },
     {
      "date": "2026-09-10",
@@ -32746,21 +32865,21 @@
      "title": "20261004_国金证券-久期独立行情-2026-10-04",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/82258225824588822",
-     "readers": 135
+     "readers": 151
     },
     {
      "date": "2026-10-07",
      "title": "美银证券-流动性洞察：美国利率——维持做空但信心下降-261005",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/22258225824584581",
-     "readers": 134
+     "readers": 150
     },
     {
      "date": "2026-10-06",
      "title": "📑覆铜板：罗杰斯投资者日带来的...",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/22258225851815451",
-     "readers": 196
+     "readers": 202
     },
     {
      "date": "2026-09-22",
@@ -32909,21 +33028,21 @@
      "title": "【东吴电新】美国大储：装机放缓...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/14425442214248522",
-     "readers": 240
+     "readers": 243
     },
     {
      "date": "2026-10-06",
      "title": "📑中国电池与材料：铜箔涨价后供...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/45548554841814118",
-     "readers": 205
+     "readers": 211
     },
     {
      "date": "2026-10-02",
      "title": "Sigma锂业（SGML-US...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/55521518424484844",
-     "readers": 194
+     "readers": 197
     },
     {
      "date": "2026-09-22",
@@ -32951,42 +33070,42 @@
      "title": "💬投资者反馈要点：在锂电池上游...",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/14425442528421112",
-     "readers": 259
+     "readers": 265
     },
     {
      "date": "2026-10-06",
      "title": "Tesla：车端产销持续超预期...",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/82258225542521812",
-     "readers": 240
+     "readers": 243
     },
     {
      "date": "2026-10-06",
      "title": "【9月国内销量跟踪】已公布车企...",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/82258225542521882",
-     "readers": 239
+     "readers": 242
     },
     {
      "date": "2026-10-05",
      "title": "20260928-中国银河-东南亚之行随笔马来西亚——东南亚半导体产业的无冕之王",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/45548581188241218",
-     "readers": 385
+     "readers": 389
     },
     {
      "date": "2026-10-04",
      "title": "20260930_太平洋证券出口链2026M8家电出口增速较快，空调同比加百分之30",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/55521518488255584",
-     "readers": 353
+     "readers": 356
     },
     {
      "date": "2026-10-03",
      "title": "高盛-Cboe Global Markets Inc（CBOE.US）：结构性利空消退，指数期权业务更具韧性——上调至中性-261002",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/82258281425451482",
-     "readers": 335
+     "readers": 338
     }
    ],
    "total": 15,
@@ -33018,14 +33137,14 @@
      "title": "10 月 5 日，海外光伏媒体...",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/22258225851844111",
-     "readers": 174
+     "readers": 179
     },
     {
      "date": "2026-10-03",
      "title": "天岳先进：电话会议核心要点需求...",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/82258281448251122",
-     "readers": 284
+     "readers": 288
     },
     {
      "date": "2026-09-22",
@@ -33085,14 +33204,14 @@
      "title": "📑中国黄金周初步观察：假期经济...",
      "dir": "看空",
      "url": "https://wx.zsxq.com/topic/14425442528581542",
-     "readers": 201
+     "readers": 207
     },
     {
      "date": "2026-10-06",
      "title": "[烟花]【中信建投脑机接口】博...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/14425442528285522",
-     "readers": 169
+     "readers": 174
     },
     {
      "date": "2026-09-22",
@@ -33148,21 +33267,21 @@
      "title": "20261006_招商证券_风格轮动择时周报大盘价值占优，市场震荡修复",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/14425442541255512",
-     "readers": 135
+     "readers": 151
     },
     {
      "date": "2026-10-03",
      "title": "20260930-江海证券-金融工程定期报告A股市场快照宽基指数每日投资动态",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/45548581254288518",
-     "readers": 375
+     "readers": 378
     },
     {
      "date": "2026-10-02",
      "title": "【广发非银】20260930新...",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/14425458121188852",
-     "readers": 220
+     "readers": 224
     }
    ],
    "total": 21,
@@ -33180,84 +33299,84 @@
      "title": "💬投资者反馈要点二：对于杰瑞股...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/55521552128528584",
-     "readers": 260
+     "readers": 266
     },
     {
      "date": "2026-10-06",
      "title": "💬投资者反馈要点三：江海股份（...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/14425442528428522",
-     "readers": 258
+     "readers": 264
     },
     {
      "date": "2026-10-06",
      "title": "【天风军工】FCC或于3.2T...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/82258225542524112",
-     "readers": 243
+     "readers": 246
     },
     {
      "date": "2026-10-06",
      "title": "【东吴电新】美国大储：装机放缓...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/14425442214248522",
-     "readers": 240
+     "readers": 243
     },
     {
      "date": "2026-10-06",
      "title": "📑半导体生产设备：亚洲投资者调...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/14425442528588122",
-     "readers": 203
+     "readers": 209
     },
     {
      "date": "2026-10-06",
      "title": "TrendForce：\n\nRu...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/55521552128155824",
-     "readers": 199
+     "readers": 204
     },
     {
      "date": "2026-10-06",
      "title": "MS：每个机架所需的 PCB、...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/82258225851848122",
-     "readers": 198
+     "readers": 203
     },
     {
      "date": "2026-10-06",
      "title": "亚洲股市在科技股上涨、油价下跌...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/22258225851848851",
-     "readers": 184
+     "readers": 189
     },
     {
      "date": "2026-10-06",
      "title": "📑摩根士丹利｜硬盘驱动器｜北美...",
      "dir": "看空",
      "url": "https://wx.zsxq.com/topic/45548554841421888",
-     "readers": 175
+     "readers": 180
     },
     {
      "date": "2026-10-04",
      "title": "Coherent 专家访谈要点...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/14425458824442542",
-     "readers": 276
+     "readers": 279
     },
     {
      "date": "2026-10-04",
      "title": "【天风军工】FCC或于3.2T...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/82258281152541552",
-     "readers": 261
+     "readers": 264
     },
     {
      "date": "2026-10-03",
      "title": "1. 350–400mW 高功...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/82258281448282522",
-     "readers": 348
+     "readers": 351
     }
    ],
    "total": 197,
@@ -33275,7 +33394,7 @@
      "title": "📑中国电池与材料：铜箔涨价后供...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/45548554841814118",
-     "readers": 205
+     "readers": 211
     }
    ],
    "total": 1,
@@ -33293,21 +33412,21 @@
      "title": "【东吴电新】美国大储：装机放缓...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/14425442214248522",
-     "readers": 240
+     "readers": 243
     },
     {
      "date": "2026-10-06",
      "title": "📑中国电池与材料：铜箔涨价后供...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/45548554841814118",
-     "readers": 205
+     "readers": 211
     },
     {
      "date": "2026-10-04",
      "title": "📝特斯拉与 Rivian 均于...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/14425458824441452",
-     "readers": 307
+     "readers": 310
     },
     {
      "date": "2026-09-22",
@@ -33342,35 +33461,35 @@
      "title": "💬投资者反馈要点：在锂电池上游...",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/14425442528421112",
-     "readers": 259
+     "readers": 265
     },
     {
      "date": "2026-10-06",
      "title": "Tesla：车端产销持续超预期...",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/82258225542521812",
-     "readers": 240
+     "readers": 243
     },
     {
      "date": "2026-10-06",
      "title": "【9月国内销量跟踪】已公布车企...",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/82258225542521882",
-     "readers": 239
+     "readers": 242
     },
     {
      "date": "2026-10-06",
      "title": "10 月 5 日，海外光伏媒体...",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/22258225851844111",
-     "readers": 174
+     "readers": 179
     },
     {
      "date": "2026-10-04",
      "title": "20261002-国联民生证券-比亚迪-002594-系列点评五十9月销量持续增长出海与",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/45548581211455188",
-     "readers": 362
+     "readers": 365
     }
    ],
    "total": 18,
@@ -33388,7 +33507,7 @@
      "title": "📑中国电池与材料：铜箔涨价后供...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/45548554841814118",
-     "readers": 205
+     "readers": 211
     }
    ],
    "total": 1,
@@ -33473,49 +33592,49 @@
      "title": "德意志银行-主题研究：最大的市场错配有哪些？2026年10月-261005",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/22258225821412441",
-     "readers": 136
+     "readers": 152
     },
     {
      "date": "2026-10-07",
      "title": "德意志银行-Tesla Inc（TSLA.US）：3Q26交付量回顾-261005",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/14425442541255852",
-     "readers": 135
+     "readers": 151
     },
     {
      "date": "2026-10-07",
      "title": "高盛-The 720：台积电3Q预览、科塔克马恒达银行、HDFC银行、爱茉莉太平洋、印度消费、SpaceX、美国半导体-261006",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/55521552154215444",
-     "readers": 135
+     "readers": 151
     },
     {
      "date": "2026-10-06",
      "title": "德意志银行-地平线机器人（9660.HK）：8月自动驾驶SoC同比增126％，前视摄像头芯片同比降26％-261002",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/22258225541212111",
-     "readers": 339
+     "readers": 343
     },
     {
      "date": "2026-10-05",
      "title": "德意志银行-贵金属特别报告：峰值已过——白银逼空（#Silversqueeze）-261002",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/55521518811411444",
-     "readers": 421
+     "readers": 424
     },
     {
      "date": "2026-10-03",
      "title": "德意志银行-理想汽车（2015.HK）：9月销量受i6订单暂停拖累，MEGA与i9带动订单回升-261001",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/45548581254241428",
-     "readers": 329
+     "readers": 332
     },
     {
      "date": "2026-10-02",
      "title": "【广发非银】20260930新...",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/14425458121188852",
-     "readers": 220
+     "readers": 224
     },
     {
      "date": "2026-09-22",
@@ -33568,21 +33687,21 @@
      "title": "20260921-国新证券股份-1-8月财政收支数据解读8月财政收入同比增速有所回落",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/82258225511215112",
-     "readers": 306
+     "readers": 309
     },
     {
      "date": "2026-10-03",
      "title": "20260928-国新证券股份-8月规模以上工业利润数据解读8月规模以上工业利润总额同比明显回落",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/55521518452411514",
-     "readers": 371
+     "readers": 374
     },
     {
      "date": "2026-10-02",
      "title": "【广发非银】20260930新...",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/14425458121188852",
-     "readers": 220
+     "readers": 224
     },
     {
      "date": "2026-09-22",
@@ -33614,14 +33733,14 @@
      "title": "🇨🇳中国 CDMO 公司：盈利...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/55521552128185114",
-     "readers": 202
+     "readers": 208
     },
     {
      "date": "2026-10-06",
      "title": "[烟花]【中信建投脑机接口】博...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/14425442528285522",
-     "readers": 169
+     "readers": 174
     },
     {
      "date": "2026-09-22",
@@ -33663,14 +33782,14 @@
      "title": "20260929-中国银河-医药行业月报2609聚焦WCLC与ESMO，中国新药持续突破",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/55521552288582854",
-     "readers": 299
+     "readers": 302
     },
     {
      "date": "2026-10-05",
      "title": "20261001-国盛证券有限责任公司-医药生物行业CXO板块2026H1总结分析业绩增长加速，订单向好支撑景气上行",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/22258281188485551",
-     "readers": 389
+     "readers": 392
     },
     {
      "date": "2026-09-22",
@@ -33709,49 +33828,49 @@
      "title": "❓为什么我们判断智能手机市场在...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/45548554841545488",
-     "readers": 258
+     "readers": 264
     },
     {
      "date": "2026-10-06",
      "title": "🎁【长江社零】2026年国庆消...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/14425442214241482",
-     "readers": 236
+     "readers": 239
     },
     {
      "date": "2026-10-06",
      "title": "📑中国电池与材料：铜箔涨价后供...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/45548554841814118",
-     "readers": 205
+     "readers": 211
     },
     {
      "date": "2026-10-06",
      "title": "📑中国黄金周初步观察：假期经济...",
      "dir": "看空",
      "url": "https://wx.zsxq.com/topic/14425442528581542",
-     "readers": 201
+     "readers": 207
     },
     {
      "date": "2026-10-06",
      "title": "TrendForce：\n\nRu...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/55521552128155824",
-     "readers": 199
+     "readers": 204
     },
     {
      "date": "2026-10-03",
      "title": "【市场跟踪】8月PCE为何超预...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/55521518441511284",
-     "readers": 341
+     "readers": 344
     },
     {
      "date": "2026-10-02",
      "title": "国庆出行前瞻：总量偏强、量价分...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/14425458121821812",
-     "readers": 227
+     "readers": 230
     },
     {
      "date": "2026-09-22",
@@ -33804,14 +33923,14 @@
      "title": "【天风军工】FCC或于3.2T...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/82258225542524112",
-     "readers": 243
+     "readers": 246
     },
     {
      "date": "2026-10-04",
      "title": "【天风军工】FCC或于3.2T...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/82258281152541552",
-     "readers": 261
+     "readers": 264
     },
     {
      "date": "2026-09-10",
@@ -33832,7 +33951,7 @@
      "title": "【广发非银】20260930新...",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/14425458121188852",
-     "readers": 220
+     "readers": 224
     },
     {
      "date": "2026-09-22",
@@ -33885,21 +34004,21 @@
      "title": "📑中国黄金周初步观察：假期经济...",
      "dir": "看空",
      "url": "https://wx.zsxq.com/topic/14425442528581542",
-     "readers": 201
+     "readers": 207
     },
     {
      "date": "2026-10-07",
      "title": "=929全国贴息政策影响及国庆节楼市表现前瞻261006.mp3",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/82258225884858222",
-     "readers": 289
+     "readers": 297
     },
     {
      "date": "2026-10-02",
      "title": "2026年1-9月中国房地产企...",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/55521518424851224",
-     "readers": 346
+     "readers": 348
     },
     {
      "date": "2026-09-22",
@@ -33938,35 +34057,35 @@
      "title": "📑中国电池与材料：铜箔涨价后供...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/45548554841814118",
-     "readers": 205
+     "readers": 211
     },
     {
      "date": "2026-10-04",
      "title": "📝特斯拉与 Rivian 均于...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/14425458824441452",
-     "readers": 307
+     "readers": 310
     },
     {
      "date": "2026-10-04",
      "title": "📑📌中国：9 月份国内乘用车销...",
      "dir": "看空",
      "url": "https://wx.zsxq.com/topic/45548581145558288",
-     "readers": 289
+     "readers": 292
     },
     {
      "date": "2026-10-02",
      "title": "赛力斯：达成新五年合作，组建专...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/22258281454188481",
-     "readers": 254
+     "readers": 257
     },
     {
      "date": "2026-10-02",
      "title": "【中泰电子|美光】业绩超预期，...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/22258281454184551",
-     "readers": 236
+     "readers": 239
     },
     {
      "date": "2026-09-22",
@@ -34008,14 +34127,14 @@
      "title": "《》：英国预计将跟随欧盟对中国...",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/82258225542522512",
-     "readers": 363
+     "readers": 366
     },
     {
      "date": "2026-10-06",
      "title": "美银证券-汽车：每周汽车补给站——技术管线增强，原材料风险累积-261002",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/55521552248584124",
-     "readers": 342
+     "readers": 345
     }
    ],
    "total": 26,
@@ -34043,7 +34162,7 @@
      "title": "【东吴电新】美国大储：装机放缓...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/14425442214248522",
-     "readers": 240
+     "readers": 243
     },
     {
      "date": "2026-09-22",
@@ -34078,49 +34197,49 @@
      "title": "20260930_东吴证券-宏桥控股(002379.SZ)-全产业链资产整合落地绿电+深加工扩张高分红价值显现-2026-09-30",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/55521552288582844",
-     "readers": 299
+     "readers": 302
     },
     {
      "date": "2026-10-06",
      "title": "📑CoreWeave：2026...",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/82258225851254282",
-     "readers": 259
+     "readers": 265
     },
     {
      "date": "2026-10-06",
      "title": "💬投资者反馈要点：在锂电池上游...",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/14425442528421112",
-     "readers": 259
+     "readers": 265
     },
     {
      "date": "2026-10-06",
      "title": "SpaceX 与 xAI：10...",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/82258225542524182",
-     "readers": 234
+     "readers": 237
     },
     {
      "date": "2026-10-04",
      "title": "20260930-开源证券-汽车行业点评报告AIDC电力需求高增，柴发与内燃机迎确定性机�",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/82258281411522422",
-     "readers": 354
+     "readers": 357
     },
     {
      "date": "2026-10-04",
      "title": "20261001_汽车行业点评报告AIDC电力需求高增，柴发与内燃机迎确定性机�",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/45548581211455148",
-     "readers": 354
+     "readers": 357
     },
     {
      "date": "2026-10-04",
      "title": "【华创海外】美股每日简报\n20...",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/82258281152221522",
-     "readers": 309
+     "readers": 312
     }
    ],
    "total": 18,
@@ -34166,14 +34285,14 @@
      "title": "【周六你需要知道的隔夜全球要闻...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/45548581228588188",
-     "readers": 346
+     "readers": 349
     },
     {
      "date": "2026-10-02",
      "title": "亚洲债券在美债反弹后上涨，股市...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/55521518424858454",
-     "readers": 367
+     "readers": 369
     },
     {
      "date": "2026-09-10",
@@ -34187,7 +34306,7 @@
      "title": "摩根大通-美国国债：试图用纸杯接住洪流-261002",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/55521552248415824",
-     "readers": 392
+     "readers": 395
     },
     {
      "date": "2026-09-10",
@@ -34226,84 +34345,84 @@
      "title": "【天风军工】FCC或于3.2T...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/82258225542524112",
-     "readers": 243
+     "readers": 246
     },
     {
      "date": "2026-10-06",
      "title": "亚洲股市上涨，美联储加息押注缓...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/82258225542524822",
-     "readers": 226
+     "readers": 229
     },
     {
      "date": "2026-10-06",
      "title": "📑中国电池与材料：铜箔涨价后供...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/45548554841814118",
-     "readers": 205
+     "readers": 211
     },
     {
      "date": "2026-10-06",
      "title": "🇨🇳中国 CDMO 公司：盈利...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/55521552128185114",
-     "readers": 202
+     "readers": 208
     },
     {
      "date": "2026-10-06",
      "title": "📑摩根士丹利｜硬盘驱动器｜北美...",
      "dir": "看空",
      "url": "https://wx.zsxq.com/topic/45548554841421888",
-     "readers": 175
+     "readers": 180
     },
     {
      "date": "2026-10-04",
      "title": "9月非农走弱边际降低加息压力\n...",
      "dir": "看空",
      "url": "https://wx.zsxq.com/topic/14425458824445582",
-     "readers": 277
+     "readers": 280
     },
     {
      "date": "2026-10-04",
      "title": "Coherent 专家访谈要点...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/14425458824442542",
-     "readers": 276
+     "readers": 279
     },
     {
      "date": "2026-10-04",
      "title": "【天风军工】FCC或于3.2T...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/82258281152541552",
-     "readers": 261
+     "readers": 264
     },
     {
      "date": "2026-10-03",
      "title": "1. 350–400mW 高功...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/82258281448282522",
-     "readers": 348
+     "readers": 351
     },
     {
      "date": "2026-10-03",
      "title": "摩根大通：英伟达 Vera R...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/45548581228588588",
-     "readers": 346
+     "readers": 349
     },
     {
      "date": "2026-10-03",
      "title": "【周六你需要知道的隔夜全球要闻...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/45548581228588188",
-     "readers": 346
+     "readers": 349
     },
     {
      "date": "2026-10-03",
      "title": "【市场跟踪】8月PCE为何超预...",
      "dir": "看多",
      "url": "https://wx.zsxq.com/topic/55521518441511284",
-     "readers": 341
+     "readers": 344
     }
    ],
    "total": 101,
@@ -34351,7 +34470,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 322,
+   "readers": 334,
    "summary": "#调研纪要#"
   },
   {
@@ -34361,7 +34480,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 289,
+   "readers": 297,
    "summary": "#调研纪要#"
   },
   {
@@ -34371,7 +34490,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 289,
+   "readers": 297,
    "summary": "#调研纪要#"
   },
   {
@@ -34381,7 +34500,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 289,
+   "readers": 297,
    "summary": "#调研纪要#"
   },
   {
@@ -34391,7 +34510,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 288,
+   "readers": 296,
    "summary": "#调研纪要#"
   },
   {
@@ -34401,7 +34520,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 286,
+   "readers": 295,
    "summary": "#调研纪要#"
   },
   {
@@ -34411,7 +34530,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 286,
+   "readers": 295,
    "summary": "#调研纪要#"
   },
   {
@@ -34421,7 +34540,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 286,
+   "readers": 295,
    "summary": "#调研纪要#"
   },
   {
@@ -34431,7 +34550,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 145,
+   "readers": 162,
    "summary": "#国内研报#"
   },
   {
@@ -34441,7 +34560,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 140,
+   "readers": 156,
    "summary": "#外资研报#"
   },
   {
@@ -34451,7 +34570,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 139,
+   "readers": 156,
    "summary": "#外资研报#"
   },
   {
@@ -34461,7 +34580,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 137,
+   "readers": 153,
    "summary": "#外资研报#"
   },
   {
@@ -34471,7 +34590,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 137,
+   "readers": 153,
    "summary": "#外资研报#"
   },
   {
@@ -34481,7 +34600,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 136,
+   "readers": 152,
    "summary": "#国内研报#"
   },
   {
@@ -34491,7 +34610,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 136,
+   "readers": 152,
    "summary": "#外资研报#"
   },
   {
@@ -34501,7 +34620,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 136,
+   "readers": 152,
    "summary": "#外资研报#"
   },
   {
@@ -34513,7 +34632,7 @@
    "comms": [
     "cu"
    ],
-   "readers": 135,
+   "readers": 151,
    "summary": "#国内研报#"
   },
   {
@@ -34523,7 +34642,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 135,
+   "readers": 151,
    "summary": "#国内研报#"
   },
   {
@@ -34533,7 +34652,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 135,
+   "readers": 151,
    "summary": "#外资研报#"
   },
   {
@@ -34543,7 +34662,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 135,
+   "readers": 151,
    "summary": "#外资研报#"
   },
   {
@@ -34553,7 +34672,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 135,
+   "readers": 151,
    "summary": "#外资研报#"
   },
   {
@@ -34565,7 +34684,7 @@
    "comms": [
     "cu"
    ],
-   "readers": 134,
+   "readers": 150,
    "summary": "#外资研报#"
   },
   {
@@ -34575,7 +34694,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 431,
+   "readers": 434,
    "summary": "#国内研报#"
   },
   {
@@ -34585,7 +34704,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 417,
+   "readers": 420,
    "summary": "#外资研报#"
   },
   {
@@ -34595,7 +34714,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 396,
+   "readers": 399,
    "summary": "#外资研报#"
   },
   {
@@ -34605,7 +34724,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 393,
+   "readers": 396,
    "summary": "#外资研报#"
   },
   {
@@ -34615,7 +34734,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 392,
+   "readers": 395,
    "summary": "#外资研报#"
   },
   {
@@ -34625,7 +34744,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 392,
+   "readers": 395,
    "summary": "#外资研报#"
   },
   {
@@ -34635,7 +34754,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 390,
+   "readers": 393,
    "summary": "#外资研报#"
   },
   {
@@ -34645,27 +34764,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 388,
-   "summary": "#外资研报#"
-  },
-  {
-   "date": "2026-10-06",
-   "title": "10月6日早间信息总结",
-   "url": "https://wx.zsxq.com/topic/45548554421155528",
-   "quality": "高",
-   "category": "其他",
-   "comms": [],
-   "readers": 381,
-   "summary": "10月6日早间信息总结"
-  },
-  {
-   "date": "2026-10-06",
-   "title": "瑞银-全球制药：美国相对欧洲制药的估值溢价创历史新高-261005",
-   "url": "https://wx.zsxq.com/topic/45548554421512218",
-   "quality": "高",
-   "category": "研报纪要",
-   "comms": [],
-   "readers": 379,
+   "readers": 391,
    "summary": "#外资研报#"
   },
   {
@@ -34675,8 +34774,28 @@
    "quality": "高",
    "category": "宏观外汇",
    "comms": [],
-   "readers": 379,
+   "readers": 388,
    "summary": "OpenAI 洽谈 300 亿美元融资，与阿联酋基金、贝莱德磋商"
+  },
+  {
+   "date": "2026-10-06",
+   "title": "10月6日早间信息总结",
+   "url": "https://wx.zsxq.com/topic/45548554421155528",
+   "quality": "高",
+   "category": "其他",
+   "comms": [],
+   "readers": 384,
+   "summary": "10月6日早间信息总结"
+  },
+  {
+   "date": "2026-10-06",
+   "title": "瑞银-全球制药：美国相对欧洲制药的估值溢价创历史新高-261005",
+   "url": "https://wx.zsxq.com/topic/45548554421512218",
+   "quality": "高",
+   "category": "研报纪要",
+   "comms": [],
+   "readers": 382,
+   "summary": "#外资研报#"
   },
   {
    "date": "2026-10-06",
@@ -34685,7 +34804,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 377,
+   "readers": 380,
    "summary": "#外资研报#"
   },
   {
@@ -34695,7 +34814,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 374,
+   "readers": 377,
    "summary": "#外资研报#"
   },
   {
@@ -34705,18 +34824,8 @@
    "quality": "高",
    "category": "其他",
    "comms": [],
-   "readers": 363,
+   "readers": 366,
    "summary": "《》：英国预计将跟随欧盟对中国电动汽车加征关税，以满足欧盟的一项关键要求"
-  },
-  {
-   "date": "2026-10-06",
-   "title": "[红包]芒果超媒：《》战天宫篇...",
-   "url": "https://wx.zsxq.com/topic/82258225542521222",
-   "quality": "高",
-   "category": "观点讨论",
-   "comms": [],
-   "readers": 352,
-   "summary": "[红包]芒果超媒：《》战天宫篇6-7集观感更新【中信传媒】 · 《》战天宫篇6-7集观感较此前进一步改善，场景丰富度与角色辨识度均有所提升"
   },
   {
    "date": "2026-10-06",
@@ -34725,8 +34834,28 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 350,
+   "readers": 356,
    "summary": "#外资研报#"
+  },
+  {
+   "date": "2026-10-06",
+   "title": "[红包]芒果超媒：《》战天宫篇...",
+   "url": "https://wx.zsxq.com/topic/82258225542521222",
+   "quality": "高",
+   "category": "观点讨论",
+   "comms": [],
+   "readers": 355,
+   "summary": "[红包]芒果超媒：《》战天宫篇6-7集观感更新【中信传媒】 · 《》战天宫篇6-7集观感较此前进一步改善，场景丰富度与角色辨识度均有所提升"
+  },
+  {
+   "date": "2026-10-06",
+   "title": "德国和法国提议新武器以应对中国...",
+   "url": "https://wx.zsxq.com/topic/14425442528484812",
+   "quality": "高",
+   "category": "其他",
+   "comms": [],
+   "readers": 347,
+   "summary": "德国和法国提议新武器以应对中国商品涌入"
   },
   {
    "date": "2026-10-06",
@@ -34735,8 +34864,18 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 343,
+   "readers": 346,
    "summary": "#外资研报#"
+  },
+  {
+   "date": "2026-10-06",
+   "title": "10月6日晚间信息总结",
+   "url": "https://wx.zsxq.com/topic/55521552111418254",
+   "quality": "高",
+   "category": "其他",
+   "comms": [],
+   "readers": 346,
+   "summary": "10月6日晚间信息总结"
   },
   {
    "date": "2026-10-06",
@@ -34745,7 +34884,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 342,
+   "readers": 345,
    "summary": "#外资研报#"
   },
   {
@@ -34755,37 +34894,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 342,
-   "summary": "#外资研报#"
-  },
-  {
-   "date": "2026-10-06",
-   "title": "德国和法国提议新武器以应对中国...",
-   "url": "https://wx.zsxq.com/topic/14425442528484812",
-   "quality": "高",
-   "category": "其他",
-   "comms": [],
-   "readers": 341,
-   "summary": "德国和法国提议新武器以应对中国商品涌入"
-  },
-  {
-   "date": "2026-10-06",
-   "title": "伯恩斯坦-Boeing：回到未来？——上周多项问题得到解决-261005",
-   "url": "https://wx.zsxq.com/topic/14425442218484882",
-   "quality": "高",
-   "category": "研报纪要",
-   "comms": [],
-   "readers": 339,
-   "summary": "#外资研报#"
-  },
-  {
-   "date": "2026-10-06",
-   "title": "德意志银行-地平线机器人（9660.HK）：8月自动驾驶SoC同比增126％，前视摄像头芯片同比降26％-261002",
-   "url": "https://wx.zsxq.com/topic/22258225541212111",
-   "quality": "高",
-   "category": "研报纪要",
-   "comms": [],
-   "readers": 339,
+   "readers": 345,
    "summary": "#外资研报#"
   },
   {
@@ -34795,7 +34904,7 @@
    "quality": "高",
    "category": "宏观外汇",
    "comms": [],
-   "readers": 338,
+   "readers": 345,
    "summary": "OpenAI 洽谈 300 亿美元融资，与阿联酋基金、贝莱德磋商"
   },
   {
@@ -34805,7 +34914,7 @@
    "quality": "高",
    "category": "其他",
    "comms": [],
-   "readers": 337,
+   "readers": 344,
    "summary": "英伟达合作伙伴鸿海因人工智能热潮销售额超出预期"
   },
   {
@@ -34815,18 +34924,28 @@
    "quality": "高",
    "category": "其他",
    "comms": [],
-   "readers": 337,
+   "readers": 344,
    "summary": "⠀"
   },
   {
    "date": "2026-10-06",
-   "title": "10月6日晚间信息总结",
-   "url": "https://wx.zsxq.com/topic/55521552111418254",
+   "title": "伯恩斯坦-Boeing：回到未来？——上周多项问题得到解决-261005",
+   "url": "https://wx.zsxq.com/topic/14425442218484882",
    "quality": "高",
-   "category": "其他",
+   "category": "研报纪要",
    "comms": [],
-   "readers": 337,
-   "summary": "10月6日晚间信息总结"
+   "readers": 343,
+   "summary": "#外资研报#"
+  },
+  {
+   "date": "2026-10-06",
+   "title": "德意志银行-地平线机器人（9660.HK）：8月自动驾驶SoC同比增126％，前视摄像头芯片同比降26％-261002",
+   "url": "https://wx.zsxq.com/topic/22258225541212111",
+   "quality": "高",
+   "category": "研报纪要",
+   "comms": [],
+   "readers": 343,
+   "summary": "#外资研报#"
   },
   {
    "date": "2026-10-06",
@@ -34835,7 +34954,7 @@
    "quality": "高",
    "category": "其他",
    "comms": [],
-   "readers": 336,
+   "readers": 343,
    "summary": "📊#🚀🚀🚀Muse爆红出圈，一张图看懂#Muse全维度数据追踪 · [拥抱]如需进一步交流或获取详细解读，欢迎联系华福证券AI互联网团队"
   },
   {
@@ -34845,7 +34964,7 @@
    "quality": "高",
    "category": "其他",
    "comms": [],
-   "readers": 335,
+   "readers": 342,
    "summary": "长光华芯开发出90W可寻址 VCSEL芯片"
   },
   {
@@ -34855,7 +34974,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 310,
+   "readers": 313,
    "summary": "#国内研报#"
   },
   {
@@ -34865,7 +34984,7 @@
    "quality": "高",
    "category": "观点讨论",
    "comms": [],
-   "readers": 309,
+   "readers": 312,
    "summary": "【浙商计算机刘雯蜀郑毅】乐鑫科技：端侧AI万众创新 · 2、按照 Meta 公布的信息，开发者可以使用 【ESP32 开发板】运行 Muse 固件，或使用 Linux SDK 连接更复杂的设备，也就是说开发者不仅能够在低成本微控制器上部署 Muse 交互逻辑，还能直接在树莓…"
   },
   {
@@ -34875,7 +34994,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 308,
+   "readers": 311,
    "summary": "#国内研报#"
   },
   {
@@ -34885,7 +35004,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 306,
+   "readers": 309,
    "summary": "#国内研报#"
   },
   {
@@ -34895,7 +35014,7 @@
    "quality": "高",
    "category": "观点讨论",
    "comms": [],
-   "readers": 304,
+   "readers": 307,
    "summary": "【中泰传媒互联网|IP】泡泡玛特周跟踪 · 🌸核心看点：星星人线上摄影大赛&线下企划&海外联名，Zsiga艺术家日本签售，LABUBU小家电亮相10周年展"
   },
   {
@@ -34905,7 +35024,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 299,
+   "readers": 302,
    "summary": "#国内研报#"
   },
   {
@@ -34915,7 +35034,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 299,
+   "readers": 302,
    "summary": "#国内研报#"
   },
   {
@@ -34925,7 +35044,7 @@
    "quality": "高",
    "category": "观点讨论",
    "comms": [],
-   "readers": 260,
+   "readers": 266,
    "summary": "💬投资者反馈要点二：对于杰瑞股份（002353.SZ）美国人工智能数据中心燃气轮机业务，为什么我们相比市场更为谨慎 · 👍看多阵营的核心观点"
   },
   {
@@ -34935,7 +35054,7 @@
    "quality": "高",
    "category": "观点讨论",
    "comms": [],
-   "readers": 259,
+   "readers": 265,
    "summary": "📑CoreWeave：2026 Fully Connected 大会 —— 拓展人工智能平台 · ⚖️虽然围绕数据中心建设的政治监管环境相比今年早些时候冲突有所缓和，但电力供给、审批流程、场地开发依旧是核心瓶颈"
   },
   {
@@ -34947,7 +35066,7 @@
    "comms": [
     "li"
    ],
-   "readers": 259,
+   "readers": 265,
    "summary": "💬投资者反馈要点：在锂电池上游材料企业当中，璞泰来（603659.SH）盈利表现相对突出，为什么这类公司估值普遍很低 · 🔋对于锂电池上游材料行业，很多投资者同时担忧供给端产能过剩，以及需求增长的可持续性"
   },
   {
@@ -34957,7 +35076,7 @@
    "quality": "高",
    "category": "观点讨论",
    "comms": [],
-   "readers": 258,
+   "readers": 264,
    "summary": "❓为什么我们判断智能手机市场在 2027 年不会迎来复苏 · 🤔逻辑是：一名消费者 2026 年推迟换机，如果换代产品价格大幅上涨，或者同等价位内存配置缩水，那么消费者未必会在 2027 年回归市场"
   },
   {
@@ -34967,7 +35086,7 @@
    "quality": "高",
    "category": "观点讨论",
    "comms": [],
-   "readers": 258,
+   "readers": 264,
    "summary": "💬投资者反馈要点三：江海股份（002484.SZ）股价波动为什么这么大 · 🔍该指引来自下游客户要求供应商尽可能扩产来规避缺货风险，但客户扩产诉求不等于未来实际产品交付量"
   },
   {
@@ -34977,7 +35096,7 @@
    "quality": "高",
    "category": "观点讨论",
    "comms": [],
-   "readers": 250,
+   "readers": 253,
    "summary": "【天风轻纺】Nike：压力尚存 · ■指引：预计FY27收入-高单"
   },
   {
@@ -34987,7 +35106,7 @@
    "quality": "高",
    "category": "观点讨论",
    "comms": [],
-   "readers": 245,
+   "readers": 248,
    "summary": "【广发纺服】耐克FY2027Q1业绩 · 耐克公布FY27Q1财报（2026年6月1日-2026年8月31日）"
   },
   {
@@ -34997,7 +35116,7 @@
    "quality": "高",
    "category": "观点讨论",
    "comms": [],
-   "readers": 243,
+   "readers": 246,
    "summary": "【天风军工】FCC或于3.2T出台限制，海外物料链条或为重中之重 · 1）目前来看海外AAOI等光模块厂商短期产能仍远低于旭创和新易盛，且组装毛利率较低，受益相对有限，因此国内光模块大厂供应格局短期风险下降，中长期来看需要解决海外供应链及毛利率问题"
   },
   {
@@ -35009,7 +35128,7 @@
    "comms": [
     "li"
    ],
-   "readers": 240,
+   "readers": 243,
    "summary": "【东吴电新】美国大储：装机放缓，备案量突破66GW，环比+2.1% · 风险提示：竞争加剧、政策超预期变化、新能源装机不及预期、海外政策风险等"
   },
   {
@@ -35021,7 +35140,7 @@
    "comms": [
     "li"
    ],
-   "readers": 240,
+   "readers": 243,
    "summary": "Tesla：车端产销持续超预期，油价危机延续带动销量高基数下的环比正增【锂电】 · 车端：2026Q3Tesla产量46.44万辆，同比+4%，环比+3%"
   },
   {
@@ -35033,7 +35152,7 @@
    "comms": [
     "li"
    ],
-   "readers": 239,
+   "readers": 242,
    "summary": "【9月国内销量跟踪】已公布车企/车型9月销量合计72.6万辆，同比+16%，环比+5%【锂电】 · 比亚迪(乘用车):销量456713辆，同比+16.2%，环比+5.4%"
   },
   {
@@ -35043,7 +35162,7 @@
    "quality": "高",
    "category": "观点讨论",
    "comms": [],
-   "readers": 236,
+   "readers": 239,
    "summary": "🎁【长江社零】2026年国庆消费数据高频监测 · 🌹交通出行：国庆前三天，全社会跨区域人员流动量同比下滑0.42%，其中铁路客运量同比下滑1%，民航客运量同比下滑2.66%"
   },
   {
@@ -35053,7 +35172,7 @@
    "quality": "高",
    "category": "观点讨论",
    "comms": [],
-   "readers": 234,
+   "readers": 237,
    "summary": "SpaceX 与 xAI：10GW–20GW AI 数据中心建设、Terra Fab 与供应链战略 · 4. Terra Fab 将仅面向内部使用制造专有 ASIC，此举源于此前亚洲零部件采购中断及地缘政治风险"
   },
   {
@@ -35063,7 +35182,7 @@
    "quality": "高",
    "category": "观点讨论",
    "comms": [],
-   "readers": 232,
+   "readers": 235,
    "summary": "【华创交运*航空日度观察】10月3日民航国内旅客量同比-4.9%，平均含油票价同比-1.1%，平均裸票价同比-8.3% · 一、9月30日-10月3日国庆节假期，民航旅客量同比-1.7%，国内全票价-6.9%"
   },
   {
@@ -35073,7 +35192,7 @@
    "quality": "高",
    "category": "其他",
    "comms": [],
-   "readers": 231,
+   "readers": 234,
    "summary": "DeepSeek 与华为瞄准英伟达坚固的护城河"
   },
   {
@@ -35083,18 +35202,8 @@
    "quality": "高",
    "category": "其他",
    "comms": [],
-   "readers": 230,
+   "readers": 233,
    "summary": "据彭博行业研究称，随着 DeepSeek 等实验室取得进展，美国人工智能公司相对于中国的性能领先优势在近几个月急剧缩小，降至历史最低水平，威胁到美国的技术主导地位"
-  },
-  {
-   "date": "2026-10-06",
-   "title": "亚洲股市上涨，美联储加息押注缓...",
-   "url": "https://wx.zsxq.com/topic/82258225542524822",
-   "quality": "高",
-   "category": "宏观外汇",
-   "comms": [],
-   "readers": 226,
-   "summary": "亚洲股市上涨，美联储加息押注缓解，债券小幅走高：市场综述"
   },
   {
    "date": "2026-10-06",
@@ -35103,8 +35212,18 @@
    "quality": "高",
    "category": "其他",
    "comms": [],
-   "readers": 226,
+   "readers": 232,
    "summary": "Aletheia 这篇今天讨论度高，不过基本是一些 ABC"
+  },
+  {
+   "date": "2026-10-06",
+   "title": "亚洲股市上涨，美联储加息押注缓...",
+   "url": "https://wx.zsxq.com/topic/82258225542524822",
+   "quality": "高",
+   "category": "宏观外汇",
+   "comms": [],
+   "readers": 229,
+   "summary": "亚洲股市上涨，美联储加息押注缓解，债券小幅走高：市场综述"
   },
   {
    "date": "2026-10-06",
@@ -35113,7 +35232,7 @@
    "quality": "高",
    "category": "观点讨论",
    "comms": [],
-   "readers": 220,
+   "readers": 224,
    "summary": "【国泰海通商社·国庆假期·10月4日】 · 预计2026年10月4日（国庆假期第4日），全社会跨区域人员流动量30619万人次，比2025年同期（10月4日，国庆假期第4日，下同）增长1.6%"
   },
   {
@@ -35123,7 +35242,7 @@
    "quality": "高",
    "category": "观点讨论",
    "comms": [],
-   "readers": 210,
+   "readers": 216,
    "summary": "微软专家调研 · 3. Home使报告生成时间缩短约33%，Autopilot在受限权限和适当安全配置下每人每周可节省3到5小时，但Code复杂任务成功率不到40%左右，约20%的协同生成代码存在潜在注入风险，Token消耗增长60%多…"
   },
   {
@@ -35136,7 +35255,7 @@
     "li",
     "cu"
    ],
-   "readers": 205,
+   "readers": 211,
    "summary": "📑中国电池与材料：铜箔涨价后供应紧张得到缓解 · 🔍根据我们渠道调研，铜箔价格谈判已于 9 月末落地，意味着供应瓶颈已经基本缓解"
   },
   {
@@ -35146,7 +35265,7 @@
    "quality": "高",
    "category": "观点讨论",
    "comms": [],
-   "readers": 203,
+   "readers": 209,
    "summary": "📑半导体生产设备：亚洲投资者调研反馈 · 💡我们认为持有迪斯科等待财报兑现具备不错的风险收益比"
   },
   {
@@ -35156,7 +35275,7 @@
    "quality": "高",
    "category": "观点讨论",
    "comms": [],
-   "readers": 202,
+   "readers": 208,
    "summary": "🇨🇳中国 CDMO 公司：盈利表现亮眼，业绩指引上调，增长能见度改善 · ✨业绩普遍超预期、指引上调、订单动能强劲，印证行业基本面"
   },
   {
@@ -35166,7 +35285,7 @@
    "quality": "高",
    "category": "观点讨论",
    "comms": [],
-   "readers": 201,
+   "readers": 207,
    "summary": "📑中国黄金周初步观察：假期经济活动表现似乎不及预期 · 💡花旗核心观点：基于早期数据，10 月 1‑7 日黄金周经济活动表现偏弱"
   },
   {
@@ -35176,17 +35295,17 @@
    "quality": "高",
    "category": "观点讨论",
    "comms": [],
-   "readers": 199,
+   "readers": 204,
    "summary": "TrendForce · Rubin 平台上仍存在系统级测试和验证问题，预计产量将从 2026 年第四季度或 2027 年第一季度开始逐步增加"
   },
   {
    "date": "2026-10-06",
    "title": "MS：每个机架所需的 PCB、...",
    "url": "https://wx.zsxq.com/topic/82258225851848122",
-   "quality": "中",
+   "quality": "高",
    "category": "其他",
    "comms": [],
-   "readers": 198,
+   "readers": 203,
    "summary": "MS：每个机架所需的 PCB、CCL 和铜箔用量正在成倍增长 · 以 PCB 为例，先进 AI PCB 的生产时间是普通 PCB 的~2 倍，令供需紧张状况进一步加剧"
   },
   {
@@ -35196,7 +35315,7 @@
    "quality": "高",
    "category": "观点讨论",
    "comms": [],
-   "readers": 197,
+   "readers": 202,
    "summary": "📑AI 服务器 PCB/CCL 规格及主要供应商 · ✨GB200，时间节点：2025 年上半年，PCB 规格：22 层 HDI、24 层（交换机板），PCB 供应商：VGT、欣兴电子"
   },
   {
@@ -35208,17 +35327,17 @@
    "comms": [
     "cu"
    ],
-   "readers": 196,
+   "readers": 202,
    "summary": "📑覆铜板：罗杰斯投资者日带来的行业启示‑CCL · 🏭我们认为制造生产能力，是该产品实现商业化落地的关键因素"
   },
   {
    "date": "2026-10-06",
    "title": "瑞银：CPO 价值链",
    "url": "https://wx.zsxq.com/topic/14425442528511542",
-   "quality": "中",
+   "quality": "高",
    "category": "其他",
    "comms": [],
-   "readers": 195,
+   "readers": 200,
    "summary": "瑞银：CPO 价值链"
   },
   {
@@ -35228,7 +35347,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 191,
+   "readers": 195,
    "summary": "#外资研报#"
   },
   {
@@ -35238,7 +35357,7 @@
    "quality": "中",
    "category": "其他",
    "comms": [],
-   "readers": 184,
+   "readers": 189,
    "summary": "亚洲股市在科技股上涨、油价下跌后有望走高：市场综述"
   },
   {
@@ -35248,7 +35367,7 @@
    "quality": "高",
    "category": "观点讨论",
    "comms": [],
-   "readers": 175,
+   "readers": 180,
    "summary": "📑摩根士丹利｜硬盘驱动器｜北美：我们无需为东芝的相关报道感到担忧，原因如下 · 📝下文我们会展开更多详细分析，但核心观点为：我们乐意借本次股价回调买入希捷与西部数据的股票"
   },
   {
@@ -35258,7 +35377,7 @@
    "quality": "高",
    "category": "观点讨论",
    "comms": [],
-   "readers": 175,
+   "readers": 180,
    "summary": "根据卓创资讯最新的价格监测显示，进入10月份电子纱、电子布迎来新一轮涨价，主流企业电子纱G75调价3000元/吨，报价达25800-26000元/吨 · 进入下半年以来，电子纱电子布供求持续紧张，电子纱每月涨幅为3000元/吨，电子布涨幅为1.5元/米，未来短时间电子纱电子布需求"
   },
   {
@@ -35268,7 +35387,7 @@
    "quality": "高",
    "category": "观点讨论",
    "comms": [],
-   "readers": 174,
+   "readers": 179,
    "summary": "關於中際旭創的問題 · FCC針對中國製光模块的政策（可能是3.2T 規格）不會對中際旭創造成影響，甚至會帶來利好"
   },
   {
@@ -35280,7 +35399,7 @@
    "comms": [
     "si"
    ],
-   "readers": 174,
+   "readers": 179,
    "summary": "10 月 5 日，海外光伏媒体 PV Tech 发布 Tandem PV 深度专访"
   },
   {
@@ -35290,7 +35409,7 @@
    "quality": "高",
    "category": "观点讨论",
    "comms": [],
-   "readers": 169,
+   "readers": 174,
    "summary": "[烟花]【中信建投脑机接口】博睿康昨日更新招股书及问询函回复，披露侵入式脑机接口产品价格、植入量、更长时间的临床随访数据等信息 · [太阳]脑机接口被纳入十五五规划六大未来产业方向，工信部、医保局、药监局等多部委及北京、上海、四川等多地出台扶持政策，产业处于技术突破与商业化落地关"
   },
   {
@@ -35300,7 +35419,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 477,
+   "readers": 482,
    "summary": "#调研纪要#"
   },
   {
@@ -35310,7 +35429,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 456,
+   "readers": 459,
    "summary": "#国内研报#"
   },
   {
@@ -35320,7 +35439,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 433,
+   "readers": 436,
    "summary": "#外资研报#"
   },
   {
@@ -35330,7 +35449,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 424,
+   "readers": 428,
    "summary": "#外资研报#"
   },
   {
@@ -35340,7 +35459,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 423,
+   "readers": 426,
    "summary": "#外资研报#"
   },
   {
@@ -35350,7 +35469,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 421,
+   "readers": 424,
    "summary": "#外资研报#"
   },
   {
@@ -35360,7 +35479,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 421,
+   "readers": 424,
    "summary": "#外资研报#"
   },
   {
@@ -35370,7 +35489,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 416,
+   "readers": 419,
    "summary": "#外资研报#"
   },
   {
@@ -35380,7 +35499,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 408,
+   "readers": 411,
    "summary": "#国内研报#"
   },
   {
@@ -35390,7 +35509,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 392,
+   "readers": 395,
    "summary": "#国内研报#"
   },
   {
@@ -35400,7 +35519,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 390,
+   "readers": 393,
    "summary": "#国内研报#"
   },
   {
@@ -35410,7 +35529,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 389,
+   "readers": 392,
    "summary": "#国内研报#"
   },
   {
@@ -35422,7 +35541,7 @@
    "comms": [
     "li"
    ],
-   "readers": 385,
+   "readers": 389,
    "summary": "#国内研报#"
   },
   {
@@ -35432,7 +35551,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 356,
+   "readers": 359,
    "summary": "#外资研报#"
   },
   {
@@ -35442,7 +35561,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 344,
+   "readers": 349,
    "summary": "#调研纪要#"
   },
   {
@@ -35452,7 +35571,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 330,
+   "readers": 335,
    "summary": "#调研纪要#"
   },
   {
@@ -35462,7 +35581,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 329,
+   "readers": 334,
    "summary": "#调研纪要#"
   },
   {
@@ -35472,7 +35591,7 @@
    "quality": "高",
    "category": "其他",
    "comms": [],
-   "readers": 285,
+   "readers": 289,
    "summary": "10月5日晚间信息总结"
   },
   {
@@ -35482,7 +35601,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 470,
+   "readers": 473,
    "summary": "#外资研报#"
   },
   {
@@ -35492,7 +35611,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 450,
+   "readers": 453,
    "summary": "#外资研报#"
   },
   {
@@ -35502,7 +35621,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 450,
+   "readers": 453,
    "summary": "#外资研报#"
   },
   {
@@ -35512,7 +35631,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 443,
+   "readers": 446,
    "summary": "#外资研报#"
   },
   {
@@ -35522,7 +35641,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 438,
+   "readers": 441,
    "summary": "#外资研报#"
   },
   {
@@ -35532,7 +35651,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 438,
+   "readers": 441,
    "summary": "#外资研报#"
   },
   {
@@ -35542,7 +35661,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 438,
+   "readers": 441,
    "summary": "#外资研报#"
   },
   {
@@ -35552,7 +35671,7 @@
    "quality": "高",
    "category": "其他",
    "comms": [],
-   "readers": 423,
+   "readers": 426,
    "summary": "瑞银：交付周期 · 先进封装/基板：1-1.5 年"
   },
   {
@@ -35562,18 +35681,18 @@
    "quality": "高",
    "category": "宏观外汇",
    "comms": [],
-   "readers": 394,
+   "readers": 397,
    "summary": "截至 9 月 30 日，超大规模云服务商最新的表外承诺金额为 3.6 万亿美元 · 仅一个月就增加了 5000 亿美元（主要来自英伟达）"
   }
  ],
  "digest_days": 7,
  "stats": {
   "quality": {
-   "高": 15756,
-   "中": 702
+   "高": 15754,
+   "中": 700
   },
-  "filtered_low": 9229,
+  "filtered_low": 9224,
   "dedup": 42,
-  "out_of_window": 32131
+  "out_of_window": 32140
  }
 }
