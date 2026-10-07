@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-07T14:30:42+08:00",
+ "updated_at": "2026-10-07T14:50:56+08:00",
  "source": "主源:纪要小能手_存档.json(2561) + 全量:前沿信息收录_topics_20260905.json(57001) + 直拉补漏近16天(300)",
  "group": "前沿信息收录",
  "window_days": 90,
@@ -33,7 +33,7 @@
      "重庆地区空调渠道交流261006_纪要.pdf",
      "重庆地区空调渠道交流261006_原文.pdf"
     ],
-    "readers": 315,
+    "readers": 322,
     "pdf_digest": {
      "name": "重庆地区空调渠道交流261006_纪要.pdf",
      "pts": [
@@ -66,7 +66,7 @@
      "2026IFA出海家电百花齐放关注新一轮大单品周期261006_纪要.pdf",
      "2026IFA出海家电百花齐放关注新一轮大单品周期261006_原文.pdf"
     ],
-    "readers": 286,
+    "readers": 289,
     "pdf_digest": {
      "name": "=929全国贴息政策影响及国庆节楼市表现前瞻261006_纪要.pdf",
      "pts": [
@@ -103,7 +103,7 @@
      "工作与生活Agent渗透提高AI应用走到哪一步了_国庆不打烊_晚8点栋察系列电话会261006_纪要.pdf",
      "工作与生活Agent渗透提高AI应用走到哪一步了_国庆不打烊_晚8点栋察系列电话会261006_原文.pdf"
     ],
-    "readers": 286,
+    "readers": 289,
     "pdf_digest": {
      "name": "AI散热系列（一）AI算力驱动TIM迭代，石墨烯散热产业化提速261006_纪要.pdf",
      "pts": [
@@ -140,7 +140,7 @@
      "直播电商从流量驱动向品质深耕转轨东方甄选开启品质零售飞轮261006_纪要.pdf",
      "直播电商从流量驱动向品质深耕转轨东方甄选开启品质零售飞轮261006_原文.pdf"
     ],
-    "readers": 286,
+    "readers": 289,
     "pdf_digest": {
      "name": "天风-国庆总结10月金股261006_纪要.pdf",
      "pts": [
@@ -177,7 +177,7 @@
      "珀莱雅大单品拾阶致高阶并表花知晓开启多品牌新章261006_纪要.pdf",
      "珀莱雅大单品拾阶致高阶并表花知晓开启多品牌新章261006_原文.pdf"
     ],
-    "readers": 285,
+    "readers": 288,
     "pdf_digest": {
      "name": "扩内需组合拳落地假期消费平稳增长2026国庆假期那些事儿261006_纪要.pdf",
      "pts": [
@@ -214,7 +214,7 @@
      "华西电子_AI20AGI时代到来261006_纪要.pdf",
      "华西电子_AI20AGI时代到来261006_原文.pdf"
     ],
-    "readers": 284,
+    "readers": 286,
     "pdf_digest": {
      "name": "光模块散热更新-散热系列13-261005_纪要.pdf",
      "pts": [
@@ -248,7 +248,7 @@
      "食饮感知一线把脉旺季酒类系列跟踪日程261006_纪要.pdf",
      "食饮感知一线把脉旺季酒类系列跟踪日程261006_原文.pdf"
     ],
-    "readers": 284,
+    "readers": 286,
     "pdf_digest": {
      "name": "人人都能生成，什么才叫创造261006_纪要.pdf",
      "pts": [
@@ -282,7 +282,7 @@
      "碳化硅SiC行业更新261006_纪要.pdf",
      "碳化硅SiC行业更新261006_原文.pdf"
     ],
-    "readers": 284,
+    "readers": 286,
     "pdf_digest": {
      "name": "矢量网络分析仪VNA行业观点更新261006_纪要.pdf",
      "pts": [
@@ -315,7 +315,7 @@
      "20261007-申万宏源-策略一周回顾展望A股长中期的波段定位.pdf",
      "20261007-中银证券-海外宏观研究专题之一如何从需求角度理解美国通胀压力？.pdf"
     ],
-    "readers": 135,
+    "readers": 145,
     "pdf_digest": {
      "name": "20261007_华新建材（600801）动态点评增发H股一般授权，看好海外长期发展空间.pdf",
      "pts": [
@@ -345,7 +345,7 @@
      "野村-全球外汇与利率月度分析-261006.pdf",
      "野村-亚洲洞察·印度：季风使经济陷入干旱-261005.pdf"
     ],
-    "readers": 131,
+    "readers": 140,
     "pdf_digest": {
      "name": "野村-全球外汇与利率月度分析-261006.pdf",
      "pts": [
@@ -378,7 +378,62 @@
      "伯恩斯坦-全球生物制药：入门——阿尔茨海默病，一个被低估的跨十年机遇？-261006.pdf",
      "伯恩斯坦-亚太核电：韩国队进军美国，谁最受益-261006.pdf"
     ],
-    "readers": 127
+    "readers": 139
+   },
+   {
+    "date": "2026-10-07",
+    "title": "花旗-人工智能·推理前瞻：为规模化智能铺设轨道-261002",
+    "summary": "#外资研报#",
+    "points": [
+     "#外资研报#"
+    ],
+    "full": "#外资研报#",
+    "source": "知识星球·前沿信息收录",
+    "url": "https://wx.zsxq.com/topic/22258225821414551",
+    "quality": "高",
+    "category": "研报纪要",
+    "comms": [],
+    "files": [
+     "花旗-人工智能·推理前瞻：为规模化智能铺设轨道-261002.pdf"
+    ],
+    "readers": 137,
+    "pdf_digest": {
+     "name": "花旗-人工智能·推理前瞻：为规模化智能铺设轨道-261002.pdf",
+     "pts": [
+      "See Appendix A-1 for Analyst Certification, Important Disclosures and Research Analyst Af…",
+      "Utilization. H100 and B200 rental prices rose 2.2% and 2.8% WoW, while B300 fell",
+      "6.5%, compressing the B300 premium over B200 by 56% (Figure 20). The WoW",
+      "5% higher 12-hour agent scores with 59% fewer FLOPs. Additionally, Meta’s Suffix",
+      "Cache Reuse cut server-side compute by 35% without affecting performance"
+     ]
+    }
+   },
+   {
+    "date": "2026-10-07",
+    "title": "摩根士丹利-SpaceX（SPCX.O）：不只是SpaceX——名字意味着什么-261005",
+    "summary": "#外资研报#",
+    "points": [
+     "#外资研报#"
+    ],
+    "full": "#外资研报#",
+    "source": "知识星球·前沿信息收录",
+    "url": "https://wx.zsxq.com/topic/45548554851212488",
+    "quality": "高",
+    "category": "研报纪要",
+    "comms": [],
+    "files": [
+     "摩根士丹利-SpaceX（SPCX.O）：不只是SpaceX——名字意味着什么-261005.pdf"
+    ],
+    "readers": 137,
+    "pdf_digest": {
+     "name": "摩根士丹利-SpaceX（SPCX.O）：不只是SpaceX——名字意味着什么-261005.pdf",
+     "pts": [
+      "SpaceX | North America",
+      "11.9% Cost of Equity.",
+      "50% Enterprise AI valuation discount for execution risk",
+      "TGR of: 4.0% Space, 4.5% connectivity, 3.0% X & Grok, 5.0% Enterprise AI"
+     ]
+    }
    },
    {
     "date": "2026-10-07",
@@ -404,7 +459,7 @@
      "20261005-中国银河-电子行业9月月报加息预期压缩科技估值，关注AI硬件通胀�.pdf",
      "20261006_A股市场运行周报第112期节日效应影响明显，中线底部迁延，继续保持耐心.pdf"
     ],
-    "readers": 126,
+    "readers": 136,
     "pdf_digest": {
      "name": "20261005_招商证券(香港)_HKStrategyWeeklyMortgageSubsidiesSu.pdf",
      "pts": [
@@ -433,7 +488,7 @@
     "files": [
      "德意志银行-主题研究：最大的市场错配有哪些？2026年10月-261005.pdf"
     ],
-    "readers": 126,
+    "readers": 136,
     "pdf_digest": {
      "name": "德意志银行-主题研究：最大的市场错配有哪些？2026年10月-261005.pdf",
      "pts": [
@@ -448,58 +503,24 @@
    },
    {
     "date": "2026-10-07",
-    "title": "花旗-人工智能·推理前瞻：为规模化智能铺设轨道-261002",
+    "title": "野村-大立光（3008.TW）：对CPO FAU增长高度敏感-261005",
     "summary": "#外资研报#",
     "points": [
      "#外资研报#"
     ],
     "full": "#外资研报#",
     "source": "知识星球·前沿信息收录",
-    "url": "https://wx.zsxq.com/topic/22258225821414551",
+    "url": "https://wx.zsxq.com/topic/55521552158484244",
     "quality": "高",
     "category": "研报纪要",
     "comms": [],
     "files": [
-     "花旗-人工智能·推理前瞻：为规模化智能铺设轨道-261002.pdf"
+     "野村-大立光（3008.TW）：对CPO FAU增长高度敏感-261005.pdf",
+     "野村-外汇洞察：欧元：关于本轮抛售的思考-261005.pdf",
+     "野村-外汇洞察：外资流入美国组合基金，与新兴市场组合基金流出形成对比-261005.pdf",
+     "野村-玉晶光（3406.TW）：光纤连接器与CPO是其能力的理想杠杆-261005.pdf"
     ],
-    "readers": 126,
-    "pdf_digest": {
-     "name": "花旗-人工智能·推理前瞻：为规模化智能铺设轨道-261002.pdf",
-     "pts": [
-      "See Appendix A-1 for Analyst Certification, Important Disclosures and Research Analyst Af…",
-      "Utilization. H100 and B200 rental prices rose 2.2% and 2.8% WoW, while B300 fell",
-      "6.5%, compressing the B300 premium over B200 by 56% (Figure 20). The WoW",
-      "5% higher 12-hour agent scores with 59% fewer FLOPs. Additionally, Meta’s Suffix",
-      "Cache Reuse cut server-side compute by 35% without affecting performance"
-     ]
-    }
-   },
-   {
-    "date": "2026-10-07",
-    "title": "摩根士丹利-SpaceX（SPCX.O）：不只是SpaceX——名字意味着什么-261005",
-    "summary": "#外资研报#",
-    "points": [
-     "#外资研报#"
-    ],
-    "full": "#外资研报#",
-    "source": "知识星球·前沿信息收录",
-    "url": "https://wx.zsxq.com/topic/45548554851212488",
-    "quality": "高",
-    "category": "研报纪要",
-    "comms": [],
-    "files": [
-     "摩根士丹利-SpaceX（SPCX.O）：不只是SpaceX——名字意味着什么-261005.pdf"
-    ],
-    "readers": 126,
-    "pdf_digest": {
-     "name": "摩根士丹利-SpaceX（SPCX.O）：不只是SpaceX——名字意味着什么-261005.pdf",
-     "pts": [
-      "SpaceX | North America",
-      "11.9% Cost of Equity.",
-      "50% Enterprise AI valuation discount for execution risk",
-      "TGR of: 4.0% Space, 4.5% connectivity, 3.0% X & Grok, 5.0% Enterprise AI"
-     ]
-    }
+    "readers": 136
    },
    {
     "date": "2026-10-07",
@@ -527,7 +548,7 @@
      "20261005_天风证券-SOFC优势进一步强化，成长天花板或被低估-2026-10-05.pdf",
      "20261005_有色金属行业跟踪周报美元指数强势，金属价格震�.pdf"
     ],
-    "readers": 125,
+    "readers": 135,
     "pdf_digest": {
      "name": "20261004_国金证券-久期独立行情-2026-10-04.pdf",
      "pts": [
@@ -563,7 +584,7 @@
      "20261006-开源证券-金融工程定期港股量化9月组合超额-0.5%，10月维持大盘价值.pdf",
      "20261006-开源证券-投资策略周报盈利斜率放缓，政策接力渐近.pdf"
     ],
-    "readers": 125,
+    "readers": 135,
     "pdf_digest": {
      "name": "20261006_招商证券_风格轮动择时周报大盘价值占优，市场震荡修复.pdf",
      "pts": [
@@ -593,7 +614,7 @@
      "伯恩斯坦-美国医疗服务：医院就业人数增速维持低位-261006.pdf",
      "伯恩斯坦-全球奢侈品：中西方社交媒体擂台3Q26——香奈儿与杰尼亚保持热度-261006.pdf"
     ],
-    "readers": 125,
+    "readers": 135,
     "pdf_digest": {
      "name": "伯恩斯坦-美国医疗服务：医院就业人数增速维持低位-261006.pdf",
      "pts": [
@@ -622,7 +643,7 @@
     "files": [
      "德意志银行-Tesla Inc（TSLA.US）：3Q26交付量回顾-261005.pdf"
     ],
-    "readers": 125,
+    "readers": 135,
     "pdf_digest": {
      "name": "德意志银行-Tesla Inc（TSLA.US）：3Q26交付量回顾-261005.pdf",
      "pts": [
@@ -656,7 +677,7 @@
      "高盛-亚太组合策略：亚洲股市每日更新-261005.pdf",
      "高盛-中国新能源车周度图表册：2026年第40周——订单环比增9％／同比降52％，零售／批发新能源车渗透率66％／70％-261006.pdf"
     ],
-    "readers": 125,
+    "readers": 135,
     "pdf_digest": {
      "name": "高盛-The 720：台积电3Q预览、科塔克马恒达银行、HDFC银行、爱茉莉太平洋、印度消费、SpaceX、美国半导体-261006.pdf",
      "pts": [
@@ -668,27 +689,6 @@
       "provisional figures showed strong headline deposit growth of 19% YoY, though"
      ]
     }
-   },
-   {
-    "date": "2026-10-07",
-    "title": "野村-大立光（3008.TW）：对CPO FAU增长高度敏感-261005",
-    "summary": "#外资研报#",
-    "points": [
-     "#外资研报#"
-    ],
-    "full": "#外资研报#",
-    "source": "知识星球·前沿信息收录",
-    "url": "https://wx.zsxq.com/topic/55521552158484244",
-    "quality": "高",
-    "category": "研报纪要",
-    "comms": [],
-    "files": [
-     "野村-大立光（3008.TW）：对CPO FAU增长高度敏感-261005.pdf",
-     "野村-外汇洞察：欧元：关于本轮抛售的思考-261005.pdf",
-     "野村-外汇洞察：外资流入美国组合基金，与新兴市场组合基金流出形成对比-261005.pdf",
-     "野村-玉晶光（3406.TW）：光纤连接器与CPO是其能力的理想杠杆-261005.pdf"
-    ],
-    "readers": 125
    },
    {
     "date": "2026-10-07",
@@ -713,7 +713,7 @@
      "美银证券-亚太科技：PCB用覆铜板——规格升级顺利推进至2027至28年，价格存上行空间-261005.pdf",
      "美银证券-中国化工：10月化工调查——需求预期改善但盈利前景滞后-261005.pdf"
     ],
-    "readers": 124,
+    "readers": 134,
     "pdf_digest": {
      "name": "美银证券-流动性洞察：美国利率——维持做空但信心下降-261005.pdf",
      "pts": [
@@ -1260,7 +1260,7 @@
      "20261002_招商证券_中国海外发展（00688）利润率同比下降，公司于中国香港销售额创同期新高.pdf",
      "20261005-西牛证券-速腾聚创-02498.HK-机器人业务部份抵销车载毛利率压力，聚焦零部件供应.pdf"
     ],
-    "readers": 309,
+    "readers": 310,
     "pdf_digest": {
      "name": "20261001_东吴证券-宏观点评央行PSL降息与定向扩容的信号意义-2026-10-01.pdf",
      "pts": [
@@ -1297,7 +1297,7 @@
      "20261001_2026年H1点评，利润同比增长502.6%.pdf",
      "20261001_传媒行业广电视听科技动态2026年第19期（总第86期�.pdf"
     ],
-    "readers": 307,
+    "readers": 308,
     "pdf_digest": {
      "name": "20260930_中观高频指标旬度跟踪新旧经济指数延续分化，综合景气指数小幅下行.pdf",
      "pts": [
@@ -1469,7 +1469,7 @@
      "最近哪些标的进入击球区_国庆不打烊_晚8点栋察系列电话会261004_纪要.pdf",
      "最近哪些标的进入击球区_国庆不打烊_晚8点栋察系列电话会261004_原文.pdf"
     ],
-    "readers": 476,
+    "readers": 477,
     "pdf_digest": {
      "name": "专家解读OpenAI工作助理Dots261004_纪要.pdf",
      "pts": [
@@ -1880,7 +1880,7 @@
      "中信证券_房地产板块投资策略房地产261005_纪要.pdf",
      "中信证券_房地产板块投资策略房地产261005_原文.pdf"
     ],
-    "readers": 343,
+    "readers": 344,
     "pdf_digest": {
      "name": "为何要重视27年智驾板块的机会261005_原文.pdf",
      "pts": [
@@ -1914,7 +1914,7 @@
      "全栈AI阿里字节等大厂都有哪些进展_国庆不打烊_晚8点栋察系列电话会261005_纪要.pdf",
      "全栈AI阿里字节等大厂都有哪些进展_国庆不打烊_晚8点栋察系列电话会261005_原文.pdf"
     ],
-    "readers": 329,
+    "readers": 330,
     "pdf_digest": {
      "name": "大摩闭门会-宏观策略谈261005_纪要.pdf",
      "pts": [
@@ -1951,7 +1951,7 @@
      "玻璃基板系列（二）量产时间表落定，产业化进入决策前夜261005_纪要.pdf",
      "玻璃基板系列（二）量产时间表落定，产业化进入决策前夜261005_原文.pdf"
     ],
-    "readers": 328,
+    "readers": 329,
     "pdf_digest": {
      "name": "AI眼镜高折射镜片渗透提速XR打开成长新空间261005_纪要.pdf",
      "pts": [
@@ -2438,7 +2438,18 @@
      "20260930_福立旺(688678)3C业绩加速兑现,AI与机器人接力成长-科创板公司动态研究_国海证券_2026-09-28.pdf",
      "20260930_工业企业利润增速持续放缓,高基数拖累当月增速-2026年8月工业企业利润点评 _开源证券 _2026-09-29.pdf"
     ],
-    "readers": 347
+    "readers": 347,
+    "pdf_digest": {
+     "name": "20260928-中国银河-东南亚之行随笔马来西亚——东南亚半导体产业的无冕之王.pdf",
+     "pts": [
+      "行业动态报告 · 电子/通信行业",
+      "（电子电气）产业占GDP 约5.8%、半导体直接贡献约3.7%，E&E 贡献全",
+      "国约 40%出口与78%贸易顺差，马来西亚为全球第6 大半导体出口国、约占",
+      "2025 年E&E 出口同比+18.3%至7,116 亿林吉特、集成",
+      "电路出口同比+24.3%，2026 上半年E&E 出口同比+42.5%至4,680 亿林吉",
+      "特、占比升至48.2%，AI 算力需求为主要拉动。"
+     ]
+    }
    },
    {
     "date": "2026-10-03",
@@ -2475,7 +2486,18 @@
      "20261003_国投证券_9月销售筑底，拿地续冷.pdf",
      "20261003_中国银河_马来西亚——东南亚半导体产业的无冕之王.pdf"
     ],
-    "readers": 466
+    "readers": 466,
+    "pdf_digest": {
+     "name": "20261003_国投证券_9月销售筑底，拿地续冷.pdf",
+     "pts": [
+      "本报告版权属于国投证券股份有限公司，各项声明请参见报告尾页。",
+      "2026 年1-9 月，TOP100 房企销售总额22597.2 亿元，同比降幅与1-",
+      "9 月楼市仍处淡季，重点城市新建住宅销售面积同比下降约7.0%，三",
+      "季度整体下降约5.0%；",
+      "中海地产、华润置地、北京城建销售额同比增长，低融资",
+      "年1-9 月，TOP100 房企拿地总额5785.0 亿元，同比下降20.5%，降"
+     ]
+    }
    },
    {
     "date": "2026-10-03",
@@ -2545,7 +2567,18 @@
     "files": [
      "非农解读.pdf"
     ],
-    "readers": 433
+    "readers": 433,
+    "pdf_digest": {
+     "name": "非农解读.pdf",
+     "pts": [
+      "Jobs Huge Miss: Sept Payrolls Plunge To",
+      "yields are tumbling from 5.22% to 5.16%, a new weekly low",
+      "点没错：收益率从 5.22% 暴跌⾄ 5.16%，创下周内新低；",
+      "unemployment rate actually rose to 4.2%, from 4.1%, and",
+      "4.1%升⾄ 4.2%，⾼于预期的持平⽔平。",
+      "率（7.0%）于 9 ⽉⼤幅上升。"
+     ]
+    }
    },
    {
     "date": "2026-10-03",
@@ -2563,7 +2596,18 @@
     "files": [
      "花旗-Moderna Inc（MRNA.US）：肿瘤管线乐观预期已过度反映——下调至卖出，目标价80美元-260930.pdf"
     ],
-    "readers": 428
+    "readers": 428,
+    "pdf_digest": {
+     "name": "花旗-Moderna Inc（MRNA.US）：肿瘤管线乐观预期已过度反映——下调至卖出，目标价80美元-260930.pdf",
+     "pts": [
+      "See Appendix A-1 for Analyst Certification, Important Disclosures and Research Analyst Af…",
+      "outsized run (+222%;",
+      "XBI index: -2%;",
+      "Regeneron’s despite materially lower expected revenue and earnings. On",
+      "NPV, assigning 100% PoS to intismeran’s lead oncology programs supports",
+      "only ~$100/sh, or 50% below current levels. Reaching ~$200/sh requires"
+     ]
+    }
    },
    {
     "date": "2026-10-03",
@@ -2607,7 +2651,15 @@
      "野村-中国互联网与新媒体：AI办公智能体——新的战场-261001.pdf",
      "野村-中国互联网与新媒体：税务审查似乎趋严-261002.pdf"
     ],
-    "readers": 409
+    "readers": 409,
+    "pdf_digest": {
+     "name": "野村-G10外汇：SDR分析-261001.pdf",
+     "pts": [
+      "Note: top row for each currency is trades recorded over the past 24h;",
+      "second row is over the past 1w. Includes all trades with expiry <12m. z-scores based on 6…",
+      "Total volume"
+     ]
+    }
    },
    {
     "date": "2026-10-03",
@@ -2633,7 +2685,18 @@
      "20261003_国金证券_Claude发现酶系统，FDA新规推进动物试验替代方案.pdf",
      "20261003_国泰海通证券_半导体厂务系统领先服务商，设备、材料赛道蓄势成长.pdf"
     ],
-    "readers": 403
+    "readers": 403,
+    "pdf_digest": {
+     "name": "20261002_招商证券_中国海外发展（00688）利润率同比下降，公司于中国香港销售额创同期新高.pdf",
+     "pts": [
+      "2026 年09 月30 日",
+      "上，预计2026/2027/2028 EPS 分别为1.14/1.14/1.15 元/股，同比分别",
+      "q 26H1 收入976 亿元，同比增长17%，归母净利润70 亿元，同比减少18%",
+      "26H1 公司核心净利润79 亿元，同比减少10%。",
+      "费率同比下降1.1 PCT 至3.2%，其中，销售费率同比下降0.8 PCT 至1.7%",
+      "管理费率同比下降0.2 PCT 至1.1%，财务费率同比下降0.1 PCT 至0.4%；"
+     ]
+    }
    },
    {
     "date": "2026-10-03",
@@ -2684,7 +2747,18 @@
      "20261002_太平洋证券-海通发展(603162.SH)-2026年H1点评，利润同比增长502.6%-2026-10-02.pdf",
      "20261002_太平洋证券-招商轮船(601872.SH)-2026年H1点评，利润同比大增227.57%-2026-10-02.pdf"
     ],
-    "readers": 395
+    "readers": 395,
+    "pdf_digest": {
+     "name": "20261001-中信建投-鱼跃医疗-002223-CGM等新品及海外业务快速增长可穿戴.pdf",
+     "pts": [
+      "CGM 等新品及海外业务快速增",
+      "2026 年上半年公司实现收入45.69 亿元，同比下降1.92% ；",
+      "净利润8.43 亿元，同比下降29.92%；",
+      "归母净利润8.43 亿元，同比下降29.92%；",
+      "亿元，同比下降16.69%。",
+      "归母净利润4.14 亿元，同比下降28.28%；"
+     ]
+    }
    },
    {
     "date": "2026-10-03",
@@ -2710,7 +2784,16 @@
      "20261001-长江证券-兆易创新-603986-存储量价齐升二季度业绩持续高增.pdf",
      "20261001-浙商证券-峰岹科技-688279-点评报告全资收购荷兰传感器公司Sci.pdf"
     ],
-    "readers": 383
+    "readers": 383,
+    "pdf_digest": {
+     "name": "20261001-华泰证券-博迈科-603727-新单如期落地.pdf",
+     "pts": [
+      "博迈科 (603727 CH)",
+      "本次合同金额16-21 亿元，按2026 年9 月24 日美元兑人民币中间价6.7489",
+      "工程进度节点付款，延迟违约赔偿金最高不超过合同额的10%，履约风险",
+      "全年方向性收入指引由65 亿美元上调至超过69 亿美元；"
+     ]
+    }
    },
    {
     "date": "2026-10-03",
@@ -2736,7 +2819,18 @@
      "20261001_国信证券_互联网行业2026年10月投资策略AI投资进入需求验证期关注.pdf",
      "20261001_华创证券_海外新兴产业日报美债长端收益率再创新高AI基建投入增长核电项.pdf"
     ],
-    "readers": 377
+    "readers": 377,
+    "pdf_digest": {
+     "name": "20261001_东方证券_软件叙事有所反转继续关注AIInfra�.pdf",
+     "pts": [
+      "近期海外软件板块反弹，AI 吞噬软件担忧再缓解。",
+      "季度CRPO（当前剩余履约义务）达到335 亿美元，同比增长14%，净新增年度订",
+      "cRPO 达到132 亿美元，同比增长21%；",
+      "研究报告中所表述的具体建议或观点无任何直接或间接的关系。",
+      "买入：相对强于市场基准指数收益率15%以上；",
+      "增持：相对强于市场基准指数收益率5%～15%；"
+     ]
+    }
    },
    {
     "date": "2026-10-03",
@@ -2762,7 +2856,18 @@
      "20261001_东方证券_929购房贴息政策点评聚焦购房刚需央地协同发.pdf",
      "20261001_东方证券_AI重构跨境电商Token出海打造新增长极.pdf"
     ],
-    "readers": 375
+    "readers": 375,
+    "pdf_digest": {
+     "name": "20260930-江海证券-金融工程定期报告A股市场快照宽基指数每日投资动态.pdf",
+     "pts": [
+      "江海证券有限公司及其关联机构在法律许可的情况下可能与本报告所分析的企业存在业务关系，并且继续寻求发展这些关系。",
+      "（0.78%）和中证500（0.5%）涨幅最大。",
+      "当年涨跌情况，中证500（-0.35%）跌幅",
+      "最小，其次是创业板指（-1.89%）和中证2000（-2.32%），中证1000（-3.55%）和",
+      "中证全指（-4.54%）跌幅缩小，而上证50（-7.29%）跌幅最大。",
+      "◆资金占比与换手：2026 年9 月29 日, 创业板指（26.49%）交易金额占比最高"
+     ]
+    }
    },
    {
     "date": "2026-10-03",
@@ -6604,7 +6709,7 @@
     "category": "宏观外汇",
     "comms": [],
     "files": [],
-    "readers": 375
+    "readers": 379
    },
    {
     "date": "2026-10-06",
@@ -10055,6 +10160,22 @@
    },
    {
     "date": "2026-10-06",
+    "title": "10月6日晚间信息总结",
+    "summary": "10月6日晚间信息总结",
+    "points": [
+     "10月6日晚间信息总结"
+    ],
+    "full": "10月6日晚间信息总结",
+    "source": "知识星球·前沿信息收录",
+    "url": "https://wx.zsxq.com/topic/55521552111418254",
+    "quality": "高",
+    "category": "其他",
+    "comms": [],
+    "files": [],
+    "readers": 337
+   },
+   {
+    "date": "2026-10-06",
     "title": "📊#🚀🚀🚀Muse爆红出圈，一...",
     "summary": "📊#🚀🚀🚀Muse爆红出圈，一张图看懂#Muse全维度数据追踪 · [拥抱]如需进一步交流或获取详细解读，欢迎联系华福证券AI互联网团队",
     "points": [
@@ -10086,22 +10207,6 @@
     "comms": [],
     "files": [],
     "readers": 335
-   },
-   {
-    "date": "2026-10-06",
-    "title": "10月6日晚间信息总结",
-    "summary": "10月6日晚间信息总结",
-    "points": [
-     "10月6日晚间信息总结"
-    ],
-    "full": "10月6日晚间信息总结",
-    "source": "知识星球·前沿信息收录",
-    "url": "https://wx.zsxq.com/topic/55521552111418254",
-    "quality": "高",
-    "category": "其他",
-    "comms": [],
-    "files": [],
-    "readers": 333
    },
    {
     "date": "2026-10-06",
@@ -11626,7 +11731,7 @@
      "20261005_天风证券-SOFC优势进一步强化，成长天花板或被低估-2026-10-05.pdf",
      "20261005_有色金属行业跟踪周报美元指数强势，金属价格震�.pdf"
     ],
-    "readers": 125,
+    "readers": 135,
     "pdf_digest": {
      "name": "20261004_国金证券-久期独立行情-2026-10-04.pdf",
      "pts": [
@@ -11661,7 +11766,7 @@
      "美银证券-亚太科技：PCB用覆铜板——规格升级顺利推进至2027至28年，价格存上行空间-261005.pdf",
      "美银证券-中国化工：10月化工调查——需求预期改善但盈利前景滞后-261005.pdf"
     ],
-    "readers": 124,
+    "readers": 134,
     "pdf_digest": {
      "name": "美银证券-流动性洞察：美国利率——维持做空但信心下降-261005.pdf",
      "pts": [
@@ -32641,14 +32746,14 @@
      "title": "20261004_国金证券-久期独立行情-2026-10-04",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/82258225824588822",
-     "readers": 125
+     "readers": 135
     },
     {
      "date": "2026-10-07",
      "title": "美银证券-流动性洞察：美国利率——维持做空但信心下降-261005",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/22258225824584581",
-     "readers": 124
+     "readers": 134
     },
     {
      "date": "2026-10-06",
@@ -33043,7 +33148,7 @@
      "title": "20261006_招商证券_风格轮动择时周报大盘价值占优，市场震荡修复",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/14425442541255512",
-     "readers": 125
+     "readers": 135
     },
     {
      "date": "2026-10-03",
@@ -33368,21 +33473,21 @@
      "title": "德意志银行-主题研究：最大的市场错配有哪些？2026年10月-261005",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/22258225821412441",
-     "readers": 126
+     "readers": 136
     },
     {
      "date": "2026-10-07",
      "title": "德意志银行-Tesla Inc（TSLA.US）：3Q26交付量回顾-261005",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/14425442541255852",
-     "readers": 125
+     "readers": 135
     },
     {
      "date": "2026-10-07",
      "title": "高盛-The 720：台积电3Q预览、科塔克马恒达银行、HDFC银行、爱茉莉太平洋、印度消费、SpaceX、美国半导体-261006",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/55521552154215444",
-     "readers": 125
+     "readers": 135
     },
     {
      "date": "2026-10-06",
@@ -33787,7 +33892,7 @@
      "title": "=929全国贴息政策影响及国庆节楼市表现前瞻261006.mp3",
      "dir": "中性",
      "url": "https://wx.zsxq.com/topic/82258225884858222",
-     "readers": 286
+     "readers": 289
     },
     {
      "date": "2026-10-02",
@@ -34246,7 +34351,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 315,
+   "readers": 322,
    "summary": "#调研纪要#"
   },
   {
@@ -34256,7 +34361,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 286,
+   "readers": 289,
    "summary": "#调研纪要#"
   },
   {
@@ -34266,7 +34371,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 286,
+   "readers": 289,
    "summary": "#调研纪要#"
   },
   {
@@ -34276,7 +34381,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 286,
+   "readers": 289,
    "summary": "#调研纪要#"
   },
   {
@@ -34286,7 +34391,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 285,
+   "readers": 288,
    "summary": "#调研纪要#"
   },
   {
@@ -34296,7 +34401,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 284,
+   "readers": 286,
    "summary": "#调研纪要#"
   },
   {
@@ -34306,7 +34411,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 284,
+   "readers": 286,
    "summary": "#调研纪要#"
   },
   {
@@ -34316,7 +34421,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 284,
+   "readers": 286,
    "summary": "#调研纪要#"
   },
   {
@@ -34326,7 +34431,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 135,
+   "readers": 145,
    "summary": "#国内研报#"
   },
   {
@@ -34336,7 +34441,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 131,
+   "readers": 140,
    "summary": "#外资研报#"
   },
   {
@@ -34346,27 +34451,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 127,
-   "summary": "#外资研报#"
-  },
-  {
-   "date": "2026-10-07",
-   "title": "20261005_招商证券(香港)_HKStrategyWeeklyMortgageSubsidiesSu",
-   "url": "https://wx.zsxq.com/topic/82258225824585142",
-   "quality": "高",
-   "category": "研报纪要",
-   "comms": [],
-   "readers": 126,
-   "summary": "#国内研报#"
-  },
-  {
-   "date": "2026-10-07",
-   "title": "德意志银行-主题研究：最大的市场错配有哪些？2026年10月-261005",
-   "url": "https://wx.zsxq.com/topic/22258225821412441",
-   "quality": "高",
-   "category": "研报纪要",
-   "comms": [],
-   "readers": 126,
+   "readers": 139,
    "summary": "#外资研报#"
   },
   {
@@ -34376,7 +34461,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 126,
+   "readers": 137,
    "summary": "#外资研报#"
   },
   {
@@ -34386,7 +34471,37 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 126,
+   "readers": 137,
+   "summary": "#外资研报#"
+  },
+  {
+   "date": "2026-10-07",
+   "title": "20261005_招商证券(香港)_HKStrategyWeeklyMortgageSubsidiesSu",
+   "url": "https://wx.zsxq.com/topic/82258225824585142",
+   "quality": "高",
+   "category": "研报纪要",
+   "comms": [],
+   "readers": 136,
+   "summary": "#国内研报#"
+  },
+  {
+   "date": "2026-10-07",
+   "title": "德意志银行-主题研究：最大的市场错配有哪些？2026年10月-261005",
+   "url": "https://wx.zsxq.com/topic/22258225821412441",
+   "quality": "高",
+   "category": "研报纪要",
+   "comms": [],
+   "readers": 136,
+   "summary": "#外资研报#"
+  },
+  {
+   "date": "2026-10-07",
+   "title": "野村-大立光（3008.TW）：对CPO FAU增长高度敏感-261005",
+   "url": "https://wx.zsxq.com/topic/55521552158484244",
+   "quality": "高",
+   "category": "研报纪要",
+   "comms": [],
+   "readers": 136,
    "summary": "#外资研报#"
   },
   {
@@ -34398,7 +34513,7 @@
    "comms": [
     "cu"
    ],
-   "readers": 125,
+   "readers": 135,
    "summary": "#国内研报#"
   },
   {
@@ -34408,7 +34523,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 125,
+   "readers": 135,
    "summary": "#国内研报#"
   },
   {
@@ -34418,7 +34533,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 125,
+   "readers": 135,
    "summary": "#外资研报#"
   },
   {
@@ -34428,7 +34543,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 125,
+   "readers": 135,
    "summary": "#外资研报#"
   },
   {
@@ -34438,17 +34553,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 125,
-   "summary": "#外资研报#"
-  },
-  {
-   "date": "2026-10-07",
-   "title": "野村-大立光（3008.TW）：对CPO FAU增长高度敏感-261005",
-   "url": "https://wx.zsxq.com/topic/55521552158484244",
-   "quality": "高",
-   "category": "研报纪要",
-   "comms": [],
-   "readers": 125,
+   "readers": 135,
    "summary": "#外资研报#"
   },
   {
@@ -34460,7 +34565,7 @@
    "comms": [
     "cu"
    ],
-   "readers": 124,
+   "readers": 134,
    "summary": "#外资研报#"
   },
   {
@@ -34565,6 +34670,16 @@
   },
   {
    "date": "2026-10-06",
+   "title": "OpenAI 洽谈 300 亿...",
+   "url": "https://wx.zsxq.com/topic/14425442528122242",
+   "quality": "高",
+   "category": "宏观外汇",
+   "comms": [],
+   "readers": 379,
+   "summary": "OpenAI 洽谈 300 亿美元融资，与阿联酋基金、贝莱德磋商"
+  },
+  {
+   "date": "2026-10-06",
    "title": "瑞银-CME Group Inc.（CME.US）：9月强劲，上调3Q每股收益；年末或迎顺风-261005",
    "url": "https://wx.zsxq.com/topic/22258225541214421",
    "quality": "高",
@@ -34572,16 +34687,6 @@
    "comms": [],
    "readers": 377,
    "summary": "#外资研报#"
-  },
-  {
-   "date": "2026-10-06",
-   "title": "OpenAI 洽谈 300 亿...",
-   "url": "https://wx.zsxq.com/topic/14425442528122242",
-   "quality": "高",
-   "category": "宏观外汇",
-   "comms": [],
-   "readers": 375,
-   "summary": "OpenAI 洽谈 300 亿美元融资，与阿联酋基金、贝莱德磋商"
   },
   {
    "date": "2026-10-06",
@@ -34715,6 +34820,16 @@
   },
   {
    "date": "2026-10-06",
+   "title": "10月6日晚间信息总结",
+   "url": "https://wx.zsxq.com/topic/55521552111418254",
+   "quality": "高",
+   "category": "其他",
+   "comms": [],
+   "readers": 337,
+   "summary": "10月6日晚间信息总结"
+  },
+  {
+   "date": "2026-10-06",
    "title": "📊#🚀🚀🚀Muse爆红出圈，一...",
    "url": "https://wx.zsxq.com/topic/82258225851212222",
    "quality": "高",
@@ -34735,13 +34850,13 @@
   },
   {
    "date": "2026-10-06",
-   "title": "10月6日晚间信息总结",
-   "url": "https://wx.zsxq.com/topic/55521552111418254",
+   "title": "20261001_东吴证券-宏观点评央行PSL降息与定向扩容的信号意义-2026-10-01",
+   "url": "https://wx.zsxq.com/topic/55521552288581254",
    "quality": "高",
-   "category": "其他",
+   "category": "研报纪要",
    "comms": [],
-   "readers": 333,
-   "summary": "10月6日晚间信息总结"
+   "readers": 310,
+   "summary": "#国内研报#"
   },
   {
    "date": "2026-10-06",
@@ -34755,22 +34870,12 @@
   },
   {
    "date": "2026-10-06",
-   "title": "20261001_东吴证券-宏观点评央行PSL降息与定向扩容的信号意义-2026-10-01",
-   "url": "https://wx.zsxq.com/topic/55521552288581254",
-   "quality": "高",
-   "category": "研报纪要",
-   "comms": [],
-   "readers": 309,
-   "summary": "#国内研报#"
-  },
-  {
-   "date": "2026-10-06",
    "title": "20260930_中观高频指标旬度跟踪新旧经济指数延续分化，综合景气指数小幅下行",
    "url": "https://wx.zsxq.com/topic/14425442288485252",
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 307,
+   "readers": 308,
    "summary": "#国内研报#"
   },
   {
@@ -35195,7 +35300,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 476,
+   "readers": 477,
    "summary": "#调研纪要#"
   },
   {
@@ -35337,7 +35442,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 343,
+   "readers": 344,
    "summary": "#调研纪要#"
   },
   {
@@ -35347,7 +35452,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 329,
+   "readers": 330,
    "summary": "#调研纪要#"
   },
   {
@@ -35357,7 +35462,7 @@
    "quality": "高",
    "category": "研报纪要",
    "comms": [],
-   "readers": 328,
+   "readers": 329,
    "summary": "#调研纪要#"
   },
   {
@@ -35467,8 +35572,8 @@
    "高": 15756,
    "中": 702
   },
-  "filtered_low": 9230,
+  "filtered_low": 9229,
   "dedup": 42,
-  "out_of_window": 32130
+  "out_of_window": 32131
  }
 }
