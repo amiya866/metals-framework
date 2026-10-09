@@ -1077,7 +1077,7 @@ window.newsZsxqHtml = function(){
   const z = window.ZSXQ, names = z.names || {};
   const order = ["cu","al","pb","zn","ni","sn","li","si"];
   const colors = {cu:"#B8734A",al:"#7A8CA3",pb:"#6B7A8C",zn:"#5B8C5A",ni:"#8C6BAE",sn:"#4A90A4",li:"#C2703E",si:"#7A9E7E"};
-  let out = `<div class="gtitle" id="zsxq-sec">9.2 知识星球 · 纪要小能手（有色相关） <span class="en">${z.updated_at ? z.updated_at.slice(0,10) + ' 更新 · 近30天' : ''}</span></div><div class="cards3">`;
+  let out = `<div class="gtitle" id="zsxq-sec">9.2 知识星球 · 纪要小能手（有色相关） <span class="en">${z.updated_at ? z.updated_at.slice(0,10) + ' 更新 · 近30天' : ''} · <a href="./zsxq.html" target="_blank" style="color:var(--gold,#a3760e)">汇总面板 ↗</a></span></div><div class="cards3">`;
   let any = false;
   for (const c of order){
     const items = (z.by_comm[c] || []).slice(0, 5);
