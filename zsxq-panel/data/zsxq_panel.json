@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-10-15T16:50:24+08:00",
- "source": "主源:纪要小能手_存档.json(2847) + 全量:前沿信息收录_topics_20260905.json(57001) + 直拉补漏近4天(300)",
+ "updated_at": "2026-10-16T09:10:10+08:00",
+ "source": "主源:纪要小能手_存档.json(3133) + 全量:前沿信息收录_topics_20260905.json(57001)",
  "group": "前沿信息收录",
  "window_days": 90,
  "names": {
@@ -34667,11 +34667,11 @@
  "digest_days": 7,
  "stats": {
   "quality": {
-   "高": 13457,
+   "高": 13396,
    "中": 758
   },
-  "filtered_low": 7962,
+  "filtered_low": 7945,
   "dedup": 34,
-  "out_of_window": 35935
+  "out_of_window": 36013
  }
 }
