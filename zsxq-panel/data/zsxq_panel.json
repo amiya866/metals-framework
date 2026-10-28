@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-28T09:12:50+08:00",
+ "updated_at": "2026-10-28T09:30:12+08:00",
  "source": "主源:纪要小能手_存档.json(3991) + 全量:前沿信息收录_topics_20260905.json(57001)",
  "group": "前沿信息收录",
  "window_days": 90,
@@ -34768,11 +34768,11 @@
  "digest_days": 7,
  "stats": {
   "quality": {
-   "高": 10674,
+   "高": 10662,
    "中": 765
   },
-  "filtered_low": 6477,
+  "filtered_low": 6470,
   "dedup": 31,
-  "out_of_window": 41057
+  "out_of_window": 41076
  }
 }
