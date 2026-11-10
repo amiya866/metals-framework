@@ -32,7 +32,7 @@ const fmtM = v => (v/10000).toFixed(1) + '万';
 document.getElementById('note').innerHTML =
   (D.preview ? `<div style="background:#fdecea;border:2px solid #c0392b;border-radius:8px;padding:8px 12px;font-weight:bold;color:#c0392b;margin-bottom:6px">⚡ 盘中预估（${D.preview.time} 价格测算，未收盘，不记账）｜预估今日盈亏 ${(D.preview.est_pnl/10000).toFixed(1)}万 ｜若现在收盘: ${D.preview.sig} ｜预估持仓: 多${D.preview.longs.join('/')} 空${D.preview.shorts.join('/')}　<span style="font-weight:normal">（官方记账以收盘后 15:37/22:55 档为准）</span></div>` : '') +
   (D.stale && D.stale.length ? `<div style="color:#c0392b;font-weight:bold">⚠ 因子断更告警（评分含陈旧数据，谨慎参考）: ${D.stale.join('；')}</div>` : '') +
-  `信号日 ${D.sig_date} ｜ 模型 ${D.model_version || 'v3.0_buf1'}（${D.rule_start || '2026-09-18'}起）｜ 规则: 日频IC加权评分→top2多/bottom2空, ${D.model_version === 'v3.1_strict_top2' ? '严格排名buf=0' : '滞回1名'}, 成本0.02%/边, 权重冻结于训练窗(2021-03~2024-06)｜ 净值连续不重置`;
+  `信号日 ${D.sig_date} ｜ 模型 ${D.model_version || 'v3.0_buf1'}（${D.rule_start || '2026-09-18'}起）｜ 规则: 日频偏IC去相关评分→top2多/bottom2空, ${['v3.1_strict_top2','v3.2_corrnorm_top2'].includes(D.model_version) ? '严格排名buf=0' : '滞回1名'}, 成本0.02%/边, 权重冻结于训练窗(2021-03~2024-06)｜ 净值连续不重置`;
 const cls = v => v >= 0 ? 'up' : 'dn';
 document.getElementById('cards').innerHTML =
   `<div class="card">当前资金<b>${fmtM(D.equity)}</b></div>` +
