@@ -1,79 +1,8 @@
-<!DOCTYPE html><html lang="zh"><head><meta charset="utf-8"><title>有色截面配置 · 实盘监控</title>
-<script src="echarts.min.js"></script>
-<style>
-body{font-family:'Microsoft YaHei',sans-serif;max-width:1300px;margin:0 auto;padding:20px;background:#f5f5f5}
-.cards{display:flex;gap:12px;flex-wrap:wrap;margin:12px 0}
-.card{background:#fff;border-radius:10px;padding:14px 20px;box-shadow:0 1px 4px #ccc;min-width:150px}
-.card b{display:block;font-size:22px;margin-top:4px}
-.up{color:#c0392b}.dn{color:#1e8449}
-table{border-collapse:collapse;width:100%;background:#fff;margin:10px 0}
-th,td{border:1px solid #ddd;padding:6px 9px;text-align:center;font-size:13px}
-th{background:#f0ead6}
-#ec{width:100%;height:480px;background:#fff;border:1px solid #ddd;border-radius:8px;margin:10px 0}
-.note{background:#fff8e1;border:1px solid #b8860b;border-radius:8px;padding:10px 16px;line-height:1.7;font-size:13px}
-.tag{padding:2px 10px;border-radius:4px;color:#fff;font-size:13px}
-.tL{background:#d43f3a}.tS{background:#3a9b5c}
-.sym{cursor:pointer;padding:3px 10px;border-radius:5px;margin:2px;display:inline-block;background:#eee}
-.sym.on{background:#b8860b;color:#fff}
-</style></head><body>
-<h2>有色截面多空配置 · 实盘监控 <span style="font-size:14px;color:#888">（交易日 14:55 盘中预估 · 15:37 收盘记账 · 22:55 晚间刷新 ｜ <a href="full.html" style="color:#b8860b">完整回测面板 →</a>）</span></h2>
-<div class="note" id="note"></div>
-<div class="cards" id="cards"></div>
-<div id="ec"></div>
-<div style="margin:8px 0" id="posbox"></div>
-<div class="note" id="whybox"></div>
-<div style="margin:8px 0" id="symbox"></div>
-<div id="bd"></div>
-<h3>调仓记录（近30条）</h3><div id="ev"></div>
-<script>
-const D = {"sig_date": "2026-11-23", "capital": 10000000, "equity": 9926860.32, "cum": -0.0073, "today_pnl": -81194.51, "ann": -0.0469, "sharpe": -0.22, "mdd": -0.0508, "curve": [["2026-09-18", 10000000.0], ["2026-09-21", 9988745.8], ["2026-09-22", 10023372.04], ["2026-09-23", 10027578.52], ["2026-09-24", 9959631.94], ["2026-09-28", 9973423.24], ["2026-09-29", 9914447.11], ["2026-09-30", 9942475.25], ["2026-10-08", 10055091.09], ["2026-10-09", 10069875.23], ["2026-10-12", 10004268.79], ["2026-10-13", 10145661.05], ["2026-10-14", 9914303.84], ["2026-10-15", 9884036.01], ["2026-10-16", 9840393.73], ["2026-10-19", 9976576.87], ["2026-10-20", 10007826.73], ["2026-10-21", 10163950.35], ["2026-10-22", 10286630.66], ["2026-10-23", 10264364.54], ["2026-10-26", 10141901.8], ["2026-10-27", 10061526.28], ["2026-10-28", 10080814.88], ["2026-10-29", 10135836.82], ["2026-10-30", 10044656.7], ["2026-11-02", 10022288.11], ["2026-11-03", 10221094.31], ["2026-11-04", 10265644.29], ["2026-11-05", 10391605.16], ["2026-11-06", 10457859.41], ["2026-11-10", 10397869.1], ["2026-11-11", 10333032.91], ["2026-11-13", 10249001.95], ["2026-11-16", 10287073.28], ["2026-11-17", 10397690.13], ["2026-11-19", 10073237.28], ["2026-11-20", 10008054.83], ["2026-11-23", 9926860.32]], "scores": [["铅", 0.814], ["锌", 0.753], ["铝", 0.443], ["镍", 0.161], ["锡", -0.273], ["铜", -0.765]], "longs": ["锌", "铅"], "shorts": ["铜", "锡"], "events": [["2026-11-23", "开多", "铅", 0.814], ["2026-11-23", "平多", "铝", 0.443], ["2026-11-20", "开空", "锡", 0.083], ["2026-11-20", "开空", "铜", -0.845], ["2026-11-20", "开多", "铝", 0.582], ["2026-11-20", "平空", "铅", 0.361], ["2026-11-20", "平空", "镍", 0.186], ["2026-11-20", "平多", "铜", -0.845], ["2026-11-19", "开多", "锌", 1.148], ["2026-11-19", "平多", "锡", 0.396], ["2026-11-17", "开多", "铜", 0.819], ["2026-11-17", "平多", "锌", 0.75], ["2026-11-16", "开多", "锡", 1.271], ["2026-11-16", "平多", "铝", 0.53], ["2026-11-13", "开空", "铅", -0.099], ["2026-11-13", "平空", "铜", 0.459], ["2026-11-11", "开空", "铜", -0.132], ["2026-11-11", "开空", "镍", -0.664], ["2026-11-11", "平空", "铅", -0.13], ["2026-11-11", "平空", "锡", -0.118], ["2026-11-10", "开空", "铅", -0.113], ["2026-11-10", "开多", "铝", 0.435], ["2026-11-10", "平空", "铜", 0.125], ["2026-11-10", "平多", "镍", -0.112], ["2026-11-06", "开空", "铜", -0.597], ["2026-11-06", "开多", "镍", 0.059], ["2026-11-06", "平空", "铅", -0.132], ["2026-11-06", "平多", "铜", -0.597], ["2026-11-05", "开多", "铜", 0.43], ["2026-11-05", "平多", "镍", 0.171]], "breakdown": {"CU": [{"factor": "注销占比", "weight": 0.24, "z": -1.0, "contrib": -0.239}, {"factor": "进口盈亏", "weight": 0.22, "z": -0.67, "contrib": -0.147}, {"factor": "升贴水", "weight": 0.159, "z": -0.64, "contrib": -0.101}, {"factor": "TC变化率", "weight": 0.14, "z": 0.69, "contrib": 0.097}, {"factor": "美元指数变化率", "weight": 0.127, "z": -2.68, "contrib": -0.34}, {"factor": "外盘强弱", "weight": 0.097, "z": -0.31, "contrib": -0.03}, {"factor": "股商背离", "weight": -0.018, "z": 0.27, "contrib": -0.005}], "AL": [{"factor": "股商背离", "weight": 0.527, "z": -0.71, "contrib": -0.377}, {"factor": "动量", "weight": -0.473, "z": -1.73, "contrib": 0.819}], "ZN": [{"factor": "外盘强弱", "weight": 0.482, "z": -0.7, "contrib": -0.336}, {"factor": "动量", "weight": -0.437, "z": -2.62, "contrib": 1.147}, {"factor": "股商背离", "weight": 0.081, "z": -0.71, "contrib": -0.058}], "PB": [{"factor": "动量", "weight": -0.455, "z": -1.06, "contrib": 0.484}, {"factor": "股商背离", "weight": -0.285, "z": -1.11, "contrib": 0.317}, {"factor": "外盘强弱", "weight": -0.26, "z": -0.05, "contrib": 0.013}], "NI": [{"factor": "注销占比", "weight": 0.388, "z": 0.47, "contrib": 0.183}, {"factor": "升贴水", "weight": 0.352, "z": -0.21, "contrib": -0.073}, {"factor": "外盘强弱", "weight": 0.26, "z": 0.2, "contrib": 0.051}], "SN": [{"factor": "SOX", "weight": 0.535, "z": -2.04, "contrib": -1.092}, {"factor": "升贴水", "weight": 0.465, "z": 1.76, "contrib": 0.819}]}, "stale": [], "why": ["<b>多·锌</b>(评分+0.75)：动量(z=-2.6→贡献+1.15)；拖累 外盘强弱(-0.34)", "<b>多·铅</b>(评分+0.81)：动量(z=-1.1→贡献+0.48)、股商背离(z=-1.1→贡献+0.32)", "<b>空·铜</b>(评分-0.77)：TC变化率(z=+0.7→贡献+0.10)；拖累 美元指数变化率(-0.34)", "<b>空·锡</b>(评分-0.27)：升贴水(z=+1.8→贡献+0.82)；拖累 SOX(-1.09)", "今日调仓：平多铝；开多铅"], "preview": null, "model_version": "v3.2_corrnorm_top2", "rule_start": "2026-11-09", "model_history": [{"date": "2026-09-18", "version": "v3.0_buf1", "note": "日频IC加权+滞回1名"}, {"date": "2026-10-27", "version": "v3.1_strict_top2", "note": "权重不变，buf=1→0；净值连续不重置"}, {"date": "2026-11-10", "version": "v3.2_corrnorm_top2", "note": "品种内偏IC去相关权重，buf=0不变；净值连续不重置"}]};
-const NAMES = ['铜','铝','锌','铅','镍','锡'];
-const fmtM = v => (v/10000).toFixed(1) + '万';
-document.getElementById('note').innerHTML =
-  (D.preview ? `<div style="background:#fdecea;border:2px solid #c0392b;border-radius:8px;padding:8px 12px;font-weight:bold;color:#c0392b;margin-bottom:6px">⚡ 盘中预估（${D.preview.time} 价格测算，未收盘，不记账）｜预估今日盈亏 ${(D.preview.est_pnl/10000).toFixed(1)}万 ｜若现在收盘: ${D.preview.sig} ｜预估持仓: 多${D.preview.longs.join('/')} 空${D.preview.shorts.join('/')}　<span style="font-weight:normal">（官方记账以收盘后 15:37/22:55 档为准）</span></div>` : '') +
-  (D.stale && D.stale.length ? `<div style="color:#c0392b;font-weight:bold">⚠ 因子断更告警（评分含陈旧数据，谨慎参考）: ${D.stale.join('；')}</div>` : '') +
-  `信号日 ${D.sig_date} ｜ 模型 ${D.model_version || 'v3.0_buf1'}（${D.rule_start || '2026-09-18'}起）｜ 规则: 日频偏IC去相关评分→top2多/bottom2空, ${['v3.1_strict_top2','v3.2_corrnorm_top2'].includes(D.model_version) ? '严格排名buf=0' : '滞回1名'}, 成本0.02%/边, 权重冻结于训练窗(2021-03~2024-06)｜ 净值连续不重置`;
-const cls = v => v >= 0 ? 'up' : 'dn';
-document.getElementById('cards').innerHTML =
-  `<div class="card">当前资金<b>${fmtM(D.equity)}</b></div>` +
-  `<div class="card">累计收益<b class="${cls(D.cum)}">${(D.cum*100).toFixed(2)}%</b></div>` +
-  `<div class="card">今日盈亏<b class="${cls(D.today_pnl)}">${fmtM(D.today_pnl)}</b></div>` +
-  `<div class="card">年化<b>${D.ann == null ? '—' : (D.ann*100).toFixed(1)+'%'}</b></div>` +
-  `<div class="card">Sharpe<b>${D.sharpe == null ? '—' : D.sharpe.toFixed(2)}</b></div>` +
-  `<div class="card">最大回撤<b class="dn">${(D.mdd*100).toFixed(1)}%</b></div>`;
-document.getElementById('posbox').innerHTML =
-  '当前持仓: ' + D.longs.map(s => `<span class="tag tL">多 ${s}</span>`).join(' ') + ' ' +
-  D.shorts.map(s => `<span class="tag tS">空 ${s}</span>`).join(' ') +
-  '　｜　最新评分: ' + D.scores.map(([n, v]) => `${n} ${v}`).join(' / ');
-document.getElementById('whybox').innerHTML =
-  '<b>今日为何这么配置（' + D.sig_date + '）</b><br>' + D.why.join('<br>') +
-  '<br><span style="color:#888">每行=该持仓腿评分的主要因子来源（z=因子历史分位，贡献=z×权重，加总=该品种总分）；逐因子完整拆解见下方各品种表与 <a href="full.html">完整回测面板</a>。</span>';
-const ch = echarts.init(document.getElementById('ec'));
-ch.setOption({animation: false,
-  grid: [{top: 40, height: '60%'}, {top: '74%', height: '16%'}],
-  xAxis: [{type: 'category', data: D.curve.map(x => x[0])}, {type: 'category', data: D.curve.map(x => x[0]), gridIndex: 1, show: false}],
-  yAxis: [{scale: true, name: '资金(元)'}, {scale: true, gridIndex: 1, name: '日盈亏%'}],
-  dataZoom: [{type: 'inside', xAxisIndex: [0,1]}, {type: 'slider', xAxisIndex: [0,1], top: '93%'}],
-  tooltip: {trigger: 'axis'},
-  series: [
-    {name: '资金', type: 'line', data: D.curve.map(x => x[1]), showSymbol: false, areaStyle: {opacity: 0.1}},
-    {name: '日盈亏%', type: 'bar', xAxisIndex: 1, yAxisIndex: 1,
-     data: D.curve.map((x, i) => i === 0 ? 0 : +((x[1]/D.curve[i-1][1]-1)*100).toFixed(3)),
-     itemStyle: {color: p => p.value >= 0 ? '#d43f3a' : '#3a9b5c'}},
-  ]});
-let sym = 'CU';
-const sb = document.getElementById('symbox');
-NAMES.forEach((n, i) => { const s = document.createElement('span'); s.className = 'sym' + (i === 0 ? ' on' : '');
-  s.textContent = n; s.id = 'sym' + ['CU','AL','ZN','PB','NI','SN'][i];
-  s.onclick = () => { sym = ['CU','AL','ZN','PB','NI','SN'][i]; renderBd(); }; sb.appendChild(s); });
-function renderBd() {
-  ['CU','AL','ZN','PB','NI','SN'].forEach(S => document.getElementById('sym' + S).className = 'sym' + (S === sym ? ' on' : ''));
-  const rows = D.breakdown[sym] || [];
-  let t = '<table><tr><th>因子</th><th>权重</th><th>最新z</th><th>贡献</th></tr>';
-  rows.forEach(r => t += `<tr><td>${r.factor}</td><td>${(r.weight*100).toFixed(0)}%</td><td>${r.z}</td><td>${r.contrib}</td></tr>`);
-  document.getElementById('bd').innerHTML = t + '</table>';
-}
-renderBd();
-document.getElementById('ev').innerHTML = '<table><tr><th>日期</th><th>动作</th><th>品种</th><th>评分</th></tr>' +
-  D.events.map(e => `<tr><td>${e[0]}</td><td class="${e[1].includes('多') ? 'up' : 'dn'}">${e[1]}</td><td>${e[2]}</td><td>${e[3]}</td></tr>`).join('') + '</table>';
-</script></body></html>
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>有色截面配置｜不可记账、不可交易</title><style>
+body{font-family:"Microsoft YaHei",sans-serif;max-width:1180px;margin:30px auto;padding:0 18px;background:#f5f5f5;color:#25282c}
+.stop{background:#fdecea;border:3px solid #c0392b;border-radius:10px;padding:24px;color:#8f241c}h1{margin-top:0}.card{background:white;border-radius:10px;padding:18px;margin-top:16px}li{margin:8px 0}code{word-break:break-all}a{color:#183b4e}</style></head><body>
+<div class="stop"><h1>不可记账、不可交易</h1><p>账可信闸门已触发。本次没有新增权益、没有调仓，也没有用陈旧数据冒充新观测。</p><p>价格信号日：2026-11-25｜最后可信权益：9,926,860.32 元</p></div>
+<div class="card"><h2>必须处置的原因</h2><ul><li>价格交易日与权益日期不一一对应，缺失：2026-11-09,2026-11-12,2026-11-18</li></ul><p>处置完成前，官方任务会持续以非零退出码报警，页面保持本红色状态。</p></div>
+<div class="card"><a href="full.html">查看历史研究面板（不代表可交易）</a><p>处置记录：<code>账可信/当前阻断.json</code>；人工放行必须匹配 incident_sha256。</p></div>
+</body></html>
